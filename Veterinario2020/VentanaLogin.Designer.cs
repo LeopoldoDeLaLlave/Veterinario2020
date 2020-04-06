@@ -79,7 +79,7 @@
             this.buttonLog.TabIndex = 4;
             this.buttonLog.Text = "Iniciar sesión";
             this.buttonLog.UseVisualStyleBackColor = true;
-            this.buttonLog.Click += new System.EventHandler(this.button1_Click);
+            this.buttonLog.Click += new System.EventHandler(this.botonLogin_Click);
             // 
             // VentanaLogin
             // 

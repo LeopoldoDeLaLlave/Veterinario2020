@@ -8,6 +8,12 @@ using MySql.Data.MySqlClient;
 
 namespace Veterinario2020
 {
+
+    /*
+     * Autor: Javier de la Llave
+     * 
+     * Está clase se encarga de realizar la conexión con la base de datos
+     */
     class Conexion
     {
         public MySqlConnection conexion;
@@ -26,7 +32,8 @@ namespace Veterinario2020
 
         }
 
-        //Obtiene la contraseña del usuario obtenido
+        //Al introducir un usuario, si este existe, se obtine su contraseña y si es administrados
+        //Utilizamos esta función en el login
         public DataTable obtenerPassword(String dni)
         {
             try
