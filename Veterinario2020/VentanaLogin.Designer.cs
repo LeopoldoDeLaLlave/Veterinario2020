@@ -30,7 +30,7 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxUsuario = new System.Windows.Forms.TextBox();
-            this.textBoxContraseña = new System.Windows.Forms.TextBox();
+            this.textBoxContrasena = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.buttonLog = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -52,13 +52,13 @@
             this.textBoxUsuario.Size = new System.Drawing.Size(285, 22);
             this.textBoxUsuario.TabIndex = 1;
             // 
-            // textBoxContraseña
+            // textBoxContrasena
             // 
-            this.textBoxContraseña.Location = new System.Drawing.Point(55, 302);
-            this.textBoxContraseña.Name = "textBoxContraseña";
-            this.textBoxContraseña.PasswordChar = '*';
-            this.textBoxContraseña.Size = new System.Drawing.Size(285, 22);
-            this.textBoxContraseña.TabIndex = 3;
+            this.textBoxContrasena.Location = new System.Drawing.Point(55, 302);
+            this.textBoxContrasena.Name = "textBoxContrasena";
+            this.textBoxContrasena.PasswordChar = '*';
+            this.textBoxContrasena.Size = new System.Drawing.Size(285, 22);
+            this.textBoxContrasena.TabIndex = 3;
             // 
             // label2
             // 
@@ -87,7 +87,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(402, 523);
             this.Controls.Add(this.buttonLog);
-            this.Controls.Add(this.textBoxContraseña);
+            this.Controls.Add(this.textBoxContrasena);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBoxUsuario);
             this.Controls.Add(this.label1);
@@ -104,7 +104,7 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBoxUsuario;
-        private System.Windows.Forms.TextBox textBoxContraseña;
+        private System.Windows.Forms.TextBox textBoxContrasena;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button buttonLog;
     }

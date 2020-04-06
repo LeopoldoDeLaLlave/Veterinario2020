@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace Veterinario2020
 {
-    public partial class Form1 : Form
+    public partial class FormUsuario : Form
     {
-        public Form1()
+        public FormUsuario()
         {
             InitializeComponent();
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
