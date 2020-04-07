@@ -51,5 +51,25 @@ namespace Veterinario2020
                 throw e;
             }
         }
+
+        //Obtenemos las mascotas y sus datos de un usuario
+        public DataTable obtenerTablaMascotas(String dni)
+        {
+            try
+            {
+                conexion.Open();
+                MySqlCommand consulta =
+                    new MySqlCommand("SELECT * FROM mascota WHERE `propietario`='" + dni + "'", conexion);
+                MySqlDataReader resultado = consulta.ExecuteReader();
+                DataTable mascotas = new DataTable();
+                mascotas.Load(resultado);
+                conexion.Close();
+                return mascotas;
+            }
+            catch (MySqlException e)
+            {
+                throw e;
+            }
+        }
     }
 }
