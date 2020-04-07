@@ -14,7 +14,8 @@ namespace Veterinario2020
     {
 
         Conexion c = new Conexion();
-        DataTable usuarioCotrasena = new DataTable();
+        public DataTable tablaUsuario = new DataTable();
+        
         public VentanaLogin()
         {
             InitializeComponent();
@@ -23,16 +24,17 @@ namespace Veterinario2020
         //Se encarga de recoger el nombre y la contraseña introducida por el usuario y comprobar si coinciden
         //En tal caso cierra VentanaLogin y abre FormUsuario o FormAdministrador en función de quien haya introducido los datos.
         //Si los datos introducidos son incorrectos salta un aviso
-        private void botonLogin_Click(object sender, EventArgs e)
+        public void BotonLogin_Click(object sender, EventArgs e)
         {
 
-            usuarioCotrasena = c.obtenerPassword(textBoxUsuario.Text);//Obtenemos la contraseña y si es administrador del usuario introducido.
+
+            tablaUsuario = c.obtenerTablaUsuario(textBoxUsuario.Text);//Obtenemos la contraseña y si es administrador del usuario introducido.
             String contrasenaReal = "";//Aquí guardaremos la contraseña que hay en la base de datos
             String contrasenaDada = textBoxContrasena.Text;//Guardamos la contraseña dada por el usuario
             Boolean usuarioCorrecto = true;//Si el usuario no existe, se vuelve false
             try
             {
-                 contrasenaReal = usuarioCotrasena.Rows[0]["contrasena"].ToString();//Guardamos la contraseña de la base de datos
+                 contrasenaReal = tablaUsuario.Rows[0]["contrasena"].ToString();//Guardamos la contraseña de la base de datos
             }
             catch 
             {//Si el usuario no existe salta aquí
@@ -42,7 +44,8 @@ namespace Veterinario2020
 
             if (String.Compare(contrasenaDada,contrasenaReal)==0 && usuarioCorrecto)//Si contraseña y usuario coinciden y si el usuario existe
             {
-                if (Convert.ToBoolean(usuarioCotrasena.Rows[0]["administrador"]))//Si el usuario es administrador abrimos el form de administrador
+                
+                if (Convert.ToBoolean(tablaUsuario.Rows[0]["administrador"]))//Si el usuario es administrador abrimos el form de administrador
                 {
                     FormAdministrador fa = new FormAdministrador();
                     fa.Show();
@@ -51,10 +54,13 @@ namespace Veterinario2020
                 }
                 else//Si el usuario es cliente abrimos el form de usuario
                 {
-                    FormUsuario f1 = new FormUsuario();
+                    
+                    FormUsuario f1 = new FormUsuario(tablaUsuario);
                     f1.Show();
                     this.Hide();
                 }
+                
+                
             }
             else
             {//Si los datos  son incorrectos damos un aviso y vacíamos el textbox de contraseña
@@ -64,34 +70,6 @@ namespace Veterinario2020
 
         }
 
-        private void VentanaLogin_Load(object sender, EventArgs e)
-        {
 
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBoxUsuario_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBoxContrasena_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

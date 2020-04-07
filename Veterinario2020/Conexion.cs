@@ -32,15 +32,14 @@ namespace Veterinario2020
 
         }
 
-        //Al introducir un usuario, si este existe, se obtine su contraseña y si es administrados
-        //Utilizamos esta función en el login
-        public DataTable obtenerPassword(String dni)
+        //Obtenemos todos los datos de un usuario a partir de su DNI
+        public DataTable obtenerTablaUsuario(String dni)
         {
             try
             {
                 conexion.Open();
                 MySqlCommand consulta =
-                    new MySqlCommand("SELECT contrasena, administrador FROM usuario WHERE dni ='" + dni + "'", conexion);
+                    new MySqlCommand("SELECT * FROM usuario WHERE dni ='" + dni + "'", conexion);
                 MySqlDataReader resultado = consulta.ExecuteReader();
                 DataTable usuarios = new DataTable();
                 usuarios.Load(resultado);

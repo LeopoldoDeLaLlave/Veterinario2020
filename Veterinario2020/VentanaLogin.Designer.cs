@@ -47,7 +47,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Usuario (DNI)";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // textBoxUsuario
             // 
@@ -55,7 +54,6 @@
             this.textBoxUsuario.Name = "textBoxUsuario";
             this.textBoxUsuario.Size = new System.Drawing.Size(399, 22);
             this.textBoxUsuario.TabIndex = 1;
-            this.textBoxUsuario.TextChanged += new System.EventHandler(this.textBoxUsuario_TextChanged);
             // 
             // textBoxContrasena
             // 
@@ -64,7 +62,6 @@
             this.textBoxContrasena.PasswordChar = '*';
             this.textBoxContrasena.Size = new System.Drawing.Size(399, 22);
             this.textBoxContrasena.TabIndex = 3;
-            this.textBoxContrasena.TextChanged += new System.EventHandler(this.textBoxContrasena_TextChanged);
             // 
             // label2
             // 
@@ -75,7 +72,6 @@
             this.label2.TabIndex = 2;
             this.label2.Text = "Contraseña";
             this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // buttonLog
             // 
@@ -88,7 +84,7 @@
             this.buttonLog.TabIndex = 4;
             this.buttonLog.Text = "Iniciar sesión";
             this.buttonLog.UseVisualStyleBackColor = false;
-            this.buttonLog.Click += new System.EventHandler(this.botonLogin_Click);
+            this.buttonLog.Click += new System.EventHandler(this.BotonLogin_Click);
             // 
             // pictureBox1
             // 
@@ -99,7 +95,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // VentanaLogin
             // 
@@ -118,7 +113,6 @@
             this.MinimizeBox = false;
             this.Name = "VentanaLogin";
             this.Text = "Emerald";
-            this.Load += new System.EventHandler(this.VentanaLogin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
