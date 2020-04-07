@@ -23,11 +23,18 @@ namespace Veterinario2020
             InitializeComponent();
             datosUsuarios = dUsuarios;
             this.Text = datosUsuarios.Rows[0]["nombre"].ToString() + " " + datosUsuarios.Rows[0]["apellido"].ToString();
-
-
+            ponerDatos();
         }
 
-
+        private void ponerDatos()
+        {
+            labelNombre.Text = datosUsuarios.Rows[0]["nombre"].ToString() + " " + datosUsuarios.Rows[0]["apellido"].ToString();
+            labelTelefono.Text = datosUsuarios.Rows[0]["telefono"].ToString();
+            labelDir.Text = datosUsuarios.Rows[0]["direccion"].ToString();
+            labelDni.Text = datosUsuarios.Rows[0]["dni"].ToString();
+            labelEmail.Text = datosUsuarios.Rows[0]["email"].ToString();
+            labelAlta.Text = datosUsuarios.Rows[0]["fecha_alta"].ToString();
+        }
 
         
 
@@ -37,9 +44,5 @@ namespace Veterinario2020
            
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
