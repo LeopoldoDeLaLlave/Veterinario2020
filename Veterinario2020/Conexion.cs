@@ -52,6 +52,7 @@ namespace Veterinario2020
             }
         }
 
+
         //Obtenemos las mascotas y sus datos de un usuario
         public DataTable obtenerTablaMascotas(String dni)
         {
