@@ -72,5 +72,27 @@ namespace Veterinario2020
                 throw e;
             }
         }
+
+
+        //Obtenemos las vacunas de un perro
+        public DataTable obtenerVacunas(String chip)
+        {
+            try
+            {
+                conexion.Open();
+                MySqlCommand consulta =
+                    new MySqlCommand("SELECT fecha AS Fecha, tipo_vacuna AS Vacuna  FROM cita WHERE `chip_mascota`='" + chip + 
+                    "' AND motivo = 'Vacuna'", conexion);
+                MySqlDataReader resultado = consulta.ExecuteReader();
+                DataTable mascotas = new DataTable();
+                mascotas.Load(resultado);
+                conexion.Close();
+                return mascotas;
+            }
+            catch (MySqlException e)
+            {
+                throw e;
+            }
+        }
     }
 }

@@ -12,6 +12,7 @@ namespace Veterinario2020
 {
     public partial class FormDatosMascota : Form
     {
+        Conexion c3 = new Conexion();
 
         public DataTable datosMascota = new DataTable();//Aquí guardamos los datos de la mascota
         string nombrePropietario = "";
@@ -25,6 +26,8 @@ namespace Veterinario2020
             InitializeComponent();
             this.Text = datosMascota.Rows[im]["nombre"].ToString();//Ponemos el nombre de la mascota de título del form
             ponerDatosMascota();
+
+            dataGridView1.DataSource = c3.obtenerVacunas(datosMascota.Rows[indice]["n_chip"].ToString());
         }
 
 
@@ -37,6 +40,7 @@ namespace Veterinario2020
             labelRaza.Text = datosMascota.Rows[indice]["raza"].ToString();
             labelColor.Text = datosMascota.Rows[indice]["color"].ToString();
             labelEspecie.Text = datosMascota.Rows[indice]["especie"].ToString();
+            labelNacimiento.Text = datosMascota.Rows[indice]["f_nacimiento"].ToString();
             labelProp.Text = nombrePropietario;
             labelMed.Text = datosMascota.Rows[indice]["medicamentos"].ToString();
 

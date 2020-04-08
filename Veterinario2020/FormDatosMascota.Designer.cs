@@ -47,6 +47,11 @@
             this.labelRaza = new System.Windows.Forms.Label();
             this.labelProp = new System.Windows.Forms.Label();
             this.labelEsterilizado = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
+            this.labelNacimiento = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.label11 = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -115,7 +120,7 @@
             // label8
             // 
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.Location = new System.Drawing.Point(476, 270);
+            this.label8.Location = new System.Drawing.Point(476, 328);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(138, 23);
             this.label8.TabIndex = 7;
@@ -167,7 +172,7 @@
             this.labelPatologia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelPatologia.Location = new System.Drawing.Point(199, 329);
             this.labelPatologia.Name = "labelPatologia";
-            this.labelPatologia.Size = new System.Drawing.Size(579, 23);
+            this.labelPatologia.Size = new System.Drawing.Size(238, 23);
             this.labelPatologia.TabIndex = 13;
             // 
             // labelChip
@@ -183,7 +188,7 @@
             this.labelRaza.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelRaza.Location = new System.Drawing.Point(551, 131);
             this.labelRaza.Name = "labelRaza";
-            this.labelRaza.Size = new System.Drawing.Size(223, 23);
+            this.labelRaza.Size = new System.Drawing.Size(283, 23);
             this.labelRaza.TabIndex = 15;
             // 
             // labelProp
@@ -191,23 +196,66 @@
             this.labelProp.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelProp.Location = new System.Drawing.Point(618, 204);
             this.labelProp.Name = "labelProp";
-            this.labelProp.Size = new System.Drawing.Size(202, 23);
+            this.labelProp.Size = new System.Drawing.Size(239, 23);
             this.labelProp.TabIndex = 16;
             // 
             // labelEsterilizado
             // 
             this.labelEsterilizado.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelEsterilizado.Location = new System.Drawing.Point(650, 271);
+            this.labelEsterilizado.Location = new System.Drawing.Point(620, 328);
             this.labelEsterilizado.Name = "labelEsterilizado";
             this.labelEsterilizado.Size = new System.Drawing.Size(114, 23);
             this.labelEsterilizado.TabIndex = 17;
+            // 
+            // label10
+            // 
+            this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(476, 271);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(223, 23);
+            this.label10.TabIndex = 18;
+            this.label10.Text = "Fecha Nacimiento:";
+            // 
+            // labelNacimiento
+            // 
+            this.labelNacimiento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNacimiento.Location = new System.Drawing.Point(722, 270);
+            this.labelNacimiento.Name = "labelNacimiento";
+            this.labelNacimiento.Size = new System.Drawing.Size(112, 23);
+            this.labelNacimiento.TabIndex = 19;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(269, 461);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(359, 172);
+            this.dataGridView1.TabIndex = 20;
+            // 
+            // label11
+            // 
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.Location = new System.Drawing.Point(269, 418);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(359, 40);
+            this.label11.TabIndex = 21;
+            this.label11.Text = "Vacunas";
+            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // FormDatosMascota
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.ClientSize = new System.Drawing.Size(821, 659);
+            this.ClientSize = new System.Drawing.Size(869, 688);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.labelNacimiento);
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.labelEsterilizado);
             this.Controls.Add(this.labelProp);
             this.Controls.Add(this.labelRaza);
@@ -229,6 +277,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormDatosMascota";
             this.Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -253,5 +302,9 @@
         private System.Windows.Forms.Label labelRaza;
         private System.Windows.Forms.Label labelProp;
         private System.Windows.Forms.Label labelEsterilizado;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.Label labelNacimiento;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label label11;
     }
 }
