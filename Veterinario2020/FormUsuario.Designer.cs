@@ -101,76 +101,94 @@
             this.tabPage1.Controls.Add(this.label2);
             this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Controls.Add(this.panel1);
+            this.tabPage1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabPage1.ImageIndex = 1;
             this.tabPage1.Location = new System.Drawing.Point(4, 39);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage1.Size = new System.Drawing.Size(1185, 541);
             this.tabPage1.TabIndex = 0;
+            this.tabPage1.Text = "Mis datos";
             // 
             // lMascota8
             // 
+            this.lMascota8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lMascota8.Location = new System.Drawing.Point(929, 445);
             this.lMascota8.Name = "lMascota8";
             this.lMascota8.Size = new System.Drawing.Size(253, 23);
             this.lMascota8.TabIndex = 23;
             this.lMascota8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lMascota8.Click += new System.EventHandler(this.lMascota8_Click);
             // 
             // lMascota4
             // 
+            this.lMascota4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lMascota4.Location = new System.Drawing.Point(926, 259);
             this.lMascota4.Name = "lMascota4";
             this.lMascota4.Size = new System.Drawing.Size(253, 23);
             this.lMascota4.TabIndex = 22;
             this.lMascota4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lMascota4.Click += new System.EventHandler(this.lMascota4_Click);
             // 
             // lMascota5
             // 
+            this.lMascota5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lMascota5.Location = new System.Drawing.Point(926, 303);
             this.lMascota5.Name = "lMascota5";
             this.lMascota5.Size = new System.Drawing.Size(253, 23);
             this.lMascota5.TabIndex = 21;
             this.lMascota5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lMascota5.Click += new System.EventHandler(this.lMascota5_Click);
             // 
             // lMascota6
             // 
+            this.lMascota6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lMascota6.Location = new System.Drawing.Point(926, 349);
             this.lMascota6.Name = "lMascota6";
             this.lMascota6.Size = new System.Drawing.Size(253, 23);
             this.lMascota6.TabIndex = 20;
             this.lMascota6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lMascota6.Click += new System.EventHandler(this.lMascota6_Click);
             // 
             // lMascota7
             // 
+            this.lMascota7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lMascota7.Location = new System.Drawing.Point(926, 403);
             this.lMascota7.Name = "lMascota7";
             this.lMascota7.Size = new System.Drawing.Size(253, 23);
             this.lMascota7.TabIndex = 19;
             this.lMascota7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lMascota7.Click += new System.EventHandler(this.lMascota7_Click);
             // 
             // lMascota3
             // 
+            this.lMascota3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lMascota3.Location = new System.Drawing.Point(926, 211);
             this.lMascota3.Name = "lMascota3";
             this.lMascota3.Size = new System.Drawing.Size(253, 23);
             this.lMascota3.TabIndex = 18;
             this.lMascota3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lMascota3.Click += new System.EventHandler(this.lMascota3_Click);
             // 
             // lMascota2
             // 
+            this.lMascota2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lMascota2.Location = new System.Drawing.Point(926, 163);
             this.lMascota2.Name = "lMascota2";
             this.lMascota2.Size = new System.Drawing.Size(253, 23);
             this.lMascota2.TabIndex = 17;
             this.lMascota2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lMascota2.Click += new System.EventHandler(this.lMascota2_Click);
             // 
             // lMascota1
             // 
+            this.lMascota1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lMascota1.Location = new System.Drawing.Point(921, 118);
             this.lMascota1.Name = "lMascota1";
             this.lMascota1.Size = new System.Drawing.Size(253, 23);
             this.lMascota1.TabIndex = 16;
             this.lMascota1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.lMascota1.Click += new System.EventHandler(this.lMascota1_Click);
             // 
             // label6
             // 

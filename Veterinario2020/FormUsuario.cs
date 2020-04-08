@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySqlX.XDevAPI.Relational;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -20,9 +21,12 @@ namespace Veterinario2020
     {
 
 
+
         Conexion c2 = new Conexion();
+
         public DataTable datosUsuarios = new DataTable();//Aquí guardamos los datos de los usuarios
         public DataTable datosMascotas = new DataTable();//Aquí guardamos los datos de las mascotas
+        
 
         /*
          * dUsuarios: Recibe todos los datos del usuario en forma de datatable
@@ -96,6 +100,88 @@ namespace Veterinario2020
         {
             Application.Exit();
            
+        }
+
+
+        //Abre la ficha con los datos de la mascota pulsada
+        private void abrirDatosMascota(int indiceMascota)
+        {
+
+            FormDatosMascota fdm = new FormDatosMascota(indiceMascota, datosMascotas, datosUsuarios.Rows[0]["nombre"].ToString() + " " + datosUsuarios.Rows[0]["apellido"].ToString());
+            fdm.ShowDialog();
+        }
+
+        //Llama al método que abre la ficha de la mascota, solo la abrirá si hay nombre en el label
+        private void lMascota1_Click(object sender, EventArgs e)
+        {
+            if (lMascota1.Text.Length>0)
+            {
+                abrirDatosMascota(0);
+            }
+            
+        }
+
+        //Llama al método que abre la ficha de la mascota, solo la abrirá si hay nombre en el label
+        private void lMascota2_Click(object sender, EventArgs e)
+        {
+            if (lMascota2.Text.Length > 0)
+            {
+                abrirDatosMascota(1);
+            }
+        }
+
+        //Llama al método que abre la ficha de la mascota, solo la abrirá si hay nombre en el label
+        private void lMascota3_Click(object sender, EventArgs e)
+        {
+            if (lMascota3.Text.Length > 0)
+            {
+                abrirDatosMascota(2);
+            }
+        }
+
+        //Llama al método que abre la ficha de la mascota, solo la abrirá si hay nombre en el label
+        private void lMascota4_Click(object sender, EventArgs e)
+        {
+            if (lMascota4.Text.Length > 0)
+            {
+                abrirDatosMascota(3);
+            }
+        }
+
+        //Llama al método que abre la ficha de la mascota, solo la abrirá si hay nombre en el label
+        private void lMascota5_Click(object sender, EventArgs e)
+        {
+            if (lMascota5.Text.Length > 0)
+            {
+                abrirDatosMascota(4);
+            }
+        }
+
+        //Llama al método que abre la ficha de la mascota, solo la abrirá si hay nombre en el label
+        private void lMascota6_Click(object sender, EventArgs e)
+        {
+            if (lMascota6.Text.Length > 0)
+            {
+                abrirDatosMascota(5);
+            }
+        }
+
+        //Llama al método que abre la ficha de la mascota, solo la abrirá si hay nombre en el label
+        private void lMascota7_Click(object sender, EventArgs e)
+        {
+            if (lMascota7.Text.Length > 0)
+            {
+                abrirDatosMascota(6);
+            }
+        }
+
+        //Llama al método que abre la ficha de la mascota, solo la abrirá si hay nombre en el label
+        private void lMascota8_Click(object sender, EventArgs e)
+        {
+            if (lMascota8.Text.Length > 0)
+            {
+                abrirDatosMascota(7);
+            }
         }
 
 
