@@ -38,10 +38,8 @@ namespace Veterinario2020
             this.Text = datosUsuarios.Rows[0]["nombre"].ToString() + " " + datosUsuarios.Rows[0]["apellido"].ToString();//Ponemos el nombre del usuario de título del form
             ponerDatos();
             ponerMascotas();
-
-
-            dataGridView1.DataSource = c2.obtenerCitasAsignadas(datosUsuarios.Rows[0]["dni"].ToString());
-
+        
+            dataGridView1.DataSource = c2.obtenerCitasAsignadas(datosUsuarios.Rows[0]["dni"].ToString());//Ponemos el historial de citas
         }
 
         //Pone en pantalla los datos de los usuarios

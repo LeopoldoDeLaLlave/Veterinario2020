@@ -105,6 +105,7 @@
             this.tabPage1.Controls.Add(this.label2);
             this.tabPage1.Controls.Add(this.label1);
             this.tabPage1.Controls.Add(this.panel1);
+            this.tabPage1.Cursor = System.Windows.Forms.Cursors.Default;
             this.tabPage1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tabPage1.ImageIndex = 1;
             this.tabPage1.Location = new System.Drawing.Point(4, 39);
@@ -116,6 +117,7 @@
             // 
             // lMascota8
             // 
+            this.lMascota8.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lMascota8.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lMascota8.Location = new System.Drawing.Point(929, 445);
             this.lMascota8.Name = "lMascota8";
@@ -126,6 +128,7 @@
             // 
             // lMascota4
             // 
+            this.lMascota4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lMascota4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lMascota4.Location = new System.Drawing.Point(926, 259);
             this.lMascota4.Name = "lMascota4";
@@ -136,6 +139,7 @@
             // 
             // lMascota5
             // 
+            this.lMascota5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lMascota5.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lMascota5.Location = new System.Drawing.Point(926, 303);
             this.lMascota5.Name = "lMascota5";
@@ -146,6 +150,7 @@
             // 
             // lMascota6
             // 
+            this.lMascota6.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lMascota6.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lMascota6.Location = new System.Drawing.Point(926, 349);
             this.lMascota6.Name = "lMascota6";
@@ -156,6 +161,7 @@
             // 
             // lMascota7
             // 
+            this.lMascota7.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lMascota7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lMascota7.Location = new System.Drawing.Point(926, 403);
             this.lMascota7.Name = "lMascota7";
@@ -166,6 +172,7 @@
             // 
             // lMascota3
             // 
+            this.lMascota3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lMascota3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lMascota3.Location = new System.Drawing.Point(926, 211);
             this.lMascota3.Name = "lMascota3";
@@ -176,6 +183,7 @@
             // 
             // lMascota2
             // 
+            this.lMascota2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lMascota2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lMascota2.Location = new System.Drawing.Point(926, 163);
             this.lMascota2.Name = "lMascota2";
@@ -186,6 +194,7 @@
             // 
             // lMascota1
             // 
+            this.lMascota1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.lMascota1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lMascota1.Location = new System.Drawing.Point(921, 118);
             this.lMascota1.Name = "lMascota1";
