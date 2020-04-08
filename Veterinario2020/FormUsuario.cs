@@ -39,6 +39,9 @@ namespace Veterinario2020
             ponerDatos();
             ponerMascotas();
 
+
+            dataGridView1.DataSource = c2.obtenerCitasAsignadas(datosUsuarios.Rows[0]["dni"].ToString());
+
         }
 
         //Pone en pantalla los datos de los usuarios

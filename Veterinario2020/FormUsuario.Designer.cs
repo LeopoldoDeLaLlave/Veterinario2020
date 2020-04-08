@@ -58,8 +58,12 @@
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.imageList2 = new System.Windows.Forms.ImageList(this.components);
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.label9 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
+            this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -322,6 +326,9 @@
             // 
             // tabPage2
             // 
+            this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.tabPage2.Controls.Add(this.label9);
+            this.tabPage2.Controls.Add(this.dataGridView1);
             this.tabPage2.ImageIndex = 2;
             this.tabPage2.Location = new System.Drawing.Point(4, 39);
             this.tabPage2.Name = "tabPage2";
@@ -329,10 +336,10 @@
             this.tabPage2.Size = new System.Drawing.Size(1185, 541);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Historial";
-            this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // tabPage3
             // 
+            this.tabPage3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.tabPage3.ImageIndex = 0;
             this.tabPage3.Location = new System.Drawing.Point(4, 39);
             this.tabPage3.Name = "tabPage3";
@@ -340,7 +347,6 @@
             this.tabPage3.Size = new System.Drawing.Size(1185, 541);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Citas";
-            this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // imageList2
             // 
@@ -349,6 +355,28 @@
             this.imageList2.Images.SetKeyName(0, "citas.ico");
             this.imageList2.Images.SetKeyName(1, "datos.ico");
             this.imageList2.Images.SetKeyName(2, "historial.ico");
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(289, 137);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.Size = new System.Drawing.Size(754, 348);
+            this.dataGridView1.TabIndex = 0;
+            // 
+            // label9
+            // 
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.Location = new System.Drawing.Point(0, 65);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(1182, 52);
+            this.label9.TabIndex = 1;
+            this.label9.Text = "Historial de Citas";
+            this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // FormUsuario
             // 
@@ -363,6 +391,8 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Form1_FormClosing);
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
+            this.tabPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -397,6 +427,8 @@
         private System.Windows.Forms.Label lMascota3;
         private System.Windows.Forms.Label lMascota2;
         private System.Windows.Forms.Label lMascota1;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label label9;
     }
 }
 

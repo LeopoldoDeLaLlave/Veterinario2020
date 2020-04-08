@@ -94,5 +94,27 @@ namespace Veterinario2020
                 throw e;
             }
         }
+
+
+        //Obtenemos las citas que ha tenido un usuario
+        public DataTable obtenerCitasAsignadas(String dni)
+        {
+            try
+            {
+                conexion.Open();
+                MySqlCommand consulta =
+                    new MySqlCommand("SELECT c.fecha AS Fecha, m.nombre AS mascota, c.motivo AS Motivo, c.precio AS Precio FROM mascota m, cita c " +
+                    "WHERE m.n_chip = c.chip_mascota AND m.propietario = '" +dni+"'", conexion);
+                MySqlDataReader resultado = consulta.ExecuteReader();
+                DataTable mascotas = new DataTable();
+                mascotas.Load(resultado);
+                conexion.Close();
+                return mascotas;
+            }
+            catch (MySqlException e)
+            {
+                throw e;
+            }
+        }
     }
 }
