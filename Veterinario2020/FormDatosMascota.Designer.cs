@@ -51,6 +51,8 @@
             this.labelNacimiento = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.label11 = new System.Windows.Forms.Label();
+            this.labelSexo = new System.Windows.Forms.Label();
+            this.label13 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -111,7 +113,7 @@
             // label7
             // 
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(55, 329);
+            this.label7.Location = new System.Drawing.Point(55, 398);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(138, 23);
             this.label7.TabIndex = 6;
@@ -170,7 +172,7 @@
             // labelPatologia
             // 
             this.labelPatologia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelPatologia.Location = new System.Drawing.Point(199, 329);
+            this.labelPatologia.Location = new System.Drawing.Point(199, 398);
             this.labelPatologia.Name = "labelPatologia";
             this.labelPatologia.Size = new System.Drawing.Size(238, 23);
             this.labelPatologia.TabIndex = 13;
@@ -229,7 +231,7 @@
             this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(269, 461);
+            this.dataGridView1.Location = new System.Drawing.Point(269, 495);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
@@ -239,12 +241,29 @@
             // label11
             // 
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(269, 418);
+            this.label11.Location = new System.Drawing.Point(264, 452);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(359, 40);
             this.label11.TabIndex = 21;
             this.label11.Text = "Vacunas";
             this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // labelSexo
+            // 
+            this.labelSexo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelSexo.Location = new System.Drawing.Point(163, 328);
+            this.labelSexo.Name = "labelSexo";
+            this.labelSexo.Size = new System.Drawing.Size(238, 23);
+            this.labelSexo.TabIndex = 23;
+            // 
+            // label13
+            // 
+            this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label13.Location = new System.Drawing.Point(55, 328);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(102, 23);
+            this.label13.TabIndex = 22;
+            this.label13.Text = "Sexo:";
             // 
             // FormDatosMascota
             // 
@@ -252,6 +271,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(869, 688);
+            this.Controls.Add(this.labelSexo);
+            this.Controls.Add(this.label13);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.labelNacimiento);
@@ -306,5 +327,7 @@
         private System.Windows.Forms.Label labelNacimiento;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.Label labelSexo;
+        private System.Windows.Forms.Label label13;
     }
 }

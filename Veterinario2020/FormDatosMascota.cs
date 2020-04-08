@@ -43,6 +43,7 @@ namespace Veterinario2020
             labelNacimiento.Text = datosMascota.Rows[indice]["f_nacimiento"].ToString();
             labelProp.Text = nombrePropietario;
             labelMed.Text = datosMascota.Rows[indice]["medicamentos"].ToString();
+            labelSexo.Text = datosMascota.Rows[indice]["sexo"].ToString();
 
             if (Convert.ToBoolean(datosMascota.Rows[indice]["esterilizado"]))
             {
