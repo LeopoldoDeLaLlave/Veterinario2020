@@ -61,6 +61,8 @@
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage4 = new System.Windows.Forms.TabPage();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.Revisiones = new System.Windows.Forms.Label();
             this.dataGridView5 = new System.Windows.Forms.DataGridView();
@@ -70,8 +72,6 @@
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.imageList2 = new System.Windows.Forms.ImageList(this.components);
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -436,6 +436,28 @@
             this.tabPage4.TabIndex = 0;
             this.tabPage4.Text = "Disponibles";
             // 
+            // label12
+            // 
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label12.Location = new System.Drawing.Point(885, 84);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(296, 23);
+            this.label12.TabIndex = 7;
+            this.label12.Text = "Otros";
+            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label11
+            // 
+            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label11.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label11.Location = new System.Drawing.Point(604, 84);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(296, 23);
+            this.label11.TabIndex = 6;
+            this.label11.Text = "Peluquería";
+            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // label10
             // 
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -477,6 +499,7 @@
             this.dataGridView5.ShowRowErrors = false;
             this.dataGridView5.Size = new System.Drawing.Size(295, 354);
             this.dataGridView5.TabIndex = 3;
+            this.dataGridView5.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView5_CellClick);
             // 
             // dataGridView4
             // 
@@ -497,6 +520,7 @@
             this.dataGridView4.ShowRowErrors = false;
             this.dataGridView4.Size = new System.Drawing.Size(295, 354);
             this.dataGridView4.TabIndex = 2;
+            this.dataGridView4.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView4_CellClick);
             // 
             // dataGridView3
             // 
@@ -517,6 +541,7 @@
             this.dataGridView3.ShowRowErrors = false;
             this.dataGridView3.Size = new System.Drawing.Size(295, 354);
             this.dataGridView3.TabIndex = 1;
+            this.dataGridView3.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView3_CellClick);
             // 
             // dataGridView2
             // 
@@ -537,6 +562,7 @@
             this.dataGridView2.ShowRowErrors = false;
             this.dataGridView2.Size = new System.Drawing.Size(295, 354);
             this.dataGridView2.TabIndex = 0;
+            this.dataGridView2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellClick);
             // 
             // tabPage5
             // 
@@ -564,28 +590,6 @@
             this.imageList1.Images.SetKeyName(1, "peluqueria.ico");
             this.imageList1.Images.SetKeyName(2, "revision.ico");
             this.imageList1.Images.SetKeyName(3, "vacuna.ico");
-            // 
-            // label11
-            // 
-            this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label11.Location = new System.Drawing.Point(604, 84);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(296, 23);
-            this.label11.TabIndex = 6;
-            this.label11.Text = "Peluquería";
-            this.label11.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label12
-            // 
-            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label12.Location = new System.Drawing.Point(885, 84);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(296, 23);
-            this.label12.TabIndex = 7;
-            this.label12.Text = "Otros";
-            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // FormUsuario
             // 
