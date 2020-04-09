@@ -40,6 +40,14 @@ namespace Veterinario2020
             ponerMascotas();
         
             dataGridView1.DataSource = c2.obtenerCitasAsignadas(datosUsuarios.Rows[0]["dni"].ToString());//Ponemos el historial de citas
+
+            dataGridView2.DataSource = c2.obtenerRevisiones();//Ponemos las revisiones libres
+
+            dataGridView3.DataSource = c2.obtenerVacunas();//Ponemos las revisiones libres
+
+            dataGridView4.DataSource = c2.obtenerPeluqueria();//Ponemos las revisiones libres
+
+            dataGridView5.DataSource = c2.obtenerOtros();//Ponemos las revisiones libres
         }
 
         //Pone en pantalla los datos de los usuarios
@@ -185,6 +193,6 @@ namespace Veterinario2020
             }
         }
 
-
+   
     }
 }
