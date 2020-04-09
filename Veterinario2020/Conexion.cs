@@ -221,6 +221,15 @@ namespace Veterinario2020
 
 
         //Reserva una cita
+        /*
+         * chip: chip de la mascota para la que se reserva cita
+         * 
+         * h: hora de la cita
+         * 
+         * f: fecha de la cita
+         * 
+         * m: motivo de la cita
+         */
         public void ReservaCita(String chip, String h, String f, String m)
         {
             try
@@ -233,7 +242,6 @@ namespace Veterinario2020
                 DataTable mascotas = new DataTable();
                 mascotas.Load(resultado);
                 conexion.Close();
-                System.Diagnostics.Debug.WriteLine(m);
 
             }
             catch (MySqlException e)

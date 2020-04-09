@@ -14,11 +14,21 @@ namespace Veterinario2020
     {
 
         Conexion c4 = new Conexion();
-        DataTable mascotas = new DataTable();
-        string fecha = "";
-        string hora = "";
-        string motivo = "";
+        DataTable mascotas = new DataTable();//Datos de las mascotas del usuario
+        string fecha = "";//fecha seleccionada
+        string hora = "";//Hora seleccionado
+        string motivo = "";//Motivo de la cita
 
+        /*
+         * DataTable dm: todas las mascotas del usuario que está usando la aplicación
+         * 
+         * string f: fecha de lacita seleccionada
+         * 
+         * string h: hora de la cita seleccionada
+         * 
+         * string mot: motivo cita seleccionada
+         * 
+         */
         public FormElegirCita(DataTable dm, string f, string h, string mot)
         {
             mascotas = dm;
@@ -50,7 +60,7 @@ namespace Veterinario2020
             if (comboBox1.Text != "" )
             {
                 DataRow[] foundRows;
-                foundRows = mascotas.Select("nombre = '" + comboBox1.Text + "'");
+                foundRows = mascotas.Select("nombre = '" + comboBox1.Text + "'");//Datos de la mascota seleccionada
                 c4.ReservaCita(foundRows[0][0].ToString(), hora,fecha, motivo);
                 this.Hide();
             }         

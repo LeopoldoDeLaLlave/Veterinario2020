@@ -193,6 +193,8 @@ namespace Veterinario2020
             }
         }
 
+        //Al pulsar sobre una de las fechas del datagrid view, sale un cuadro para reservarlo
+        //Son las citas de revisión
         private void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             FormElegirCita fec = new FormElegirCita(datosMascotas, dataGridView2.Rows[e.RowIndex].Cells["Fecha"].Value.ToString(),
@@ -200,6 +202,8 @@ namespace Veterinario2020
             fec.ShowDialog();
         }
 
+        //Al pulsar sobre una de las fechas del datagrid view, sale un cuadro para reservarlo
+        //Son las citas de vacunas
         private void dataGridView3_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             FormElegirCita fec = new FormElegirCita(datosMascotas, dataGridView3.Rows[e.RowIndex].Cells["Fecha"].Value.ToString(),
@@ -207,6 +211,8 @@ namespace Veterinario2020
             fec.ShowDialog();
         }
 
+        //Al pulsar sobre una de las fechas del datagrid view, sale un cuadro para reservarlo
+        //Son las citas de peluquería
         private void dataGridView4_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             FormElegirCita fec = new FormElegirCita(datosMascotas, dataGridView4.Rows[e.RowIndex].Cells["Fecha"].Value.ToString(),
@@ -214,6 +220,8 @@ namespace Veterinario2020
             fec.ShowDialog();
         }
 
+        //Al pulsar sobre una de las fechas del datagrid view, sale un cuadro para reservarlo
+        //Son las citas de Otros
         private void dataGridView5_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             FormElegirCita fec = new FormElegirCita(datosMascotas, dataGridView5.Rows[e.RowIndex].Cells["Fecha"].Value.ToString(),
