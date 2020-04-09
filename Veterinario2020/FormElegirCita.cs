@@ -17,12 +17,14 @@ namespace Veterinario2020
         DataTable mascotas = new DataTable();
         string fecha = "";
         string hora = "";
+        string dniDueno = "";
 
-        public FormElegirCita(DataTable dm, string f, string h)
+        public FormElegirCita(DataTable dm, string f, string h, string dni)
         {
             mascotas = dm;
             fecha = f;
             hora = h;
+            dniDueno = dni;
             
             InitializeComponent();
             fillCombo();
@@ -33,6 +35,7 @@ namespace Veterinario2020
         //Pone en un combobox los nombres de las mascotas
         void fillCombo()
         {
+
             int numColumnas = mascotas.Rows.Count;//Obtenemos el número de mascotas que tiene
             for (int i = 0; i < numColumnas; i++)
             {
@@ -40,9 +43,23 @@ namespace Veterinario2020
             }
         }
 
+        //Comprueba que se ha introducido una mascota y le reserva la cita
         private void button1_Click(object sender, EventArgs e)
         {
 
+            if (comboBox1.Text != "" )
+            {
+                DataRow[] foundRows;
+                foundRows = mascotas.Select("nombre = '" + comboBox1.Text + "'");
+                System.Diagnostics.Debug.WriteLine(foundRows[0][0].ToString());
+                c4.ReservaCita(foundRows[0][0].ToString(), hora,fecha);
+            }         
+            else
+            {
+                MessageBox.Show("Hay que seleccionar una mascota", "Información", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
+
+  
     }
 }

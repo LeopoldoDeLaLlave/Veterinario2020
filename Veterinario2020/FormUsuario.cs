@@ -196,28 +196,32 @@ namespace Veterinario2020
         private void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             FormElegirCita fec = new FormElegirCita(datosMascotas, dataGridView2.Rows[e.RowIndex].Cells["Fecha"].Value.ToString(),
-                                                    dataGridView2.Rows[e.RowIndex].Cells["Hora"].Value.ToString());
+                                                    dataGridView2.Rows[e.RowIndex].Cells["Hora"].Value.ToString(),
+                                                    datosUsuarios.Rows[0]["dni"].ToString());
             fec.ShowDialog();
         }
 
         private void dataGridView3_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             FormElegirCita fec = new FormElegirCita(datosMascotas, dataGridView2.Rows[e.RowIndex].Cells["Fecha"].Value.ToString(),
-                                                    dataGridView2.Rows[e.RowIndex].Cells["Hora"].Value.ToString());
+                                                    dataGridView2.Rows[e.RowIndex].Cells["Hora"].Value.ToString(),
+                                                    datosUsuarios.Rows[0]["dni"].ToString());
             fec.ShowDialog();
         }
 
         private void dataGridView4_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             FormElegirCita fec = new FormElegirCita(datosMascotas, dataGridView2.Rows[e.RowIndex].Cells["Fecha"].Value.ToString(),
-                                                    dataGridView2.Rows[e.RowIndex].Cells["Hora"].Value.ToString());
+                                                    dataGridView2.Rows[e.RowIndex].Cells["Hora"].Value.ToString(),
+                                                    datosUsuarios.Rows[0]["dni"].ToString());
             fec.ShowDialog();
         }
 
         private void dataGridView5_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             FormElegirCita fec = new FormElegirCita(datosMascotas, dataGridView2.Rows[e.RowIndex].Cells["Fecha"].Value.ToString(),
-                                                    dataGridView2.Rows[e.RowIndex].Cells["Hora"].Value.ToString());
+                                                    dataGridView2.Rows[e.RowIndex].Cells["Hora"].Value.ToString(),
+                                                    datosUsuarios.Rows[0]["dni"].ToString());
             fec.ShowDialog();
         }
     }

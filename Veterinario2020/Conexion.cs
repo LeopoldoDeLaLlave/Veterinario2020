@@ -199,8 +199,45 @@ namespace Veterinario2020
             }
         }
 
+        //Obtenemos el chiip del animal a traves del nombre del animal y el dni del dueño
+        public String obtenerChip(String nombre, String dni)
+        {
+            try
+            {
+                conexion.Open();
+                MySqlCommand consulta =
+                    new MySqlCommand("SELECT n_chipFROM mascota  WHERE nombre = '"+nombre+"' AND dni ="+ dni + "'", conexion);
+                MySqlDataReader resultado = consulta.ExecuteReader();
+                DataTable mascotas = new DataTable();
+                mascotas.Load(resultado);
+                conexion.Close();
+                return "";
+            }
+            catch (MySqlException e)
+            {
+                throw e;
+            }
+        }
 
 
+        //Reserva una cita
+        public void ReservaCita(String chip, String h, String f)
+        {
+            try
+            {
+                conexion.Open();
+                MySqlCommand consulta =
+                    new MySqlCommand("UPDATE cita SET chip_mascota = '" +chip + "' where fecha='" + f + "' AND hora='"+h+"';", conexion);
+                MySqlDataReader resultado = consulta.ExecuteReader();
+                DataTable mascotas = new DataTable();
+                mascotas.Load(resultado);
+                conexion.Close();
+            }
+            catch (MySqlException e)
+            {
+                throw e;
+            }
+        }
 
     }
 }
