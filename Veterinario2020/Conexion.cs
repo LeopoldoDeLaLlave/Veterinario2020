@@ -104,7 +104,7 @@ namespace Veterinario2020
                 conexion.Open();
                 MySqlCommand consulta =
                     new MySqlCommand("SELECT DATE_FORMAT(c.fecha, '%Y-%m-%d') AS Fecha, m.nombre AS mascota, c.motivo AS Motivo, c.precio AS Precio FROM mascota m, cita c " +
-                    "WHERE m.n_chip = c.chip_mascota AND m.propietario = '" +dni+"'", conexion);
+                    "WHERE m.n_chip = c.chip_mascota AND m.propietario = '" +dni+"' AND fecha<CURDATE()", conexion);
                 MySqlDataReader resultado = consulta.ExecuteReader();
                 DataTable mascotas = new DataTable();
                 mascotas.Load(resultado);
@@ -124,7 +124,7 @@ namespace Veterinario2020
             {
                 conexion.Open();
                 MySqlCommand consulta =
-                    new MySqlCommand("SELECT DATE_FORMAT(fecha, '%Y-%m-%d') AS Fecha, hora AS Hora FROM cita  WHERE chip_mascota IS NULL AND motivo = 'Revisión'", conexion);
+                    new MySqlCommand("SELECT DATE_FORMAT(fecha, '%Y-%m-%d') AS Fecha, hora AS Hora FROM cita  WHERE chip_mascota IS NULL AND motivo = 'Revisión' AND fecha>CURDATE()", conexion);
                 MySqlDataReader resultado = consulta.ExecuteReader();
                 DataTable mascotas = new DataTable();
                 mascotas.Load(resultado);
@@ -199,25 +199,6 @@ namespace Veterinario2020
             }
         }
 
-        //Obtenemos el chiip del animal a traves del nombre del animal y el dni del dueño
-        public String obtenerChip(String nombre, String dni)
-        {
-            try
-            {
-                conexion.Open();
-                MySqlCommand consulta =
-                    new MySqlCommand("SELECT n_chipFROM mascota  WHERE nombre = '"+nombre+"' AND dni ="+ dni + "'", conexion);
-                MySqlDataReader resultado = consulta.ExecuteReader();
-                DataTable mascotas = new DataTable();
-                mascotas.Load(resultado);
-                conexion.Close();
-                return "";
-            }
-            catch (MySqlException e)
-            {
-                throw e;
-            }
-        }
 
 
         //Reserva una cita

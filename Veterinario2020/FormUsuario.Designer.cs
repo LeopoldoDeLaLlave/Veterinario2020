@@ -434,7 +434,7 @@
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage4.Size = new System.Drawing.Size(1181, 513);
             this.tabPage4.TabIndex = 0;
-            this.tabPage4.Text = "Disponibles";
+            this.tabPage4.Text = "Citas disponibles";
             // 
             // label12
             // 
@@ -572,7 +572,7 @@
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
             this.tabPage5.Size = new System.Drawing.Size(1181, 513);
             this.tabPage5.TabIndex = 1;
-            this.tabPage5.Text = "Mis citas";
+            this.tabPage5.Text = "Mis próximas citas";
             // 
             // imageList2
             // 
