@@ -198,7 +198,7 @@ namespace Veterinario2020
         private void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             FormElegirCita fec = new FormElegirCita(datosMascotas, dataGridView2.Rows[e.RowIndex].Cells["Fecha"].Value.ToString(),
-                                                    dataGridView2.Rows[e.RowIndex].Cells["Hora"].Value.ToString(),"Revisión");
+                                                    dataGridView2.Rows[e.RowIndex].Cells["Hora"].Value.ToString(),"Revisión", dataGridView2);
             fec.ShowDialog();
         }
 
@@ -207,7 +207,7 @@ namespace Veterinario2020
         private void dataGridView3_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             FormElegirCita fec = new FormElegirCita(datosMascotas, dataGridView3.Rows[e.RowIndex].Cells["Fecha"].Value.ToString(),
-                                                    dataGridView3.Rows[e.RowIndex].Cells["Hora"].Value.ToString(),"Vacuna");
+                                                    dataGridView3.Rows[e.RowIndex].Cells["Hora"].Value.ToString(),"Vacuna", dataGridView3);
             fec.ShowDialog();
         }
 
@@ -216,7 +216,7 @@ namespace Veterinario2020
         private void dataGridView4_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             FormElegirCita fec = new FormElegirCita(datosMascotas, dataGridView4.Rows[e.RowIndex].Cells["Fecha"].Value.ToString(),
-                                                    dataGridView4.Rows[e.RowIndex].Cells["Hora"].Value.ToString(), "Peluquería");
+                                                    dataGridView4.Rows[e.RowIndex].Cells["Hora"].Value.ToString(), "Peluquería", dataGridView4);
             fec.ShowDialog();
         }
 
@@ -225,7 +225,7 @@ namespace Veterinario2020
         private void dataGridView5_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             FormElegirCita fec = new FormElegirCita(datosMascotas, dataGridView5.Rows[e.RowIndex].Cells["Fecha"].Value.ToString(),
-                                                    dataGridView5.Rows[e.RowIndex].Cells["Hora"].Value.ToString(),"Otros");
+                                                    dataGridView5.Rows[e.RowIndex].Cells["Hora"].Value.ToString(),"Otros", dataGridView5);
             fec.ShowDialog();
         }
     }

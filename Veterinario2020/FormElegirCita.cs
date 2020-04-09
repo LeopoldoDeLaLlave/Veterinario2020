@@ -18,6 +18,7 @@ namespace Veterinario2020
         string fecha = "";//fecha seleccionada
         string hora = "";//Hora seleccionado
         string motivo = "";//Motivo de la cita
+        DataGridView aux = new DataGridView(); //guardaremos el datagridview usado para actualizarlo
 
         /*
          * DataTable dm: todas las mascotas del usuario que está usando la aplicación
@@ -28,13 +29,15 @@ namespace Veterinario2020
          * 
          * string mot: motivo cita seleccionada
          * 
+         * DataGridView dg: datagridview usado
          */
-        public FormElegirCita(DataTable dm, string f, string h, string mot)
+        public FormElegirCita(DataTable dm, string f, string h, string mot, DataGridView dg)
         {
             mascotas = dm;
             fecha = f;
             hora = h;
             motivo = mot;
+            aux=dg;
             
             InitializeComponent();
             fillCombo();
@@ -62,7 +65,27 @@ namespace Veterinario2020
                 DataRow[] foundRows;
                 foundRows = mascotas.Select("nombre = '" + comboBox1.Text + "'");//Datos de la mascota seleccionada
                 c4.ReservaCita(foundRows[0][0].ToString(), hora,fecha, motivo);
+
                 this.Hide();
+
+
+                //Actualizamos los datagridview
+                if (String.Compare(motivo, "Revisión") == 0)
+                {
+                    aux.DataSource = c4.obtenerRevisiones();//Ponemos las revisiones libres
+                }else if (String.Compare(motivo, "Vacuna") == 0)
+                {
+                    aux.DataSource = c4.obtenerVacunas();//Ponemos las revisiones libres
+                }
+                else if(String.Compare(motivo, "Peluquería") == 0)
+                {
+                    aux.DataSource = c4.obtenerPeluqueria();//Ponemos las revisiones libres
+                }
+                else if(String.Compare(motivo, "Otros") == 0)
+                {
+                    aux.DataSource = c4.obtenerOtros();//Ponemos las revisiones libres
+                }
+
             }         
             else
             {
