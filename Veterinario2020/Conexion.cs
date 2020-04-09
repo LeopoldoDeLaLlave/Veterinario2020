@@ -232,6 +232,7 @@ namespace Veterinario2020
                 DataTable mascotas = new DataTable();
                 mascotas.Load(resultado);
                 conexion.Close();
+
             }
             catch (MySqlException e)
             {
