@@ -221,17 +221,19 @@ namespace Veterinario2020
 
 
         //Reserva una cita
-        public void ReservaCita(String chip, String h, String f)
+        public void ReservaCita(String chip, String h, String f, String m)
         {
             try
             {
                 conexion.Open();
                 MySqlCommand consulta =
-                    new MySqlCommand("UPDATE cita SET chip_mascota = '" +chip + "' where fecha='" + f + "' AND hora='"+h+"';", conexion);
+                    new MySqlCommand("UPDATE cita SET chip_mascota = '" +chip + "' where fecha='" + f + "' AND hora='"+h+"'" +
+                    "AND motivo = '"+m+"'", conexion);
                 MySqlDataReader resultado = consulta.ExecuteReader();
                 DataTable mascotas = new DataTable();
                 mascotas.Load(resultado);
                 conexion.Close();
+                System.Diagnostics.Debug.WriteLine(m);
 
             }
             catch (MySqlException e)

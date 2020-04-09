@@ -17,14 +17,14 @@ namespace Veterinario2020
         DataTable mascotas = new DataTable();
         string fecha = "";
         string hora = "";
-        string dniDueno = "";
+        string motivo = "";
 
-        public FormElegirCita(DataTable dm, string f, string h, string dni)
+        public FormElegirCita(DataTable dm, string f, string h, string mot)
         {
             mascotas = dm;
             fecha = f;
             hora = h;
-            dniDueno = dni;
+            motivo = mot;
             
             InitializeComponent();
             fillCombo();
@@ -51,8 +51,8 @@ namespace Veterinario2020
             {
                 DataRow[] foundRows;
                 foundRows = mascotas.Select("nombre = '" + comboBox1.Text + "'");
-                System.Diagnostics.Debug.WriteLine(foundRows[0][0].ToString());
-                c4.ReservaCita(foundRows[0][0].ToString(), hora,fecha);
+                c4.ReservaCita(foundRows[0][0].ToString(), hora,fecha, motivo);
+                this.Hide();
             }         
             else
             {

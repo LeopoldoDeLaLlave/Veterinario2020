@@ -196,32 +196,28 @@ namespace Veterinario2020
         private void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             FormElegirCita fec = new FormElegirCita(datosMascotas, dataGridView2.Rows[e.RowIndex].Cells["Fecha"].Value.ToString(),
-                                                    dataGridView2.Rows[e.RowIndex].Cells["Hora"].Value.ToString(),
-                                                    datosUsuarios.Rows[0]["dni"].ToString());
+                                                    dataGridView2.Rows[e.RowIndex].Cells["Hora"].Value.ToString(),"Revisión");
             fec.ShowDialog();
         }
 
         private void dataGridView3_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            FormElegirCita fec = new FormElegirCita(datosMascotas, dataGridView2.Rows[e.RowIndex].Cells["Fecha"].Value.ToString(),
-                                                    dataGridView2.Rows[e.RowIndex].Cells["Hora"].Value.ToString(),
-                                                    datosUsuarios.Rows[0]["dni"].ToString());
+            FormElegirCita fec = new FormElegirCita(datosMascotas, dataGridView3.Rows[e.RowIndex].Cells["Fecha"].Value.ToString(),
+                                                    dataGridView3.Rows[e.RowIndex].Cells["Hora"].Value.ToString(),"Vacuna");
             fec.ShowDialog();
         }
 
         private void dataGridView4_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            FormElegirCita fec = new FormElegirCita(datosMascotas, dataGridView2.Rows[e.RowIndex].Cells["Fecha"].Value.ToString(),
-                                                    dataGridView2.Rows[e.RowIndex].Cells["Hora"].Value.ToString(),
-                                                    datosUsuarios.Rows[0]["dni"].ToString());
+            FormElegirCita fec = new FormElegirCita(datosMascotas, dataGridView4.Rows[e.RowIndex].Cells["Fecha"].Value.ToString(),
+                                                    dataGridView4.Rows[e.RowIndex].Cells["Hora"].Value.ToString(), "Peluquería");
             fec.ShowDialog();
         }
 
         private void dataGridView5_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            FormElegirCita fec = new FormElegirCita(datosMascotas, dataGridView2.Rows[e.RowIndex].Cells["Fecha"].Value.ToString(),
-                                                    dataGridView2.Rows[e.RowIndex].Cells["Hora"].Value.ToString(),
-                                                    datosUsuarios.Rows[0]["dni"].ToString());
+            FormElegirCita fec = new FormElegirCita(datosMascotas, dataGridView5.Rows[e.RowIndex].Cells["Fecha"].Value.ToString(),
+                                                    dataGridView5.Rows[e.RowIndex].Cells["Hora"].Value.ToString(),"Otros");
             fec.ShowDialog();
         }
     }
