@@ -98,6 +98,7 @@ namespace Veterinario2020
             else
             {
                 MessageBox.Show("Hay que seleccionar una mascota", "Información", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
             }
         }
 
