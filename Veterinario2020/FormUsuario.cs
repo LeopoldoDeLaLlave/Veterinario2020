@@ -26,7 +26,7 @@ namespace Veterinario2020
 
         public DataTable datosUsuarios = new DataTable();//Aquí guardamos los datos de los usuarios
         public DataTable datosMascotas = new DataTable();//Aquí guardamos los datos de las mascotas
-        
+
 
         /*
          * dUsuarios: Recibe todos los datos del usuario en forma de datatable
@@ -38,7 +38,7 @@ namespace Veterinario2020
             this.Text = datosUsuarios.Rows[0]["nombre"].ToString() + " " + datosUsuarios.Rows[0]["apellido"].ToString();//Ponemos el nombre del usuario de título del form
             ponerDatos();
             ponerMascotas();
-        
+
             dataGridView1.DataSource = c2.obtenerCitasAsignadas(datosUsuarios.Rows[0]["dni"].ToString());//Ponemos el historial de citas pasadas
 
             dataGridView6.DataSource = c2.obtenerProximasCitas(datosUsuarios.Rows[0]["dni"].ToString());//Ponemos las próximas citas
@@ -68,7 +68,7 @@ namespace Veterinario2020
         {
             datosMascotas = c2.obtenerTablaMascotas(datosUsuarios.Rows[0]["dni"].ToString());//Obtenemos los datos de las mascotas del usuario que está en sesión
             int numColumnas = datosMascotas.Rows.Count;//Obtenemos el número de mascotas que tiene
-            
+
             //Vamos poniendo los nombres de las mascotas uno debajo de otro
             for (int i = 0; i < numColumnas; i++)
             {
@@ -110,7 +110,7 @@ namespace Veterinario2020
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
-           
+
         }
 
 
@@ -125,11 +125,11 @@ namespace Veterinario2020
         //Llama al método que abre la ficha de la mascota, solo la abrirá si hay nombre en el label
         private void lMascota1_Click(object sender, EventArgs e)
         {
-            if (lMascota1.Text.Length>0)
+            if (lMascota1.Text.Length > 0)
             {
                 abrirDatosMascota(0);
             }
-            
+
         }
 
         //Llama al método que abre la ficha de la mascota, solo la abrirá si hay nombre en el label
@@ -209,7 +209,7 @@ namespace Veterinario2020
             {
 
             }
-            
+
         }
 
         //Al pulsar sobre una de las fechas del datagrid view, sale un cuadro para reservarlo
@@ -221,11 +221,12 @@ namespace Veterinario2020
                 FormElegirCita fec = new FormElegirCita(datosMascotas, dataGridView3.Rows[e.RowIndex].Cells["Fecha"].Value.ToString(),
                                                     dataGridView3.Rows[e.RowIndex].Cells["Hora"].Value.ToString(), "Vacuna", dataGridView3, dataGridView6);
                 fec.ShowDialog();
-            }catch
+            }
+            catch
             {
 
             }
-            
+
         }
 
         //Al pulsar sobre una de las fechas del datagrid view, sale un cuadro para reservarlo
@@ -243,7 +244,7 @@ namespace Veterinario2020
             {
 
             }
-            
+
         }
 
         //Al pulsar sobre una de las fechas del datagrid view, sale un cuadro para reservarlo
@@ -260,7 +261,26 @@ namespace Veterinario2020
             {
 
             }
-            
+
+        }
+
+        private void dataGridView6_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                FormAnularCita fac = new FormAnularCita(datosUsuarios.Rows[0]["dni"].ToString(),
+                                                    dataGridView6.Rows[e.RowIndex].Cells["Fecha"].Value.ToString(),
+                                                    dataGridView6.Rows[e.RowIndex].Cells["Hora"].Value.ToString(),
+                                                    Int32.Parse(dataGridView6.Rows[e.RowIndex].Cells["Numero"].Value.ToString()),
+                                                    dataGridView2, dataGridView3, dataGridView4, dataGridView5, dataGridView6);
+                fac.ShowDialog();
+                
+            }
+            catch
+            {
+
+            }
+
         }
     }
 }

@@ -10,6 +10,13 @@ using System.Windows.Forms;
 
 namespace Veterinario2020
 {
+    /*
+     * Autor: Javier de la Llave
+     * 
+     * En este form se puede reservar una cita elegiendo la mascota
+     * 
+     */
+    
     public partial class FormElegirCita : Form
     {
 

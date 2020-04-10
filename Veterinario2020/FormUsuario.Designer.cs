@@ -70,10 +70,10 @@
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.tabPage5 = new System.Windows.Forms.TabPage();
-            this.imageList2 = new System.Windows.Forms.ImageList(this.components);
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.label13 = new System.Windows.Forms.Label();
             this.dataGridView6 = new System.Windows.Forms.DataGridView();
+            this.imageList2 = new System.Windows.Forms.ImageList(this.components);
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -580,23 +580,6 @@
             this.tabPage5.TabIndex = 1;
             this.tabPage5.Text = "Mis próximas citas";
             // 
-            // imageList2
-            // 
-            this.imageList2.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList2.ImageStream")));
-            this.imageList2.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList2.Images.SetKeyName(0, "citas.ico");
-            this.imageList2.Images.SetKeyName(1, "datos.ico");
-            this.imageList2.Images.SetKeyName(2, "historial.ico");
-            // 
-            // imageList1
-            // 
-            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "otros.ico");
-            this.imageList1.Images.SetKeyName(1, "peluqueria.ico");
-            this.imageList1.Images.SetKeyName(2, "revision.ico");
-            this.imageList1.Images.SetKeyName(3, "vacuna.ico");
-            // 
             // label13
             // 
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -616,7 +599,7 @@
             this.dataGridView6.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.dataGridView6.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dataGridView6.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView6.Location = new System.Drawing.Point(288, 118);
+            this.dataGridView6.Location = new System.Drawing.Point(171, 122);
             this.dataGridView6.Name = "dataGridView6";
             this.dataGridView6.ReadOnly = true;
             this.dataGridView6.RowHeadersWidth = 51;
@@ -627,6 +610,24 @@
             this.dataGridView6.ShowRowErrors = false;
             this.dataGridView6.Size = new System.Drawing.Size(754, 348);
             this.dataGridView6.TabIndex = 2;
+            this.dataGridView6.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView6_CellClick);
+            // 
+            // imageList2
+            // 
+            this.imageList2.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList2.ImageStream")));
+            this.imageList2.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList2.Images.SetKeyName(0, "citas.ico");
+            this.imageList2.Images.SetKeyName(1, "datos.ico");
+            this.imageList2.Images.SetKeyName(2, "historial.ico");
+            // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "otros.ico");
+            this.imageList1.Images.SetKeyName(1, "peluqueria.ico");
+            this.imageList1.Images.SetKeyName(2, "revision.ico");
+            this.imageList1.Images.SetKeyName(3, "vacuna.ico");
             // 
             // FormUsuario
             // 

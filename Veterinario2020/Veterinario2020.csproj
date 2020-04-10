@@ -69,6 +69,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Conexion.cs" />
+    <Compile Include="FormAnularCita.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormAnularCita.Designer.cs">
+      <DependentUpon>FormAnularCita.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormElegirCita.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -106,6 +112,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormAnularCita.resx">
+      <DependentUpon>FormAnularCita.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormElegirCita.resx">
       <DependentUpon>FormElegirCita.cs</DependentUpon>
     </EmbeddedResource>

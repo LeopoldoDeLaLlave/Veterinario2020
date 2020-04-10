@@ -125,7 +125,7 @@ namespace Veterinario2020
             {
                 conexion.Open();
                 MySqlCommand consulta =
-                    new MySqlCommand("SELECT DATE_FORMAT(c.fecha, '%Y-%m-%d') AS Fecha, hora AS Hora, m.nombre AS mascota, c.motivo AS Motivo FROM mascota m, cita c " +
+                    new MySqlCommand("SELECT n_cita AS Numero, DATE_FORMAT(c.fecha, '%Y-%m-%d') AS Fecha, hora AS Hora, m.nombre AS mascota, c.motivo AS Motivo FROM mascota m, cita c " +
                     "WHERE m.n_chip = c.chip_mascota AND m.propietario = '" + dni + "' AND fecha>CURDATE()", conexion);
                 MySqlDataReader resultado = consulta.ExecuteReader();
                 DataTable mascotas = new DataTable();
@@ -241,6 +241,25 @@ namespace Veterinario2020
                 MySqlCommand consulta =
                     new MySqlCommand("UPDATE cita SET chip_mascota = '" +chip + "' where fecha='" + f + "' AND hora='"+h+"'" +
                     "AND motivo = '"+m+"'", conexion);
+                MySqlDataReader resultado = consulta.ExecuteReader();
+                DataTable mascotas = new DataTable();
+                mascotas.Load(resultado);
+                conexion.Close();
+
+            }
+            catch (MySqlException e)
+            {
+                throw e;
+            }
+        }
+
+        public void anularCita(int n)
+        {
+            try
+            {
+                conexion.Open();
+                MySqlCommand consulta =
+                    new MySqlCommand("UPDATE cita SET chip_mascota = NULL where n_cita='" + n + "'", conexion);
                 MySqlDataReader resultado = consulta.ExecuteReader();
                 DataTable mascotas = new DataTable();
                 mascotas.Load(resultado);
