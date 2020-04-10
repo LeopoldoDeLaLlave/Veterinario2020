@@ -14,11 +14,13 @@ namespace Veterinario2020
     {
 
         Conexion c4 = new Conexion();
+
         DataTable mascotas = new DataTable();//Datos de las mascotas del usuario
         string fecha = "";//fecha seleccionada
         string hora = "";//Hora seleccionado
         string motivo = "";//Motivo de la cita
         DataGridView aux = new DataGridView(); //guardaremos el datagridview usado para actualizarlo
+        DataGridView citasFuturas = new DataGridView(); //Al reservar una cita actuaizamos las próximas citas
 
         /*
          * DataTable dm: todas las mascotas del usuario que está usando la aplicación
@@ -30,15 +32,19 @@ namespace Veterinario2020
          * string mot: motivo cita seleccionada
          * 
          * DataGridView dg: datagridview usado
+         * 
+         * DataGridView dg2: datagridview con las próximas citas
          */
-        public FormElegirCita(DataTable dm, string f, string h, string mot, DataGridView dg)
+        public FormElegirCita(DataTable dm, string f, string h, string mot, DataGridView dg, DataGridView dg2)
         {
             mascotas = dm;
             fecha = f;
             hora = h;
             motivo = mot;
             aux=dg;
-            
+            citasFuturas = dg2;
+
+
             InitializeComponent();
             fillCombo();
 
@@ -86,6 +92,8 @@ namespace Veterinario2020
                     aux.DataSource = c4.obtenerOtros();//Ponemos las revisiones libres
                 }
 
+
+                citasFuturas.DataSource = c4.obtenerProximasCitas(foundRows[0][1].ToString());//Actualizamos las revisiones libres
             }         
             else
             {

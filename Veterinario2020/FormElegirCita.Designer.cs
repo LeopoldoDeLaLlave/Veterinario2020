@@ -48,7 +48,7 @@
             // 
             this.button1.Location = new System.Drawing.Point(366, 116);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(159, 35);
+            this.button1.Size = new System.Drawing.Size(159, 24);
             this.button1.TabIndex = 1;
             this.button1.Text = "Confirmar reserva";
             this.button1.UseVisualStyleBackColor = true;
