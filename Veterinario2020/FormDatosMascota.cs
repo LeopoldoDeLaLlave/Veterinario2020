@@ -10,6 +10,11 @@ using System.Windows.Forms;
 
 namespace Veterinario2020
 {
+    /*
+     * Autor: Javier de la Llave
+     * 
+     * Form con los datos de la mascota
+     */
     public partial class FormDatosMascota : Form
     {
         Conexion c3 = new Conexion();
@@ -27,7 +32,9 @@ namespace Veterinario2020
             this.Text = datosMascota.Rows[im]["nombre"].ToString();//Ponemos el nombre de la mascota de título del form
             ponerDatosMascota();
 
-            dataGridView1.DataSource = c3.obtenerVacunas(datosMascota.Rows[indice]["n_chip"].ToString());
+            dataGridView1.DataSource = c3.obtenerDatos("SELECT DATE_FORMAT(fecha, '%Y-%m-%d') AS Fecha, tipo_vacuna AS Vacuna  FROM cita WHERE `chip_mascota`='" +
+                datosMascota.Rows[indice]["n_chip"].ToString() +
+                    "' AND motivo = 'Vacuna' AND tipo_vacuna IS NOT NULL");
         }
 
 

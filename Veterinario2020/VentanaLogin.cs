@@ -10,6 +10,11 @@ using System.Windows.Forms;
 
 namespace Veterinario2020
 {
+    /*
+     * Autor: Javier de la LLave
+     * 
+     * El usuario introduce su dni y contraseña, si son correctos, se abre un form u otro en función de si es usuario o administrador
+     */
     public partial class VentanaLogin : Form
     {
 
@@ -28,7 +33,7 @@ namespace Veterinario2020
         {
 
 
-            tablaUsuario = c.obtenerTablaUsuario(textBoxUsuario.Text);//Obtenemos la contraseña y si es administrador del usuario introducido.
+            tablaUsuario = c.obtenerDatos("SELECT * FROM usuario WHERE dni ='" + textBoxUsuario.Text + "'");//Obtenemos la contraseña y si es administrador del usuario introducido.
             String contrasenaReal = "";//Aquí guardaremos la contraseña que hay en la base de datos
             String contrasenaDada = textBoxContrasena.Text;//Guardamos la contraseña dada por el usuario
             Boolean usuarioCorrecto = true;//Si el usuario no existe, se vuelve false
@@ -59,8 +64,11 @@ namespace Veterinario2020
                     f1.Show();
                     this.Hide();
                 }
-                
-                
+
+                //Vacíamos los textbox por sí se cierra sesión y se abre otra
+                textBoxContrasena.Text = "";
+                textBoxUsuario.Text = "";
+
             }
             else
             {//Si los datos  son incorrectos damos un aviso y vacíamos el textbox de contraseña
@@ -70,6 +78,10 @@ namespace Veterinario2020
 
         }
 
-
+        //Para que se para la aplicación al pulsar la x
+        private void VentanaLogin_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

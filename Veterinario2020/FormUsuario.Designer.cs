@@ -74,6 +74,7 @@
             this.dataGridView6 = new System.Windows.Forms.DataGridView();
             this.imageList2 = new System.Windows.Forms.ImageList(this.components);
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.button1 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -105,6 +106,7 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.tabPage1.Controls.Add(this.button1);
             this.tabPage1.Controls.Add(this.lMascota8);
             this.tabPage1.Controls.Add(this.lMascota4);
             this.tabPage1.Controls.Add(this.lMascota5);
@@ -629,6 +631,16 @@
             this.imageList1.Images.SetKeyName(2, "revision.ico");
             this.imageList1.Images.SetKeyName(3, "vacuna.ico");
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(31, 461);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(231, 48);
+            this.button1.TabIndex = 24;
+            this.button1.Text = "Cerrar sesión";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // FormUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -703,6 +715,7 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.DataGridView dataGridView6;
+        private System.Windows.Forms.Button button1;
     }
 }
 

@@ -73,19 +73,20 @@ namespace Veterinario2020
          */
         private void button1_Click(object sender, EventArgs e)
         {
-            c5.anularCita(nCita);
+            c5.modificaTabla("UPDATE cita SET chip_mascota = NULL where n_cita='" + nCita + "'");
 
             //Actualizamos los datagridview con las citas disponibles
-            revisiones.DataSource = c5.obtenerRevisiones();//Ponemos las revisiones libres
+            revisiones.DataSource = c5.obtenerDatos("SELECT DATE_FORMAT(fecha, '%Y-%m-%d') AS Fecha, hora AS Hora FROM cita  WHERE chip_mascota IS NULL AND motivo = 'Revisión' AND fecha>CURDATE()");//Ponemos las revisiones libres
 
-            vacunas.DataSource = c5.obtenerVacunas();//Ponemos las revisiones libres
+            vacunas.DataSource = c5.obtenerDatos("SELECT DATE_FORMAT(fecha, '%Y-%m-%d') AS Fecha, hora AS Hora FROM cita  WHERE chip_mascota IS NULL AND motivo = 'Vacuna'");//Ponemos las revisiones libres
 
-            peluqueria.DataSource = c5.obtenerPeluqueria();//Ponemos las revisiones libres
+            peluqueria.DataSource = c5.obtenerDatos("SELECT DATE_FORMAT(fecha, '%Y-%m-%d') AS Fecha, hora AS Hora FROM cita  WHERE chip_mascota IS NULL AND motivo = 'Peluquería'");//Ponemos las revisiones libres
 
-            otros.DataSource = c5.obtenerOtros();//Ponemos las revisiones libres
+            otros.DataSource = c5.obtenerDatos("SELECT DATE_FORMAT(fecha, '%Y-%m-%d') AS Fecha, hora AS Hora FROM cita  WHERE chip_mascota IS NULL AND motivo = 'Otros'");//Ponemos las revisiones libres
             
             //Actualizamos el datagridview con las citas programadas
-            proximasCitas.DataSource = c5.obtenerProximasCitas(dni);//Actualizamos las revisiones libres
+            proximasCitas.DataSource = c5.obtenerDatos("SELECT n_cita AS Numero, DATE_FORMAT(c.fecha, '%Y-%m-%d') AS Fecha, hora AS Hora, m.nombre AS mascota, c.motivo AS Motivo FROM mascota m, cita c " +
+                    "WHERE m.n_chip = c.chip_mascota AND m.propietario = '" + dni + "' AND fecha>CURDATE()");//Actualizamos las revisiones libres
 
             this.Hide();
         }

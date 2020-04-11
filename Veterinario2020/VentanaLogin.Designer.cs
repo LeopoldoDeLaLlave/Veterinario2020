@@ -113,6 +113,7 @@
             this.MinimizeBox = false;
             this.Name = "VentanaLogin";
             this.Text = "Emerald";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.VentanaLogin_FormClosing);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

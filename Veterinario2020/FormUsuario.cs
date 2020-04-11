@@ -35,22 +35,33 @@ namespace Veterinario2020
         {
             InitializeComponent();
             datosUsuarios = dUsuarios;//Obtenemos los datos de los usuarios
+            prepararForm();
+        }
+
+        /*
+         * Coloca los elementos en el form de usuarios
+         */
+        private void prepararForm()
+        {
             this.Text = datosUsuarios.Rows[0]["nombre"].ToString() + " " + datosUsuarios.Rows[0]["apellido"].ToString();//Ponemos el nombre del usuario de título del form
             ponerDatos();
             ponerMascotas();
 
-            dataGridView1.DataSource = c2.obtenerCitasAsignadas(datosUsuarios.Rows[0]["dni"].ToString());//Ponemos el historial de citas pasadas
+            dataGridView1.DataSource = c2.obtenerDatos("SELECT DATE_FORMAT(c.fecha, '%Y-%m-%d') AS Fecha, m.nombre AS mascota, c.motivo AS Motivo, c.precio AS Precio FROM mascota m, cita c " +
+                    "WHERE m.n_chip = c.chip_mascota AND m.propietario = '" + datosUsuarios.Rows[0]["dni"].ToString() + "' AND fecha<CURDATE()");//Ponemos el historial de citas pasadas
 
-            dataGridView6.DataSource = c2.obtenerProximasCitas(datosUsuarios.Rows[0]["dni"].ToString());//Ponemos las próximas citas
+            dataGridView6.DataSource = c2.obtenerDatos("SELECT n_cita AS Numero, DATE_FORMAT(c.fecha, '%Y-%m-%d') AS Fecha, hora AS Hora, m.nombre AS mascota, c.motivo AS Motivo FROM mascota m, cita c " +
+                    "WHERE m.n_chip = c.chip_mascota AND m.propietario = '" + datosUsuarios.Rows[0]["dni"].ToString() + "' AND fecha>CURDATE()");//Ponemos las próximas citas
 
-            dataGridView2.DataSource = c2.obtenerRevisiones();//Ponemos las revisiones libres
+            dataGridView2.DataSource = c2.obtenerDatos("SELECT DATE_FORMAT(fecha, '%Y-%m-%d') AS Fecha, hora AS Hora FROM cita  WHERE chip_mascota IS NULL AND motivo = 'Revisión' AND fecha>CURDATE()");//Ponemos las revisiones libres
 
-            dataGridView3.DataSource = c2.obtenerVacunas();//Ponemos las revisiones libres
+            dataGridView3.DataSource = c2.obtenerDatos("SELECT DATE_FORMAT(fecha, '%Y-%m-%d') AS Fecha, hora AS Hora FROM cita  WHERE chip_mascota IS NULL AND motivo = 'Vacuna'");//Ponemos las revisiones libres
 
-            dataGridView4.DataSource = c2.obtenerPeluqueria();//Ponemos las revisiones libres
+            dataGridView4.DataSource = c2.obtenerDatos("SELECT DATE_FORMAT(fecha, '%Y-%m-%d') AS Fecha, hora AS Hora FROM cita  WHERE chip_mascota IS NULL AND motivo = 'Peluquería'");//Ponemos las revisiones libres
 
-            dataGridView5.DataSource = c2.obtenerOtros();//Ponemos las revisiones libres
+            dataGridView5.DataSource = c2.obtenerDatos("SELECT DATE_FORMAT(fecha, '%Y-%m-%d') AS Fecha, hora AS Hora FROM cita  WHERE chip_mascota IS NULL AND motivo = 'Otros'");//Ponemos las revisiones libres
         }
+
 
         //Pone en pantalla los datos de los usuarios
         private void ponerDatos()
@@ -66,7 +77,7 @@ namespace Veterinario2020
         //Crea una lista con los nombres de las mascotas.
         private void ponerMascotas()
         {
-            datosMascotas = c2.obtenerTablaMascotas(datosUsuarios.Rows[0]["dni"].ToString());//Obtenemos los datos de las mascotas del usuario que está en sesión
+            datosMascotas = c2.obtenerDatos("SELECT * FROM mascota WHERE `propietario`='" + datosUsuarios.Rows[0]["dni"].ToString() + "'");//Obtenemos los datos de las mascotas del usuario que está en sesión
             int numColumnas = datosMascotas.Rows.Count;//Obtenemos el número de mascotas que tiene
 
             //Vamos poniendo los nombres de las mascotas uno debajo de otro
@@ -107,6 +118,7 @@ namespace Veterinario2020
             }
         }
 
+        //Para la aplicación al pulsar x
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
@@ -117,7 +129,6 @@ namespace Veterinario2020
         //Abre la ficha con los datos de la mascota pulsada
         private void abrirDatosMascota(int indiceMascota)
         {
-
             FormDatosMascota fdm = new FormDatosMascota(indiceMascota, datosMascotas, datosUsuarios.Rows[0]["nombre"].ToString() + " " + datosUsuarios.Rows[0]["apellido"].ToString());
             fdm.ShowDialog();
         }
@@ -281,6 +292,14 @@ namespace Veterinario2020
 
             }
 
+        }
+
+        //Al pulsar el botón se cierr la sesión y se abre la ventana de login
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            VentanaLogin vl = new VentanaLogin();
+            vl.Show();
         }
     }
 }

@@ -77,7 +77,8 @@ namespace Veterinario2020
             {
                 DataRow[] foundRows;
                 foundRows = mascotas.Select("nombre = '" + comboBox1.Text + "'");//Datos de la mascota seleccionada
-                c4.ReservaCita(foundRows[0][0].ToString(), hora,fecha, motivo);
+                c4.modificaTabla("UPDATE cita SET chip_mascota = '" + foundRows[0][0].ToString() + "' where fecha='" + fecha + "' AND hora='" + hora + "'" +
+                    "AND motivo = '" + motivo + "'");
 
                 this.Hide();
 
@@ -85,22 +86,25 @@ namespace Veterinario2020
                 //Actualizamos los datagridview
                 if (String.Compare(motivo, "Revisión") == 0)
                 {
-                    aux.DataSource = c4.obtenerRevisiones();//Ponemos las revisiones libres
-                }else if (String.Compare(motivo, "Vacuna") == 0)
+                    aux.DataSource = c4.obtenerDatos("SELECT DATE_FORMAT(fecha, '%Y-%m-%d') AS Fecha, hora AS Hora FROM cita  WHERE chip_mascota IS NULL AND motivo = 'Revisión' AND fecha>CURDATE()");//Ponemos las revisiones libres
+                }
+                else if (String.Compare(motivo, "Vacuna") == 0)
                 {
-                    aux.DataSource = c4.obtenerVacunas();//Ponemos las revisiones libres
+                    aux.DataSource = c4.obtenerDatos("SELECT DATE_FORMAT(fecha, '%Y-%m-%d') AS Fecha, hora AS Hora FROM cita  WHERE chip_mascota IS NULL AND motivo = 'Vacuna'");//Ponemos las revisiones libres
                 }
                 else if(String.Compare(motivo, "Peluquería") == 0)
                 {
-                    aux.DataSource = c4.obtenerPeluqueria();//Ponemos las revisiones libres
+                    aux.DataSource = c4.obtenerDatos("SELECT DATE_FORMAT(fecha, '%Y-%m-%d') AS Fecha, hora AS Hora FROM cita  WHERE chip_mascota IS NULL AND motivo = 'Peluquería'");//Ponemos las revisiones libres
                 }
                 else if(String.Compare(motivo, "Otros") == 0)
                 {
-                    aux.DataSource = c4.obtenerOtros();//Ponemos las revisiones libres
+                    aux.DataSource = c4.obtenerDatos("SELECT DATE_FORMAT(fecha, '%Y-%m-%d') AS Fecha, hora AS Hora FROM cita  WHERE chip_mascota IS NULL AND motivo = 'Otros'");//Ponemos las revisiones libres
                 }
 
 
-                citasFuturas.DataSource = c4.obtenerProximasCitas(foundRows[0][1].ToString());//Actualizamos las revisiones libres
+                citasFuturas.DataSource = c4.obtenerDatos("SELECT n_cita AS Numero, DATE_FORMAT(c.fecha, '%Y-%m-%d') AS Fecha, hora AS Hora, m.nombre AS mascota, c.motivo AS Motivo FROM mascota m, cita c " +
+                    "WHERE m.n_chip = c.chip_mascota AND m.propietario = '" + foundRows[0][1].ToString() + "' AND fecha>CURDATE()");//Actualizamos las revisiones libres
+                
             }         
             else
             {
