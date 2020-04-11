@@ -34,6 +34,35 @@ namespace Veterinario2020
 
 
         /*
+         * Recibe el dni y la contraseña introducidos por el usuario y comprueba si coinciden
+         */
+        public Boolean comprobarLogin(String dni, String contrasena)
+        {
+            try
+            {
+                conexion.Open();
+                MySqlCommand consulta =
+                    new MySqlCommand("SELECT * FROM usuario WHERE dni = @dni AND contrasena = @contrasena", conexion);
+                consulta.Parameters.AddWithValue("@dni", dni);
+                consulta.Parameters.AddWithValue("@contrasena", contrasena);
+                MySqlDataReader resultado = consulta.ExecuteReader();
+            
+                if (resultado.Read())
+                {
+                    conexion.Close();
+                    return true;
+                }
+                conexion.Close();
+                return false;
+            }
+            catch (MySqlException e)
+            {
+                System.Diagnostics.Debug.WriteLine(e);
+                return false;
+            }
+        }
+
+        /*
          * Recibe una consulta y devuelve una tabla con el resultado de esa consulta
          */
         public DataTable obtenerDatos(String str)
@@ -54,6 +83,7 @@ namespace Veterinario2020
                 throw e;
             }
         }
+
 
         //Recibe código para modificar la tabla
         public void modificaTabla(String str)

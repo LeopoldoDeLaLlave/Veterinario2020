@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BCrypt.Net;
 
 namespace Veterinario2020
 {
@@ -33,23 +34,11 @@ namespace Veterinario2020
         {
 
 
-            tablaUsuario = c.obtenerDatos("SELECT * FROM usuario WHERE dni ='" + textBoxUsuario.Text + "'");//Obtenemos la contraseña y si es administrador del usuario introducido.
-            String contrasenaReal = "";//Aquí guardaremos la contraseña que hay en la base de datos
-            String contrasenaDada = textBoxContrasena.Text;//Guardamos la contraseña dada por el usuario
-            Boolean usuarioCorrecto = true;//Si el usuario no existe, se vuelve false
-            try
-            {
-                 contrasenaReal = tablaUsuario.Rows[0]["contrasena"].ToString();//Guardamos la contraseña de la base de datos
-            }
-            catch 
-            {//Si el usuario no existe salta aquí
-                usuarioCorrecto = false;
-            }
             
 
-            if (String.Compare(contrasenaDada,contrasenaReal)==0 && usuarioCorrecto)//Si contraseña y usuario coinciden y si el usuario existe
+            if (c.comprobarLogin(textBoxUsuario.Text, textBoxContrasena.Text))
             {
-                
+                tablaUsuario = c.obtenerDatos("SELECT * FROM usuario WHERE dni ='" + textBoxUsuario.Text + "'");//Obtenemos los datos del usuario
                 if (Convert.ToBoolean(tablaUsuario.Rows[0]["administrador"]))//Si el usuario es administrador abrimos el form de administrador
                 {
                     FormAdministrador fa = new FormAdministrador();
@@ -59,7 +48,7 @@ namespace Veterinario2020
                 }
                 else//Si el usuario es cliente abrimos el form de usuario
                 {
-                    
+
                     FormUsuario f1 = new FormUsuario(tablaUsuario);
                     f1.Show();
                     this.Hide();
@@ -68,12 +57,12 @@ namespace Veterinario2020
                 //Vacíamos los textbox por sí se cierra sesión y se abre otra
                 textBoxContrasena.Text = "";
                 textBoxUsuario.Text = "";
-
             }
             else
             {//Si los datos  son incorrectos damos un aviso y vacíamos el textbox de contraseña
                 MessageBox.Show("El usuario y la contraseña no se corresponden", "Información", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 textBoxContrasena.Text = "";
+
             }
 
         }
