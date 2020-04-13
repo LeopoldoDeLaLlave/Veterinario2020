@@ -70,7 +70,7 @@ namespace Veterinario2020
         //Se abren los datos del usuario pulsado
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            FormModificarUsuario fmu = new FormModificarUsuario(dataGridView1.Rows[e.RowIndex].Cells["DNI"].Value.ToString(), dataGridView1);
+            FormModificarUsuario fmu = new FormModificarUsuario(dataGridView1.Rows[e.RowIndex].Cells["DNI"].Value.ToString(), dataGridView1, dataGridView2);
             fmu.ShowDialog();
         }
     }

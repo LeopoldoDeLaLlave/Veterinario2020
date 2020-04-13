@@ -72,6 +72,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Conexion.cs" />
+    <Compile Include="FormConfirmarEliminar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormConfirmarEliminar.Designer.cs">
+      <DependentUpon>FormConfirmarEliminar.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormModificarUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -123,6 +129,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="FormAnularCita.resx">
       <DependentUpon>FormAnularCita.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormConfirmarEliminar.resx">
+      <DependentUpon>FormConfirmarEliminar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormElegirCita.resx">
       <DependentUpon>FormElegirCita.cs</DependentUpon>

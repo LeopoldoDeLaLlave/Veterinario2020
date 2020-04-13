@@ -42,6 +42,7 @@
             this.textBoxDir = new System.Windows.Forms.TextBox();
             this.textBoxEmail = new System.Windows.Forms.TextBox();
             this.buttonCambios = new System.Windows.Forms.Button();
+            this.buttonBorrarUsuario = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label8
@@ -142,7 +143,7 @@
             // 
             // buttonCambios
             // 
-            this.buttonCambios.Location = new System.Drawing.Point(631, 436);
+            this.buttonCambios.Location = new System.Drawing.Point(743, 436);
             this.buttonCambios.Name = "buttonCambios";
             this.buttonCambios.Size = new System.Drawing.Size(195, 45);
             this.buttonCambios.TabIndex = 34;
@@ -150,12 +151,23 @@
             this.buttonCambios.UseVisualStyleBackColor = true;
             this.buttonCambios.Click += new System.EventHandler(this.buttonCambios_Click);
             // 
+            // buttonBorrarUsuario
+            // 
+            this.buttonBorrarUsuario.Location = new System.Drawing.Point(53, 436);
+            this.buttonBorrarUsuario.Name = "buttonBorrarUsuario";
+            this.buttonBorrarUsuario.Size = new System.Drawing.Size(195, 45);
+            this.buttonBorrarUsuario.TabIndex = 35;
+            this.buttonBorrarUsuario.Text = "Eliminar usuario";
+            this.buttonBorrarUsuario.UseVisualStyleBackColor = true;
+            this.buttonBorrarUsuario.Click += new System.EventHandler(this.buttonBorrarUsuario_Click);
+            // 
             // FormModificarUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(972, 531);
+            this.Controls.Add(this.buttonBorrarUsuario);
             this.Controls.Add(this.buttonCambios);
             this.Controls.Add(this.textBoxEmail);
             this.Controls.Add(this.textBoxDir);
@@ -191,5 +203,6 @@
         private System.Windows.Forms.TextBox textBoxDir;
         private System.Windows.Forms.TextBox textBoxEmail;
         private System.Windows.Forms.Button buttonCambios;
+        private System.Windows.Forms.Button buttonBorrarUsuario;
     }
 }

@@ -24,12 +24,14 @@ namespace Veterinario2020
         String dni = "";
 
         DataGridView aux = new DataGridView();//Para actualizar los datos del datagridview de clientes
-        public FormModificarUsuario(String d, DataGridView dg)
+        DataGridView dgmascotas = new DataGridView();//Para actualizar los datos del datagridview de las mascotas 
+        public FormModificarUsuario(String d, DataGridView dg, DataGridView dg2)
         {
 
             dni = d;
             datosUsuario = c.obtenerDatos("SELECT nombre, apellido, telefono, email, direccion FROM usuario WHERE dni = '"+dni+"';");
             aux = dg;
+            dgmascotas = dg2;
             
             InitializeComponent();
             ponerDatos();
@@ -60,12 +62,20 @@ namespace Veterinario2020
                 MessageBox.Show("Cambios guardados", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Hide();
                 aux.DataSource = c.obtenerDatos("SELECT dni AS DNI, nombre AS Nombre, apellido AS Apellido, email AS Email, telefono AS Telefono FROM usuario WHERE administrador=FALSE; ");//Actualizamos el datagridview con usuarios
-
+                dgmascotas.DataSource = c.obtenerDatos("SELECT m.n_chip AS Chip, m.nombre AS Nombre, m.especie AS Especie, m.raza AS Raza, CONCAT(s.nombre, ' ', s.apellido) AS Propietario FROM `mascota` m, usuario s WHERE m.propietario = s.dni;");//Actualizamos el datagridview de las mascotas
             }
             else
             {
                 MessageBox.Show("Datos no válidos", "Información", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        //Nos lleva a una ventana para confirmar el borrar al usuario
+        private void buttonBorrarUsuario_Click(object sender, EventArgs e)
+        {
+            FormConfirmarEliminar fce = new FormConfirmarEliminar(dni, aux, dgmascotas);
+            fce.ShowDialog();
+            this.Hide();
         }
     }
 }
