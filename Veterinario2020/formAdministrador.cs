@@ -71,6 +71,7 @@ namespace Veterinario2020
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             FormModificarUsuario fmu = new FormModificarUsuario(dataGridView1.Rows[e.RowIndex].Cells["DNI"].Value.ToString(), dataGridView1, dataGridView2);
+            
             fmu.ShowDialog();
         }
     }
