@@ -10,6 +10,12 @@ using System.Windows.Forms;
 
 namespace Veterinario2020
 {
+    /*
+     * Autor: Javier de la Llave
+     * 
+     * 
+     * 
+     */
     public partial class FormAdministrador : Form
     {
 
@@ -59,6 +65,13 @@ namespace Veterinario2020
             dataGridView2.DataSource = c6.obtenerDatos("SELECT m.n_chip AS Chip, m.nombre AS Nombre, m.especie AS Especie, m.raza AS Raza, " +
                                                        "CONCAT(s.nombre, ' ', s.apellido) AS Propietario FROM `mascota` m, usuario s " +
                                                        "WHERE m.propietario = s.dni AND LOWER(m.nombre) LIKE '%" + textBoxnmascota.Text.ToLower() + "%';");
+        }
+
+        //Se abren los datos del usuario pulsado
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            FormModificarUsuario fmu = new FormModificarUsuario(dataGridView1.Rows[e.RowIndex].Cells["DNI"].Value.ToString(), dataGridView1);
+            fmu.ShowDialog();
         }
     }
 }
