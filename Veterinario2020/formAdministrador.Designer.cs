@@ -214,6 +214,7 @@
             this.buttonNMaascota.TabIndex = 13;
             this.buttonNMaascota.Text = "Buscar Nombre";
             this.buttonNMaascota.UseVisualStyleBackColor = true;
+            this.buttonNMaascota.Click += new System.EventHandler(this.buttonNMaascota_Click);
             // 
             // textBoxnmascota
             // 
