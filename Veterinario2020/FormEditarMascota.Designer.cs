@@ -50,6 +50,8 @@
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.buttonGuardar = new System.Windows.Forms.Button();
+            this.buttonborrarMascota = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label13
@@ -230,12 +232,33 @@
             this.comboBox1.Size = new System.Drawing.Size(175, 24);
             this.comboBox1.TabIndex = 44;
             // 
+            // buttonGuardar
+            // 
+            this.buttonGuardar.Location = new System.Drawing.Point(674, 446);
+            this.buttonGuardar.Name = "buttonGuardar";
+            this.buttonGuardar.Size = new System.Drawing.Size(195, 44);
+            this.buttonGuardar.TabIndex = 45;
+            this.buttonGuardar.Text = "Guardar cambios";
+            this.buttonGuardar.UseVisualStyleBackColor = true;
+            this.buttonGuardar.Click += new System.EventHandler(this.buttonGuardar_Click);
+            // 
+            // buttonborrarMascota
+            // 
+            this.buttonborrarMascota.Location = new System.Drawing.Point(35, 446);
+            this.buttonborrarMascota.Name = "buttonborrarMascota";
+            this.buttonborrarMascota.Size = new System.Drawing.Size(195, 44);
+            this.buttonborrarMascota.TabIndex = 46;
+            this.buttonborrarMascota.Text = "Borrar Registro";
+            this.buttonborrarMascota.UseVisualStyleBackColor = true;
+            // 
             // FormEditarMascota
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
             this.ClientSize = new System.Drawing.Size(907, 525);
+            this.Controls.Add(this.buttonborrarMascota);
+            this.Controls.Add(this.buttonGuardar);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.checkBox1);
@@ -288,5 +311,7 @@
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.Button buttonGuardar;
+        private System.Windows.Forms.Button buttonborrarMascota;
     }
 }

@@ -28,7 +28,9 @@ namespace Veterinario2020
             ponerDatos();
         }
 
-
+        /*
+         * Ponemos los datos de la mascota
+         */
         private void ponerDatos()
         {
             textBoxnombre.Text = datosMascota.Rows[0]["nombre"].ToString();
@@ -43,6 +45,19 @@ namespace Veterinario2020
             checkBox1.Checked = Convert.ToBoolean(datosMascota.Rows[0]["esterilizado"]);
             dateTimePicker1.Value = DateTime.Parse(datosMascota.Rows[0]["f_nacimiento"].ToString());
         }
+
+        //Guarda en la base de datos los valores modificados
+        private void buttonGuardar_Click(object sender, EventArgs e)
+        {
+            String fecha=Convert.ToDateTime(dateTimePicker1.Value.ToString().Substring(0, 10)).ToString("yyyy-MM-dd");
+            System.Diagnostics.Debug.WriteLine(fecha);
+            c.modificaTabla("UPDATE mascota SET nombre='" + textBoxnombre.Text + "', n_chip='" + textBoxchip.Text +
+                    "', especie = '" + textBoxespecie.Text + "', raza='" + textBoxraza.Text + "',propietario='" + textBoxpropietario.Text
+                    + "', color='" + textBoxcolor.Text + "', patologias='" + textBoxpat.Text + 
+                    "', medicamentos='" + textBoxmed.Text + "', sexo='" + comboBox1.SelectedItem
+                    + "', esterilizado=" + checkBox1.Checked + ", f_nacimiento='" + fecha+ "' WHERE n_chip = '" + chip + "';");
+        }
+
 
     }
 }

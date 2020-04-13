@@ -84,5 +84,7 @@ namespace Veterinario2020
             FormEditarMascota fem = new FormEditarMascota(dataGridView1.Rows[e.RowIndex].Cells["Chip"].Value.ToString());
             fem.ShowDialog();
         }
+
+
     }
 }
