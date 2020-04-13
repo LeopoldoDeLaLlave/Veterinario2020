@@ -72,6 +72,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Conexion.cs" />
+    <Compile Include="FormEditarMascota.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormEditarMascota.Designer.cs">
+      <DependentUpon>FormEditarMascota.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormConfirmarEliminar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -132,6 +138,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormConfirmarEliminar.resx">
       <DependentUpon>FormConfirmarEliminar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormEditarMascota.resx">
+      <DependentUpon>FormEditarMascota.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormElegirCita.resx">
       <DependentUpon>FormElegirCita.cs</DependentUpon>

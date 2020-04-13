@@ -78,6 +78,11 @@ namespace Veterinario2020
             this.Hide();
         }
 
-  
+        //Abre una ficha con los datos del animal que se pueden modificar y también se puede borrar al animal
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            FormEditarMascota fem = new FormEditarMascota(dataGridView1.Rows[e.RowIndex].Cells["Chip"].Value.ToString());
+            fem.ShowDialog();
+        }
     }
 }
