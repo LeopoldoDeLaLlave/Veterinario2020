@@ -32,7 +32,15 @@ namespace Veterinario2020
         //Al pulsar buscar, aparece el dni que coincida con el escrito o los que contengan los carácteres escritos
         private void buttonbdni_Click(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = c6.obtenerDatos("SELECT dni AS DNI, nombre AS Nombre, apellido AS Apellido, email AS Email, telefono AS Telefono FROM usuario WHERE administrador=FALSE AND dni LIKE '%"+textBoxdni.Text.ToUpper()+"%';");
+            dataGridView1.DataSource = c6.obtenerDatos("SELECT dni AS DNI, nombre AS Nombre, apellido AS Apellido, email AS Email, telefono AS Telefono " +
+                "FROM usuario WHERE administrador=FALSE AND dni LIKE '%"+textBoxdni.Text.ToUpper()+"%';");
+        }
+
+        //Al pulsar buscar, aparecen los nombres que coincidad
+        private void buttonNombre_Click(object sender, EventArgs e)
+        {
+            dataGridView1.DataSource = c6.obtenerDatos("SELECT dni AS DNI, nombre AS Nombre, apellido AS Apellido, email AS Email, telefono AS Telefono " +
+                "FROM usuario WHERE administrador=FALSE AND LOWER(CONCAT(nombre, ' ', apellido)) LIKE '%" + textBoxNombre.Text.ToLower() + "%';");
         }
     }
 }

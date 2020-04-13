@@ -38,6 +38,10 @@
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.textBoxdni = new System.Windows.Forms.TextBox();
             this.buttonbdni = new System.Windows.Forms.Button();
+            this.buttonNombre = new System.Windows.Forms.Button();
+            this.textBoxNombre = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.buttonAddUser = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -59,6 +63,10 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.tabPage1.Controls.Add(this.buttonAddUser);
+            this.tabPage1.Controls.Add(this.label1);
+            this.tabPage1.Controls.Add(this.buttonNombre);
+            this.tabPage1.Controls.Add(this.textBoxNombre);
             this.tabPage1.Controls.Add(this.buttonbdni);
             this.tabPage1.Controls.Add(this.textBoxdni);
             this.tabPage1.Controls.Add(this.dataGridView1);
@@ -138,6 +146,42 @@
             this.buttonbdni.UseVisualStyleBackColor = true;
             this.buttonbdni.Click += new System.EventHandler(this.buttonbdni_Click);
             // 
+            // buttonNombre
+            // 
+            this.buttonNombre.Location = new System.Drawing.Point(688, 134);
+            this.buttonNombre.Name = "buttonNombre";
+            this.buttonNombre.Size = new System.Drawing.Size(118, 23);
+            this.buttonNombre.TabIndex = 7;
+            this.buttonNombre.Text = "Buscar Nombre";
+            this.buttonNombre.UseVisualStyleBackColor = true;
+            this.buttonNombre.Click += new System.EventHandler(this.buttonNombre_Click);
+            // 
+            // textBoxNombre
+            // 
+            this.textBoxNombre.Location = new System.Drawing.Point(390, 134);
+            this.textBoxNombre.Name = "textBoxNombre";
+            this.textBoxNombre.Size = new System.Drawing.Size(223, 22);
+            this.textBoxNombre.TabIndex = 6;
+            // 
+            // label1
+            // 
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(0, 51);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(1186, 23);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Buscar Usuarios";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // buttonAddUser
+            // 
+            this.buttonAddUser.Location = new System.Drawing.Point(36, 480);
+            this.buttonAddUser.Name = "buttonAddUser";
+            this.buttonAddUser.Size = new System.Drawing.Size(180, 38);
+            this.buttonAddUser.TabIndex = 9;
+            this.buttonAddUser.Text = "Añadir Usuario";
+            this.buttonAddUser.UseVisualStyleBackColor = true;
+            // 
             // FormAdministrador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -167,5 +211,9 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Button buttonbdni;
         private System.Windows.Forms.TextBox textBoxdni;
+        private System.Windows.Forms.Button buttonNombre;
+        private System.Windows.Forms.TextBox textBoxNombre;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button buttonAddUser;
     }
 }
