@@ -22,6 +22,7 @@ namespace Veterinario2020
             datosUsuarios = dUsuarios;
             this.Text = datosUsuarios.Rows[0]["nombre"].ToString() + " " + datosUsuarios.Rows[0]["apellido"].ToString();//Ponemos el nombre del usuario de título del form
             dataGridView1.DataSource = c6.obtenerDatos("SELECT dni AS DNI, nombre AS Nombre, apellido AS Apellido, email AS Email, telefono AS Telefono FROM usuario WHERE administrador=FALSE; ");//Ponemos todos los usuarios
+            dataGridView2.DataSource = c6.obtenerDatos("SELECT m.n_chip AS Chip, m.nombre AS Nombre, m.especie AS Especie, m.raza AS Raza, CONCAT(s.nombre, ' ', s.apellido) AS Propietario FROM `mascota` m, usuario s WHERE m.propietario = s.dni;");//Ponemos todos los usuarios
         }
 
         private void formAdministrador_FormClosing(object sender, FormClosingEventArgs e)
@@ -40,7 +41,15 @@ namespace Veterinario2020
         private void buttonNombre_Click(object sender, EventArgs e)
         {
             dataGridView1.DataSource = c6.obtenerDatos("SELECT dni AS DNI, nombre AS Nombre, apellido AS Apellido, email AS Email, telefono AS Telefono " +
-                "FROM usuario WHERE administrador=FALSE AND LOWER(CONCAT(nombre, ' ', apellido)) LIKE '%" + textBoxNombre.Text.ToLower() + "%';");
+                                                       "FROM usuario WHERE administrador=FALSE AND LOWER(CONCAT(nombre, ' ', apellido)) " +
+                                                       "LIKE '%" + textBoxNombre.Text.ToLower() + "%';");
+        }
+
+        private void buttonChip_Click(object sender, EventArgs e)
+        {
+            dataGridView2.DataSource = c6.obtenerDatos("SELECT m.n_chip AS Chip, m.nombre AS Nombre, m.especie AS Especie, m.raza AS Raza, " +
+                                                       "CONCAT(s.nombre, ' ', s.apellido) AS Propietario FROM `mascota` m, usuario s " +
+                                                       "WHERE m.propietario = s.dni AND m.n_chip LIKE '%"+textBoxchip.Text+"%';");//AND n_chip LIKE '%"+textBoxchip+"%'
         }
     }
 }

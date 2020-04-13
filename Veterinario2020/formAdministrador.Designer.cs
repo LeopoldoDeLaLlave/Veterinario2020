@@ -42,9 +42,17 @@
             this.textBoxNombre = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.buttonAddUser = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
+            this.buttonNMaascota = new System.Windows.Forms.Button();
+            this.textBoxnmascota = new System.Windows.Forms.TextBox();
+            this.buttonChip = new System.Windows.Forms.Button();
+            this.textBoxchip = new System.Windows.Forms.TextBox();
+            this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -102,6 +110,12 @@
             // tabPage2
             // 
             this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.tabPage2.Controls.Add(this.label2);
+            this.tabPage2.Controls.Add(this.buttonNMaascota);
+            this.tabPage2.Controls.Add(this.textBoxnmascota);
+            this.tabPage2.Controls.Add(this.buttonChip);
+            this.tabPage2.Controls.Add(this.textBoxchip);
+            this.tabPage2.Controls.Add(this.dataGridView2);
             this.tabPage2.ImageIndex = 1;
             this.tabPage2.Location = new System.Drawing.Point(4, 39);
             this.tabPage2.Name = "tabPage2";
@@ -182,6 +196,70 @@
             this.buttonAddUser.Text = "Añadir Usuario";
             this.buttonAddUser.UseVisualStyleBackColor = true;
             // 
+            // label2
+            // 
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(1, 51);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(1186, 23);
+            this.label2.TabIndex = 14;
+            this.label2.Text = "Buscar Mascotas";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // buttonNMaascota
+            // 
+            this.buttonNMaascota.Location = new System.Drawing.Point(689, 134);
+            this.buttonNMaascota.Name = "buttonNMaascota";
+            this.buttonNMaascota.Size = new System.Drawing.Size(118, 23);
+            this.buttonNMaascota.TabIndex = 13;
+            this.buttonNMaascota.Text = "Buscar Nombre";
+            this.buttonNMaascota.UseVisualStyleBackColor = true;
+            // 
+            // textBoxnmascota
+            // 
+            this.textBoxnmascota.Location = new System.Drawing.Point(391, 134);
+            this.textBoxnmascota.Name = "textBoxnmascota";
+            this.textBoxnmascota.Size = new System.Drawing.Size(223, 22);
+            this.textBoxnmascota.TabIndex = 12;
+            // 
+            // buttonChip
+            // 
+            this.buttonChip.Location = new System.Drawing.Point(689, 189);
+            this.buttonChip.Name = "buttonChip";
+            this.buttonChip.Size = new System.Drawing.Size(118, 23);
+            this.buttonChip.TabIndex = 11;
+            this.buttonChip.Text = "Buscar Chip";
+            this.buttonChip.UseVisualStyleBackColor = true;
+            this.buttonChip.Click += new System.EventHandler(this.buttonChip_Click);
+            // 
+            // textBoxchip
+            // 
+            this.textBoxchip.Location = new System.Drawing.Point(391, 189);
+            this.textBoxchip.Name = "textBoxchip";
+            this.textBoxchip.Size = new System.Drawing.Size(223, 22);
+            this.textBoxchip.TabIndex = 10;
+            // 
+            // dataGridView2
+            // 
+            this.dataGridView2.AllowUserToAddRows = false;
+            this.dataGridView2.AllowUserToDeleteRows = false;
+            this.dataGridView2.AllowUserToResizeColumns = false;
+            this.dataGridView2.AllowUserToResizeRows = false;
+            this.dataGridView2.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.dataGridView2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.Location = new System.Drawing.Point(240, 258);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.ReadOnly = true;
+            this.dataGridView2.RowHeadersWidth = 51;
+            this.dataGridView2.RowTemplate.Height = 24;
+            this.dataGridView2.ShowCellErrors = false;
+            this.dataGridView2.ShowCellToolTips = false;
+            this.dataGridView2.ShowEditingIcon = false;
+            this.dataGridView2.ShowRowErrors = false;
+            this.dataGridView2.Size = new System.Drawing.Size(754, 231);
+            this.dataGridView2.TabIndex = 9;
+            // 
             // FormAdministrador
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -197,6 +275,9 @@
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.tabPage2.ResumeLayout(false);
+            this.tabPage2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -215,5 +296,11 @@
         private System.Windows.Forms.TextBox textBoxNombre;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button buttonAddUser;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button buttonNMaascota;
+        private System.Windows.Forms.TextBox textBoxnmascota;
+        private System.Windows.Forms.Button buttonChip;
+        private System.Windows.Forms.TextBox textBoxchip;
+        private System.Windows.Forms.DataGridView dataGridView2;
     }
 }
