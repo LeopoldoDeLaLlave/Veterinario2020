@@ -41,7 +41,7 @@ namespace Veterinario2020
                 tablaUsuario = c.obtenerDatos("SELECT * FROM usuario WHERE dni ='" + textBoxUsuario.Text + "'");//Obtenemos los datos del usuario
                 if (Convert.ToBoolean(tablaUsuario.Rows[0]["administrador"]))//Si el usuario es administrador abrimos el form de administrador
                 {
-                    FormAdministrador fa = new FormAdministrador();
+                    FormAdministrador fa = new FormAdministrador(tablaUsuario);
                     fa.Show();
                     this.Hide();
 

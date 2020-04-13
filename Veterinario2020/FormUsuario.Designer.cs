@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormUsuario));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.button1 = new System.Windows.Forms.Button();
             this.lMascota8 = new System.Windows.Forms.Label();
             this.lMascota4 = new System.Windows.Forms.Label();
             this.lMascota5 = new System.Windows.Forms.Label();
@@ -74,7 +75,6 @@
             this.dataGridView6 = new System.Windows.Forms.DataGridView();
             this.imageList2 = new System.Windows.Forms.ImageList(this.components);
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.button1 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -139,6 +139,16 @@
             this.tabPage1.Size = new System.Drawing.Size(1185, 541);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Mis datos";
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(31, 461);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(231, 48);
+            this.button1.TabIndex = 24;
+            this.button1.Text = "Cerrar sesión";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // lMascota8
             // 
@@ -630,16 +640,6 @@
             this.imageList1.Images.SetKeyName(1, "peluqueria.ico");
             this.imageList1.Images.SetKeyName(2, "revision.ico");
             this.imageList1.Images.SetKeyName(3, "vacuna.ico");
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(31, 461);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(231, 48);
-            this.button1.TabIndex = 24;
-            this.button1.Text = "Cerrar sesión";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // FormUsuario
             // 
