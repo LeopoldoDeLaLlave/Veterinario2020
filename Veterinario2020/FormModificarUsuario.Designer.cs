@@ -43,6 +43,10 @@
             this.textBoxEmail = new System.Windows.Forms.TextBox();
             this.buttonCambios = new System.Windows.Forms.Button();
             this.buttonBorrarUsuario = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.buttonaddmascota = new System.Windows.Forms.Button();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // label8
@@ -161,12 +165,53 @@
             this.buttonBorrarUsuario.UseVisualStyleBackColor = true;
             this.buttonBorrarUsuario.Click += new System.EventHandler(this.buttonBorrarUsuario_Click);
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Silver;
+            this.panel1.Location = new System.Drawing.Point(979, 1);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(10, 578);
+            this.panel1.TabIndex = 36;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToResizeColumns = false;
+            this.dataGridView1.AllowUserToResizeRows = false;
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(1008, 53);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersWidth = 51;
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.ShowCellErrors = false;
+            this.dataGridView1.ShowCellToolTips = false;
+            this.dataGridView1.ShowEditingIcon = false;
+            this.dataGridView1.ShowRowErrors = false;
+            this.dataGridView1.Size = new System.Drawing.Size(351, 350);
+            this.dataGridView1.TabIndex = 37;
+            // 
+            // buttonaddmascota
+            // 
+            this.buttonaddmascota.Location = new System.Drawing.Point(1092, 436);
+            this.buttonaddmascota.Name = "buttonaddmascota";
+            this.buttonaddmascota.Size = new System.Drawing.Size(195, 45);
+            this.buttonaddmascota.TabIndex = 38;
+            this.buttonaddmascota.Text = "Añadir mascota";
+            this.buttonaddmascota.UseVisualStyleBackColor = true;
+            // 
             // FormModificarUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.ClientSize = new System.Drawing.Size(972, 531);
+            this.ClientSize = new System.Drawing.Size(1371, 531);
+            this.Controls.Add(this.buttonaddmascota);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.buttonBorrarUsuario);
             this.Controls.Add(this.buttonCambios);
             this.Controls.Add(this.textBoxEmail);
@@ -184,6 +229,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormModificarUsuario";
             this.Text = "Form1";
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -204,5 +250,8 @@
         private System.Windows.Forms.TextBox textBoxEmail;
         private System.Windows.Forms.Button buttonCambios;
         private System.Windows.Forms.Button buttonBorrarUsuario;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button buttonaddmascota;
     }
 }

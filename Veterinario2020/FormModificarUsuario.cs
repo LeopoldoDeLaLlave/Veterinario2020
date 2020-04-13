@@ -31,9 +31,9 @@ namespace Veterinario2020
             dni = d;
             datosUsuario = c.obtenerDatos("SELECT nombre, apellido, telefono, email, direccion FROM usuario WHERE dni = '"+dni+"';");
             aux = dg;
-            dgmascotas = dg2;
-            
+            dgmascotas = dg2;          
             InitializeComponent();
+            dataGridView1.DataSource = c.obtenerDatos("SELECT n_chip AS Chip, nombre AS Nombre FROM mascota WHERE propietario='"+dni+"'; ");//Ponemos todos los usuarios
             ponerDatos();
             this.Text = datosUsuario.Rows[0]["nombre"].ToString() + " " + datosUsuario.Rows[0]["apellido"].ToString();//Ponemos el nombre del usuario de título del form
         }
@@ -77,5 +77,7 @@ namespace Veterinario2020
             fce.ShowDialog();
             this.Hide();
         }
+
+  
     }
 }
