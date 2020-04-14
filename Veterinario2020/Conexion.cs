@@ -106,5 +106,39 @@ namespace Veterinario2020
         }
 
 
+        /*
+ * Recibe el dni y la contraseña introducidos por el usuario y comprueba si coinciden
+ */
+        public void addUser(String nombre, String apellido, String dni, String email, String dir, String telefono, String pass)
+        {
+            //Cramos una variable con la fecha actual para guardarla en fecha de registro
+            DateTime now = DateTime.Now;
+            String fecha = Convert.ToDateTime(now.ToString().Substring(0, 10)).ToString("yyyy-MM-dd");
+
+            try
+            {
+                //"INSERT INTO profesor VALUES (@dni, FALSE, @nombre, @apellido, @email, @telefono, @dir,'"+fecha+"', @pass), " String nombre, String apellido, String dni, String email, String dir, String telefono, String pass
+                conexion.Open();
+                MySqlCommand consulta =
+                    new MySqlCommand("INSERT INTO usuario VALUES (@dni, FALSE, @nombre, @apellido, @email, @telefono, @dir,'" + fecha + "', @pass)", conexion);
+                consulta.Parameters.AddWithValue("@dni", dni);
+                consulta.Parameters.AddWithValue("@pass", pass);
+                consulta.Parameters.AddWithValue("@nombre", nombre);
+                consulta.Parameters.AddWithValue("@apellido", apellido);
+                consulta.Parameters.AddWithValue("@email", email);
+                consulta.Parameters.AddWithValue("@dir", dir);
+                consulta.Parameters.AddWithValue("@telefono", telefono);
+
+                MySqlDataReader resultado = consulta.ExecuteReader();
+                DataTable mascotas = new DataTable();
+                mascotas.Load(resultado);
+                conexion.Close();
+            }
+            catch (MySqlException e)
+            {
+                
+            }
+        }
+
     }
 }

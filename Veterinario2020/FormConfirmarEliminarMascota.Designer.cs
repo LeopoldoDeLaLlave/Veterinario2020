@@ -36,16 +36,16 @@
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(-4, 88);
+            this.label1.Location = new System.Drawing.Point(-7, 48);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(640, 23);
+            this.label1.Size = new System.Drawing.Size(484, 23);
             this.label1.TabIndex = 0;
             this.label1.Text = "¿Quiere eliminar esta mascota?";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(242, 187);
+            this.button1.Location = new System.Drawing.Point(170, 119);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(133, 52);
             this.button1.TabIndex = 1;
@@ -56,7 +56,7 @@
             // FormConfirmarEliminarMascota
             // 
             this.BackColor = System.Drawing.Color.Silver;
-            this.ClientSize = new System.Drawing.Size(639, 324);
+            this.ClientSize = new System.Drawing.Size(473, 239);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

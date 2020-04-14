@@ -94,6 +94,7 @@
             this.buttonAddUser.TabIndex = 9;
             this.buttonAddUser.Text = "Añadir Usuario";
             this.buttonAddUser.UseVisualStyleBackColor = true;
+            this.buttonAddUser.Click += new System.EventHandler(this.buttonAddUser_Click);
             // 
             // label1
             // 
