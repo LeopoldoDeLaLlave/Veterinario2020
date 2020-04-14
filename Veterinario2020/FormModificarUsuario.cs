@@ -11,7 +11,7 @@ using System.Windows.Forms;
 namespace Veterinario2020
 {
     /*
-     * Autor: JAvier de la Llave
+     * Autor: Javier de la Llave
      * 
      * Form con los datos del usuario seleccionado donde estos se pueden editar o eliminar al usuario
      */
@@ -92,6 +92,17 @@ namespace Veterinario2020
             }
         }
 
+        private void buttonaddmascota_Click(object sender, EventArgs e)
+        {
+            if (1==1)
+            {
+                FormAddPet fap = new FormAddPet(dni);
+                fap.ShowDialog();
+            }
+            else
+            {
 
+            }
+        }
     }
 }

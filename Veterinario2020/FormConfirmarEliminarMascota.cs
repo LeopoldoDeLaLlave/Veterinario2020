@@ -31,10 +31,12 @@ namespace Veterinario2020
         //Elimina la mascota seleccionada
         private void button1_Click(object sender, EventArgs e)
         {
-            c.modificaTabla("DELETE FROM mascota WHERE chip = '" + chip + "';");
+            c.modificaTabla("DELETE FROM mascota WHERE n_chip = '" + chip + "';");
             MessageBox.Show("Cambios guardados", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            c.modificaTabla("DELETE FROM mascota WHERE n_chip = '"+chip+"';");
             try
             {//El admin puede llegar aquí desde la modificación de usuario o desde la lista de mascotas, en este ultimo caso este datagridview sera null
+
                 aux.DataSource = c.obtenerDatos("SELECT n_chip AS Chip, nombre AS Nombre FROM mascota WHERE propietario='" + dni + "'; ");//Ponemos todas las mascotas que tiene ese usuario
             }
             catch (Exception)

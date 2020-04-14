@@ -203,6 +203,7 @@
             this.buttonaddmascota.TabIndex = 38;
             this.buttonaddmascota.Text = "Añadir mascota";
             this.buttonaddmascota.UseVisualStyleBackColor = true;
+            this.buttonaddmascota.Click += new System.EventHandler(this.buttonaddmascota_Click);
             // 
             // FormModificarUsuario
             // 

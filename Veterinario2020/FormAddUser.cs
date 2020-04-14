@@ -11,6 +11,11 @@ using BCrypt.Net;
 
 namespace Veterinario2020
 {
+    /*
+     * Autor: Javier de la Llave
+     * 
+     * Se introducen los datos del usuario y se guardan en la base de datos
+     */
     public partial class FormAddUser : Form
     {
         Conexion c = new Conexion();
