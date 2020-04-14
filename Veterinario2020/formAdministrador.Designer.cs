@@ -32,22 +32,22 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAdministrador));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.tabPage3 = new System.Windows.Forms.TabPage();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.textBoxdni = new System.Windows.Forms.TextBox();
-            this.buttonbdni = new System.Windows.Forms.Button();
+            this.buttonAddUser = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.buttonNombre = new System.Windows.Forms.Button();
             this.textBoxNombre = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.buttonAddUser = new System.Windows.Forms.Button();
+            this.buttonbdni = new System.Windows.Forms.Button();
+            this.textBoxdni = new System.Windows.Forms.TextBox();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.label2 = new System.Windows.Forms.Label();
             this.buttonNMaascota = new System.Windows.Forms.Button();
             this.textBoxnmascota = new System.Windows.Forms.TextBox();
             this.buttonChip = new System.Windows.Forms.Button();
             this.textBoxchip = new System.Windows.Forms.TextBox();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -85,6 +85,59 @@
             this.tabPage1.Size = new System.Drawing.Size(1189, 545);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Clientes";
+            // 
+            // buttonAddUser
+            // 
+            this.buttonAddUser.Location = new System.Drawing.Point(36, 480);
+            this.buttonAddUser.Name = "buttonAddUser";
+            this.buttonAddUser.Size = new System.Drawing.Size(180, 38);
+            this.buttonAddUser.TabIndex = 9;
+            this.buttonAddUser.Text = "Añadir Usuario";
+            this.buttonAddUser.UseVisualStyleBackColor = true;
+            // 
+            // label1
+            // 
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(0, 51);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(1186, 23);
+            this.label1.TabIndex = 8;
+            this.label1.Text = "Buscar Usuarios";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // buttonNombre
+            // 
+            this.buttonNombre.Location = new System.Drawing.Point(688, 134);
+            this.buttonNombre.Name = "buttonNombre";
+            this.buttonNombre.Size = new System.Drawing.Size(118, 23);
+            this.buttonNombre.TabIndex = 7;
+            this.buttonNombre.Text = "Buscar Nombre";
+            this.buttonNombre.UseVisualStyleBackColor = true;
+            this.buttonNombre.Click += new System.EventHandler(this.buttonNombre_Click);
+            // 
+            // textBoxNombre
+            // 
+            this.textBoxNombre.Location = new System.Drawing.Point(390, 134);
+            this.textBoxNombre.Name = "textBoxNombre";
+            this.textBoxNombre.Size = new System.Drawing.Size(223, 22);
+            this.textBoxNombre.TabIndex = 6;
+            // 
+            // buttonbdni
+            // 
+            this.buttonbdni.Location = new System.Drawing.Point(688, 189);
+            this.buttonbdni.Name = "buttonbdni";
+            this.buttonbdni.Size = new System.Drawing.Size(118, 23);
+            this.buttonbdni.TabIndex = 5;
+            this.buttonbdni.Text = "Buscar DNI\r\n";
+            this.buttonbdni.UseVisualStyleBackColor = true;
+            this.buttonbdni.Click += new System.EventHandler(this.buttonbdni_Click);
+            // 
+            // textBoxdni
+            // 
+            this.textBoxdni.Location = new System.Drawing.Point(390, 189);
+            this.textBoxdni.Name = "textBoxdni";
+            this.textBoxdni.Size = new System.Drawing.Size(223, 22);
+            this.textBoxdni.TabIndex = 4;
             // 
             // dataGridView1
             // 
@@ -124,78 +177,6 @@
             this.tabPage2.Size = new System.Drawing.Size(1189, 545);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Mascotas";
-            // 
-            // tabPage3
-            // 
-            this.tabPage3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.tabPage3.ImageIndex = 0;
-            this.tabPage3.Location = new System.Drawing.Point(4, 39);
-            this.tabPage3.Name = "tabPage3";
-            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1189, 545);
-            this.tabPage3.TabIndex = 2;
-            this.tabPage3.Text = "Citas";
-            // 
-            // imageList1
-            // 
-            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "citas.ico");
-            this.imageList1.Images.SetKeyName(1, "huella.ico");
-            this.imageList1.Images.SetKeyName(2, "user.ico");
-            // 
-            // textBoxdni
-            // 
-            this.textBoxdni.Location = new System.Drawing.Point(390, 189);
-            this.textBoxdni.Name = "textBoxdni";
-            this.textBoxdni.Size = new System.Drawing.Size(223, 22);
-            this.textBoxdni.TabIndex = 4;
-            // 
-            // buttonbdni
-            // 
-            this.buttonbdni.Location = new System.Drawing.Point(688, 189);
-            this.buttonbdni.Name = "buttonbdni";
-            this.buttonbdni.Size = new System.Drawing.Size(118, 23);
-            this.buttonbdni.TabIndex = 5;
-            this.buttonbdni.Text = "Buscar DNI\r\n";
-            this.buttonbdni.UseVisualStyleBackColor = true;
-            this.buttonbdni.Click += new System.EventHandler(this.buttonbdni_Click);
-            // 
-            // buttonNombre
-            // 
-            this.buttonNombre.Location = new System.Drawing.Point(688, 134);
-            this.buttonNombre.Name = "buttonNombre";
-            this.buttonNombre.Size = new System.Drawing.Size(118, 23);
-            this.buttonNombre.TabIndex = 7;
-            this.buttonNombre.Text = "Buscar Nombre";
-            this.buttonNombre.UseVisualStyleBackColor = true;
-            this.buttonNombre.Click += new System.EventHandler(this.buttonNombre_Click);
-            // 
-            // textBoxNombre
-            // 
-            this.textBoxNombre.Location = new System.Drawing.Point(390, 134);
-            this.textBoxNombre.Name = "textBoxNombre";
-            this.textBoxNombre.Size = new System.Drawing.Size(223, 22);
-            this.textBoxNombre.TabIndex = 6;
-            // 
-            // label1
-            // 
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(0, 51);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1186, 23);
-            this.label1.TabIndex = 8;
-            this.label1.Text = "Buscar Usuarios";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // buttonAddUser
-            // 
-            this.buttonAddUser.Location = new System.Drawing.Point(36, 480);
-            this.buttonAddUser.Name = "buttonAddUser";
-            this.buttonAddUser.Size = new System.Drawing.Size(180, 38);
-            this.buttonAddUser.TabIndex = 9;
-            this.buttonAddUser.Text = "Añadir Usuario";
-            this.buttonAddUser.UseVisualStyleBackColor = true;
             // 
             // label2
             // 
@@ -261,6 +242,26 @@
             this.dataGridView2.ShowRowErrors = false;
             this.dataGridView2.Size = new System.Drawing.Size(754, 231);
             this.dataGridView2.TabIndex = 9;
+            this.dataGridView2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellClick);
+            // 
+            // tabPage3
+            // 
+            this.tabPage3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.tabPage3.ImageIndex = 0;
+            this.tabPage3.Location = new System.Drawing.Point(4, 39);
+            this.tabPage3.Name = "tabPage3";
+            this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage3.Size = new System.Drawing.Size(1189, 545);
+            this.tabPage3.TabIndex = 2;
+            this.tabPage3.Text = "Citas";
+            // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "citas.ico");
+            this.imageList1.Images.SetKeyName(1, "huella.ico");
+            this.imageList1.Images.SetKeyName(2, "user.ico");
             // 
             // FormAdministrador
             // 

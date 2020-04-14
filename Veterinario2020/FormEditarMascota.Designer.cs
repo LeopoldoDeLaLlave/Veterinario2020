@@ -68,7 +68,7 @@
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.Location = new System.Drawing.Point(499, 257);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(173, 23);
+            this.label10.Size = new System.Drawing.Size(187, 23);
             this.label10.TabIndex = 32;
             this.label10.Text = "Fecha Nacimiento:";
             // 
@@ -167,9 +167,9 @@
             // 
             // textBoxmed
             // 
-            this.textBoxmed.Location = new System.Drawing.Point(189, 256);
+            this.textBoxmed.Location = new System.Drawing.Point(199, 256);
             this.textBoxmed.Name = "textBoxmed";
-            this.textBoxmed.Size = new System.Drawing.Size(272, 22);
+            this.textBoxmed.Size = new System.Drawing.Size(262, 22);
             this.textBoxmed.TabIndex = 37;
             // 
             // textBoxpat
@@ -214,10 +214,10 @@
             // 
             this.dateTimePicker1.CustomFormat = "yyyy-MM-dd";
             this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dateTimePicker1.Location = new System.Drawing.Point(669, 257);
+            this.dateTimePicker1.Location = new System.Drawing.Point(692, 257);
             this.dateTimePicker1.MaxDate = new System.DateTime(2020, 4, 13, 0, 0, 0, 0);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(200, 22);
+            this.dateTimePicker1.Size = new System.Drawing.Size(177, 22);
             this.dateTimePicker1.TabIndex = 43;
             this.dateTimePicker1.Value = new System.DateTime(2020, 4, 13, 0, 0, 0, 0);
             // 
@@ -226,7 +226,7 @@
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Items.AddRange(new object[] {
             "Macho",
-            "Hembre"});
+            "Hembra"});
             this.comboBox1.Location = new System.Drawing.Point(111, 313);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(175, 24);
@@ -250,6 +250,7 @@
             this.buttonborrarMascota.TabIndex = 46;
             this.buttonborrarMascota.Text = "Borrar Registro";
             this.buttonborrarMascota.UseVisualStyleBackColor = true;
+            this.buttonborrarMascota.Click += new System.EventHandler(this.buttonborrarMascota_Click);
             // 
             // FormEditarMascota
             // 

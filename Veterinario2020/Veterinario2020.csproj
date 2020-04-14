@@ -72,6 +72,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Conexion.cs" />
+    <Compile Include="FormConfirmarEliminarMascota.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormConfirmarEliminarMascota.Designer.cs">
+      <DependentUpon>FormConfirmarEliminarMascota.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormEditarMascota.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -133,6 +139,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormConfirmarEliminarMascota.resx">
+      <DependentUpon>FormConfirmarEliminarMascota.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormAnularCita.resx">
       <DependentUpon>FormAnularCita.cs</DependentUpon>
     </EmbeddedResource>

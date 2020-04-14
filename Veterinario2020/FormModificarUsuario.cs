@@ -33,7 +33,7 @@ namespace Veterinario2020
             aux = dg;
             dgmascotas = dg2;          
             InitializeComponent();
-            dataGridView1.DataSource = c.obtenerDatos("SELECT n_chip AS Chip, nombre AS Nombre FROM mascota WHERE propietario='"+dni+"'; ");//Ponemos todos los usuarios
+            dataGridView1.DataSource = c.obtenerDatos("SELECT n_chip AS Chip, nombre AS Nombre FROM mascota WHERE propietario='"+dni+"'; ");//Ponemos todas las mascotas que tiene ese usuario
             ponerDatos();
             this.Text = datosUsuario.Rows[0]["nombre"].ToString() + " " + datosUsuario.Rows[0]["apellido"].ToString();//Ponemos el nombre del usuario de título del form
         }
@@ -81,7 +81,7 @@ namespace Veterinario2020
         //Abre una ficha con los datos del animal que se pueden modificar y también se puede borrar al animal
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            FormEditarMascota fem = new FormEditarMascota(dataGridView1.Rows[e.RowIndex].Cells["Chip"].Value.ToString());
+            FormEditarMascota fem = new FormEditarMascota(dataGridView1.Rows[e.RowIndex].Cells["Chip"].Value.ToString(), dataGridView1,dgmascotas);
             fem.ShowDialog();
         }
 

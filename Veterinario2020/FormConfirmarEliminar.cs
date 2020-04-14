@@ -29,16 +29,10 @@ namespace Veterinario2020
             InitializeComponent();
         }
 
-        //Cancela eliminar
-        private void button2_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-        }
-
         //Elimina al usuario
         private void button1_Click(object sender, EventArgs e)
         {
-            c.modificaTabla("DELETE FROM usuario WHERE DNI = '"+dni+"';");
+            c.modificaTabla("DELETE FROM usuario WHERE dni = '"+dni+"';");
             MessageBox.Show("Cambios guardados", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
             aux.DataSource = c.obtenerDatos("SELECT dni AS DNI, nombre AS Nombre, apellido AS Apellido, email AS Email, telefono AS Telefono FROM usuario WHERE administrador=FALSE; ");//Ponemos todos los usuarios
             dgMascotas.DataSource = c.obtenerDatos("SELECT m.n_chip AS Chip, m.nombre AS Nombre, m.especie AS Especie, m.raza AS Raza, CONCAT(s.nombre, ' ', s.apellido) AS Propietario FROM `mascota` m, usuario s WHERE m.propietario = s.dni;");//Actualizamos el datagridview de las mascotas
