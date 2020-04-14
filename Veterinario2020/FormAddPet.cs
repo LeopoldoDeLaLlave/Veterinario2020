@@ -52,6 +52,7 @@ namespace Veterinario2020
                 mascotasUsuario.DataSource = c.obtenerDatos("SELECT n_chip AS Chip, nombre AS Nombre FROM mascota WHERE propietario='" + dni + "'; ");//Actualizamos el datagridview con las mascotas del usuariodel usuario
                 todasMascotas.DataSource = c.obtenerDatos("SELECT m.n_chip AS Chip, m.nombre AS Nombre, m.especie AS Especie, m.raza AS Raza, CONCAT(s.nombre, ' ', s.apellido) AS Propietario FROM `mascota` m, usuario s WHERE m.propietario = s.dni;");//Ponemos todass las mascotas
                 System.Diagnostics.Debug.WriteLine(mascotasUsuario.RowCount);
+
                 if (mascotasUsuario.RowCount >= 6)//Si ya hay 7 mascotas, impedimos que el usuario introduzca más
                 {
                     this.Hide();
