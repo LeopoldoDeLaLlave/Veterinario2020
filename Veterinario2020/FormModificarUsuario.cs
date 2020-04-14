@@ -94,14 +94,16 @@ namespace Veterinario2020
 
         private void buttonaddmascota_Click(object sender, EventArgs e)
         {
-            if (1==1)
+
+
+            if (dataGridView1.RowCount<=6)
             {
-                FormAddPet fap = new FormAddPet(dni);
+                FormAddPet fap = new FormAddPet(dni, dataGridView1, dgmascotas);
                 fap.ShowDialog();
             }
             else
             {
-
+                MessageBox.Show("Se puede tener hasta un máximo de 7 mascotas", "Información", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

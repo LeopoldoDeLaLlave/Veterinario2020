@@ -64,7 +64,7 @@ namespace Veterinario2020
                         + "', esterilizado=" + checkBox1.Checked + ", f_nacimiento='" + fecha + "' WHERE n_chip = '" + chip + "';");
                 try
                 {//El admin puede llegar aquí desde la modificación de usuario o desde la lista de mascotas, en este ultimo caso este datagridview sera null
-                    aux.DataSource = c.obtenerDatos("SELECT n_chip AS Chip, nombre AS Nombre FROM mascota WHERE propietario='" + datosMascota.Rows[0]["propietario"].ToString() + "'; ");//Actualizamos el datagridview con los datos del usuario
+                    aux.DataSource = c.obtenerDatos("SELECT n_chip AS Chip, nombre AS Nombre FROM mascota WHERE propietario='" + datosMascota.Rows[0]["propietario"].ToString() + "'; ");//Actualizamos el datagridview con las mascotasdel usuario
                 }
                 catch (Exception)
                 {
@@ -72,7 +72,7 @@ namespace Veterinario2020
                 }
 
                 
-                dglistaMascotas.DataSource = c.obtenerDatos("SELECT m.n_chip AS Chip, m.nombre AS Nombre, m.especie AS Especie, m.raza AS Raza, CONCAT(s.nombre, ' ', s.apellido) AS Propietario FROM `mascota` m, usuario s WHERE m.propietario = s.dni;");//Ponemos todos las mascotas
+                dglistaMascotas.DataSource = c.obtenerDatos("SELECT m.n_chip AS Chip, m.nombre AS Nombre, m.especie AS Especie, m.raza AS Raza, CONCAT(s.nombre, ' ', s.apellido) AS Propietario FROM `mascota` m, usuario s WHERE m.propietario = s.dni;");//Ponemos todass las mascotas
                 MessageBox.Show("Cambios guardados", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 this.Hide();
             }
