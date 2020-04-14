@@ -36,7 +36,7 @@ namespace Veterinario2020
         //Añade la mascota en la base e datos
         private void button1_Click(object sender, EventArgs e)
         {
-            if (textBoxchip.Text.Length>5 && textBoxnombre.Text.Length>1 && textBoxespecie.Text.Length>1 && textBoxraza.Text.Length>1 && textBoxcolor.Text.Length>1)
+            if (textBoxchip.Text.Length>5 && textBoxnombre.Text.Length>1 && textBoxespecie.Text.Length>1 && textBoxraza.Text.Length>1 && textBoxcolor.Text.Length>1 && comboBox1.Text.Length>2)
             {
                 String fecha = Convert.ToDateTime(dateTimePicker1.Value.ToString().Substring(0, 10)).ToString("yyyy-MM-dd");//Para que no de fallo al introducirlo en l base de datos
                 c.modificaTabla("INSERT INTO mascota VALUES('" + textBoxchip.Text + "','" + dni + "','" + textBoxnombre.Text + "','" + textBoxespecie.Text
