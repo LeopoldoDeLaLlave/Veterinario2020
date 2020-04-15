@@ -42,15 +42,16 @@ namespace Veterinario2020
             {
                 conexion.Open();
                 MySqlCommand consulta =
-                    new MySqlCommand("SELECT * FROM usuario WHERE dni = @dni AND contrasena = @contrasena", conexion);
+                    new MySqlCommand("SELECT * FROM usuario WHERE dni = @dni", conexion);
                 consulta.Parameters.AddWithValue("@dni", dni);
-                consulta.Parameters.AddWithValue("@contrasena", contrasena);
                 MySqlDataReader resultado = consulta.ExecuteReader();
             
                 if (resultado.Read())
                 {
+                    string passwordHash = resultado.GetString("contrasena");
+                    
                     conexion.Close();
-                    return true;
+                    return BCrypt.Net.BCrypt.Verify(contrasena, passwordHash); //Si la contraseña introducida coincide con la de la base de datos sin el hash devuelve true
                 }
                 conexion.Close();
                 return false;

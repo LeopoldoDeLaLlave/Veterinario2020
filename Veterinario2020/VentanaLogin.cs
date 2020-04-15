@@ -31,10 +31,7 @@ namespace Veterinario2020
         //En tal caso cierra VentanaLogin y abre FormUsuario o FormAdministrador en función de quien haya introducido los datos.
         //Si los datos introducidos son incorrectos salta un aviso
         public void BotonLogin_Click(object sender, EventArgs e)
-        {
-
-
-            
+        {      
 
             if (c.comprobarLogin(textBoxUsuario.Text, textBoxContrasena.Text))
             {

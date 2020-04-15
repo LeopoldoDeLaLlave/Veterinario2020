@@ -24,12 +24,13 @@ namespace Veterinario2020
         public FormChangePass(String d)
         {
             dni = d;
+;
             InitializeComponent();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (c.comprobarLogin(dni, textBoxActual.Text))//COmprobamos que la contraseña actual sea correcta
+            if (c.comprobarLogin(dni, textBoxActual.Text))//Comprobamos que la contraseña actual sea correcta
             {
                 if (textBoxNueva.Text.Length>3 && textBoxNueva.Text.Length <=20 && String.Equals(textBoxNueva.Text, textBoxConfirmar.Text))
                 {//Comprobamos que la conraseña tenga el número de caracteres adecuado y que sea la misma contraseña las dos veces
