@@ -302,6 +302,11 @@ namespace Veterinario2020
             vl.Show();
         }
 
-
+        //Al pulsar se abre un form para cambiar la contraseña
+        private void buttonPass_Click(object sender, EventArgs e)
+        {
+            FormChangePass fcp = new FormChangePass(datosUsuarios.Rows[0]["dni"].ToString());
+            fcp.ShowDialog();
+        }
     }
 }

@@ -75,6 +75,7 @@
             this.dataGridView6 = new System.Windows.Forms.DataGridView();
             this.imageList2 = new System.Windows.Forms.ImageList(this.components);
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
+            this.buttonPass = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -106,6 +107,7 @@
             // tabPage1
             // 
             this.tabPage1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.tabPage1.Controls.Add(this.buttonPass);
             this.tabPage1.Controls.Add(this.button1);
             this.tabPage1.Controls.Add(this.lMascota8);
             this.tabPage1.Controls.Add(this.lMascota4);
@@ -641,6 +643,16 @@
             this.imageList1.Images.SetKeyName(2, "revision.ico");
             this.imageList1.Images.SetKeyName(3, "vacuna.ico");
             // 
+            // buttonPass
+            // 
+            this.buttonPass.Location = new System.Drawing.Point(579, 461);
+            this.buttonPass.Name = "buttonPass";
+            this.buttonPass.Size = new System.Drawing.Size(231, 48);
+            this.buttonPass.TabIndex = 25;
+            this.buttonPass.Text = "Cambiar contraseña";
+            this.buttonPass.UseVisualStyleBackColor = true;
+            this.buttonPass.Click += new System.EventHandler(this.buttonPass_Click);
+            // 
             // FormUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -716,6 +728,7 @@
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.DataGridView dataGridView6;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button buttonPass;
     }
 }
 
