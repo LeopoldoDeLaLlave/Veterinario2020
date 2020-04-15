@@ -141,5 +141,35 @@ namespace Veterinario2020
             }
         }
 
+        /*
+         * Recibe un id y devuelve true si está registrado
+        */
+        public Boolean comprobarId(String str)
+        {
+            try
+            {
+                conexion.Open();
+                MySqlCommand consulta =
+                    new MySqlCommand(str, conexion);
+                MySqlDataReader resultado = consulta.ExecuteReader();
+
+                if (resultado.Read())
+                {
+                    conexion.Close();
+                    return true;
+
+                }
+                
+               
+                conexion.Close();
+                return false;
+            }
+            catch (MySqlException e)
+            {
+                System.Diagnostics.Debug.WriteLine(e);
+                return false;
+            }
+        }
+
     }
 }
