@@ -29,10 +29,10 @@ namespace Veterinario2020
         //Inserta el usuario creado en la base de dados
         private void button1_Click(object sender, EventArgs e)
         {
-            if (!c.comprobarId("SELECT * FROM usuario WHERE dni='"+ textBoxdni.Text + "';"))
+            if (!c.comprobarId("SELECT * FROM usuario WHERE dni='"+ textBoxdni.Text.ToUpper() + "';"))//Si el dni ya está registrado sale mensaje de error
             {
                 if (textBoxNombre.Text.Length > 1 && textBoxApellido.Text.Length > 1 && textBoxdni.Text.Length > 5 && textBoxDir.Text.Length > 5 && textBoxPass.Text.Length > 3)
-                {
+                {//Si no cumple las medidas mínimas sale mensaje de error
                     string myHash = BCrypt.Net.BCrypt.HashPassword(textBoxPass.Text, BCrypt.Net.BCrypt.GenerateSalt());
 
 

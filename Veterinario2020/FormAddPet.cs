@@ -36,33 +36,42 @@ namespace Veterinario2020
         //Añade la mascota en la base e datos
         private void button1_Click(object sender, EventArgs e)
         {
-            if (textBoxchip.Text.Length>5 && textBoxnombre.Text.Length>1 && textBoxespecie.Text.Length>1 && textBoxraza.Text.Length>1 && textBoxcolor.Text.Length>1 && comboBox1.Text.Length>2)
+
+            if (!c.comprobarId("SELECT * FROM mascota WHERE n_chip='" + textBoxchip.Text + "';"))
             {
-                String fecha = Convert.ToDateTime(dateTimePicker1.Value.ToString().Substring(0, 10)).ToString("yyyy-MM-dd");//Para que no de fallo al introducirlo en l base de datos
-                c.modificaTabla("INSERT INTO mascota VALUES('" + textBoxchip.Text + "','" + dni + "','" + textBoxnombre.Text + "','" + textBoxespecie.Text
-                    + "','" + textBoxraza.Text + "','" + textBoxcolor.Text + "','" + checkBox1.Checked + "', '" + textBoxpat.Text + "','" + textBoxmed.Text + "','" + fecha + "','" + comboBox1.Text + "')");
-                textBoxchip.Text = "";
-                textBoxnombre.Text = "";
-                textBoxespecie.Text = "";
-                textBoxraza.Text = "";
-                textBoxcolor.Text = "";
-                textBoxpat.Text = "";
-                textBoxmed.Text = "";
-                checkBox1.Checked = false;
-                mascotasUsuario.DataSource = c.obtenerDatos("SELECT n_chip AS Chip, nombre AS Nombre FROM mascota WHERE propietario='" + dni + "'; ");//Actualizamos el datagridview con las mascotas del usuariodel usuario
-                todasMascotas.DataSource = c.obtenerDatos("SELECT m.n_chip AS Chip, m.nombre AS Nombre, m.especie AS Especie, m.raza AS Raza, CONCAT(s.nombre, ' ', s.apellido) AS Propietario FROM `mascota` m, usuario s WHERE m.propietario = s.dni;");//Ponemos todass las mascotas
-                System.Diagnostics.Debug.WriteLine(mascotasUsuario.RowCount);
-
-                if (mascotasUsuario.RowCount >= 7)//Si ya hay 8 mascotas, impedimos que el usuario introduzca más
+                if (textBoxchip.Text.Length > 5 && textBoxnombre.Text.Length > 1 && textBoxespecie.Text.Length > 1 && textBoxraza.Text.Length > 1 && textBoxcolor.Text.Length > 1 && comboBox1.Text.Length > 2)
                 {
-                    this.Hide();
-                }
+                    String fecha = Convert.ToDateTime(dateTimePicker1.Value.ToString().Substring(0, 10)).ToString("yyyy-MM-dd");//Para que no de fallo al introducirlo en l base de datos
+                    c.modificaTabla("INSERT INTO mascota VALUES('" + textBoxchip.Text + "','" + dni + "','" + textBoxnombre.Text + "','" + textBoxespecie.Text
+                        + "','" + textBoxraza.Text + "','" + textBoxcolor.Text + "','" + checkBox1.Checked + "', '" + textBoxpat.Text + "','" + textBoxmed.Text + "','" + fecha + "','" + comboBox1.Text + "')");
+                    textBoxchip.Text = "";
+                    textBoxnombre.Text = "";
+                    textBoxespecie.Text = "";
+                    textBoxraza.Text = "";
+                    textBoxcolor.Text = "";
+                    textBoxpat.Text = "";
+                    textBoxmed.Text = "";
+                    checkBox1.Checked = false;
+                    mascotasUsuario.DataSource = c.obtenerDatos("SELECT n_chip AS Chip, nombre AS Nombre FROM mascota WHERE propietario='" + dni + "'; ");//Actualizamos el datagridview con las mascotas del usuariodel usuario
+                    todasMascotas.DataSource = c.obtenerDatos("SELECT m.n_chip AS Chip, m.nombre AS Nombre, m.especie AS Especie, m.raza AS Raza, CONCAT(s.nombre, ' ', s.apellido) AS Propietario FROM `mascota` m, usuario s WHERE m.propietario = s.dni;");//Ponemos todass las mascotas
+                    System.Diagnostics.Debug.WriteLine(mascotasUsuario.RowCount);
 
-             }
+                    if (mascotasUsuario.RowCount >= 7)//Si ya hay 8 mascotas, impedimos que el usuario introduzca más
+                    {
+                        this.Hide();
+                    }
+
+                }
+                else
+                {
+                    MessageBox.Show("Datos no válidos", "Información", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
             else
             {
-                MessageBox.Show("Datos no válidos", "Información", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Chip ya registrado", "Información", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            
             
         }
     }
