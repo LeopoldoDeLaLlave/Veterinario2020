@@ -32,6 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormUsuario));
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.buttonPass = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.lMascota8 = new System.Windows.Forms.Label();
             this.lMascota4 = new System.Windows.Forms.Label();
@@ -75,7 +76,6 @@
             this.dataGridView6 = new System.Windows.Forms.DataGridView();
             this.imageList2 = new System.Windows.Forms.ImageList(this.components);
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
-            this.buttonPass = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
@@ -141,6 +141,16 @@
             this.tabPage1.Size = new System.Drawing.Size(1185, 541);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Mis datos";
+            // 
+            // buttonPass
+            // 
+            this.buttonPass.Location = new System.Drawing.Point(579, 461);
+            this.buttonPass.Name = "buttonPass";
+            this.buttonPass.Size = new System.Drawing.Size(231, 48);
+            this.buttonPass.TabIndex = 25;
+            this.buttonPass.Text = "Cambiar contraseña";
+            this.buttonPass.UseVisualStyleBackColor = true;
+            this.buttonPass.Click += new System.EventHandler(this.buttonPass_Click);
             // 
             // button1
             // 
@@ -642,16 +652,6 @@
             this.imageList1.Images.SetKeyName(1, "peluqueria.ico");
             this.imageList1.Images.SetKeyName(2, "revision.ico");
             this.imageList1.Images.SetKeyName(3, "vacuna.ico");
-            // 
-            // buttonPass
-            // 
-            this.buttonPass.Location = new System.Drawing.Point(579, 461);
-            this.buttonPass.Name = "buttonPass";
-            this.buttonPass.Size = new System.Drawing.Size(231, 48);
-            this.buttonPass.TabIndex = 25;
-            this.buttonPass.Text = "Cambiar contraseña";
-            this.buttonPass.UseVisualStyleBackColor = true;
-            this.buttonPass.Click += new System.EventHandler(this.buttonPass_Click);
             // 
             // FormUsuario
             // 

@@ -36,6 +36,17 @@ namespace Veterinario2020
             dataGridView1.DataSource = c.obtenerDatos("SELECT n_chip AS Chip, nombre AS Nombre FROM mascota WHERE propietario='"+dni+"'; ");//Ponemos todas las mascotas que tiene ese usuario
             ponerDatos();
             this.Text = datosUsuario.Rows[0]["nombre"].ToString() + " " + datosUsuario.Rows[0]["apellido"].ToString();//Ponemos el nombre del usuario de título del form
+
+            dataGridView2.DataSource = c.obtenerDatos("SELECT DATE_FORMAT(fecha, '%Y-%m-%d') AS Fecha, hora AS Hora FROM cita  WHERE chip_mascota IS NULL AND motivo = 'Revisión' AND fecha>CURDATE()");//Ponemos las revisiones libres
+
+            dataGridView3.DataSource = c.obtenerDatos("SELECT DATE_FORMAT(fecha, '%Y-%m-%d') AS Fecha, hora AS Hora FROM cita  WHERE chip_mascota IS NULL AND motivo = 'Vacuna' AND fecha>CURDATE()");//Ponemos las revisiones libres
+
+            dataGridView4.DataSource = c.obtenerDatos("SELECT DATE_FORMAT(fecha, '%Y-%m-%d') AS Fecha, hora AS Hora FROM cita  WHERE chip_mascota IS NULL AND motivo = 'Peluquería' AND fecha>CURDATE()");//Ponemos las revisiones libres
+
+            dataGridView5.DataSource = c.obtenerDatos("SELECT DATE_FORMAT(fecha, '%Y-%m-%d') AS Fecha, hora AS Hora FROM cita  WHERE chip_mascota IS NULL AND motivo = 'Otros' AND fecha>CURDATE()");//Ponemos las revisiones libres
+
+            dataGridView6.DataSource = c.obtenerDatos("SELECT n_cita AS Numero, DATE_FORMAT(c.fecha, '%Y-%m-%d') AS Fecha, hora AS Hora, m.nombre AS mascota, c.motivo AS Motivo FROM mascota m, cita c " +
+                    "WHERE m.n_chip = c.chip_mascota AND m.propietario = '" + dni + "' AND fecha>CURDATE()");//Ponemos las próximas citas
         }
 
 
@@ -114,5 +125,6 @@ namespace Veterinario2020
                 MessageBox.Show("Se puede tener hasta un máximo de 8 mascotas", "Información", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+
     }
 }
