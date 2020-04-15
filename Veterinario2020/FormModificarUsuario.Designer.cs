@@ -50,7 +50,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.label12 = new System.Windows.Forms.Label();
@@ -64,6 +63,7 @@
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.label13 = new System.Windows.Forms.Label();
             this.dataGridView6 = new System.Windows.Forms.DataGridView();
+            this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -125,6 +125,7 @@
             this.buttonaddmascota.TabIndex = 55;
             this.buttonaddmascota.Text = "Añadir mascota";
             this.buttonaddmascota.UseVisualStyleBackColor = true;
+            this.buttonaddmascota.Click += new System.EventHandler(this.buttonaddmascota_Click);
             // 
             // dataGridView1
             // 
@@ -163,6 +164,7 @@
             this.buttonBorrarUsuario.TabIndex = 52;
             this.buttonBorrarUsuario.Text = "Eliminar usuario";
             this.buttonBorrarUsuario.UseVisualStyleBackColor = true;
+            this.buttonBorrarUsuario.Click += new System.EventHandler(this.buttonBorrarUsuario_Click);
             // 
             // buttonCambios
             // 
@@ -172,6 +174,7 @@
             this.buttonCambios.TabIndex = 51;
             this.buttonCambios.Text = "Guardar Cambios";
             this.buttonCambios.UseVisualStyleBackColor = true;
+            this.buttonCambios.Click += new System.EventHandler(this.buttonCambios_Click);
             // 
             // textBoxEmail
             // 
@@ -281,13 +284,6 @@
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Citas";
             // 
-            // imageList1
-            // 
-            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
-            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
-            this.imageList1.Images.SetKeyName(0, "citas.png");
-            this.imageList1.Images.SetKeyName(1, "datos.ico");
-            // 
             // tabControl2
             // 
             this.tabControl2.Controls.Add(this.tabPage4);
@@ -379,6 +375,7 @@
             this.dataGridView5.ShowRowErrors = false;
             this.dataGridView5.Size = new System.Drawing.Size(295, 351);
             this.dataGridView5.TabIndex = 3;
+            this.dataGridView5.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView5_CellClick);
             // 
             // dataGridView4
             // 
@@ -399,6 +396,7 @@
             this.dataGridView4.ShowRowErrors = false;
             this.dataGridView4.Size = new System.Drawing.Size(295, 354);
             this.dataGridView4.TabIndex = 2;
+            this.dataGridView4.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView4_CellClick);
             // 
             // dataGridView3
             // 
@@ -419,6 +417,7 @@
             this.dataGridView3.ShowRowErrors = false;
             this.dataGridView3.Size = new System.Drawing.Size(295, 351);
             this.dataGridView3.TabIndex = 1;
+            this.dataGridView3.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView3_CellClick);
             // 
             // dataGridView2
             // 
@@ -439,6 +438,7 @@
             this.dataGridView2.ShowRowErrors = false;
             this.dataGridView2.Size = new System.Drawing.Size(295, 345);
             this.dataGridView2.TabIndex = 0;
+            this.dataGridView2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellClick);
             // 
             // tabPage5
             // 
@@ -482,6 +482,13 @@
             this.dataGridView6.ShowRowErrors = false;
             this.dataGridView6.Size = new System.Drawing.Size(754, 348);
             this.dataGridView6.TabIndex = 2;
+            // 
+            // imageList1
+            // 
+            this.imageList1.ImageStream = ((System.Windows.Forms.ImageListStreamer)(resources.GetObject("imageList1.ImageStream")));
+            this.imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            this.imageList1.Images.SetKeyName(0, "citas.png");
+            this.imageList1.Images.SetKeyName(1, "datos.ico");
             // 
             // FormModificarUsuario
             // 

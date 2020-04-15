@@ -103,7 +103,7 @@ namespace Veterinario2020
 
 
                 citasFuturas.DataSource = c4.obtenerDatos("SELECT n_cita AS Numero, DATE_FORMAT(c.fecha, '%Y-%m-%d') AS Fecha, hora AS Hora, m.nombre AS mascota, c.motivo AS Motivo FROM mascota m, cita c " +
-                    "WHERE m.n_chip = c.chip_mascota AND m.propietario = '" + foundRows[0][1].ToString() + "' AND fecha>CURDATE()");//Actualizamos las revisiones libres
+                    "WHERE m.n_chip = c.chip_mascota AND m.propietario = '" + foundRows[0][1].ToString() + "' AND fecha>CURDATE()");//Actualizamos las próximas citas
                 
             }         
             else

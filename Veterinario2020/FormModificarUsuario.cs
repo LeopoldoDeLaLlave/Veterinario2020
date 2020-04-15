@@ -33,7 +33,7 @@ namespace Veterinario2020
             aux = dg;
             dgmascotas = dg2;          
             InitializeComponent();
-            dataGridView1.DataSource = c.obtenerDatos("SELECT n_chip AS Chip, nombre AS Nombre FROM mascota WHERE propietario='"+dni+"'; ");//Ponemos todas las mascotas que tiene ese usuario
+            dataGridView1.DataSource = c.obtenerDatos("SELECT n_chip AS Chip, nombre AS Nombre FROM mascota WHERE propietario='" + dni+"'; ");//Ponemos todas las mascotas que tiene ese usuario
             ponerDatos();
             this.Text = datosUsuario.Rows[0]["nombre"].ToString() + " " + datosUsuario.Rows[0]["apellido"].ToString();//Ponemos el nombre del usuario de título del form
 
@@ -63,7 +63,7 @@ namespace Veterinario2020
 
         private void buttonCambios_Click(object sender, EventArgs e)
         {
-            if (!c.comprobarId("SELECT * FROM usuario WHERE dni='" + textBoxdni.Text.ToUpper() + "';"))//Si el dni ya está registrado sale mensaje de error
+            if (!c.comprobarId("SELECT * FROM usuario WHERE dni='" + textBoxdni.Text.ToUpper() + "';") || String.Equals(textBoxdni.Text, dni))//Si el dni ya está registrado sale mensaje de error
             {
                 if (textBoxNombre.Text.Length >= 2 && textBoxApellido.Text.Length >= 2 && textBoxTelefono.Text.Length > 6 && textBoxDir.Text.Length > 6
                 && textBoxEmail.Text.Length > 5)
@@ -125,6 +125,74 @@ namespace Veterinario2020
                 MessageBox.Show("Se puede tener hasta un máximo de 8 mascotas", "Información", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
+        //Al pulsar sobre una de las fechas del datagrid view, sale un cuadro para reservarlo
+        //Son las citas de revisión
+       private void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                FormElegirCita fec = new FormElegirCita((DataTable)(dataGridView1.DataSource), dataGridView2.Rows[e.RowIndex].Cells["Fecha"].Value.ToString(),
+                                                    dataGridView2.Rows[e.RowIndex].Cells["Hora"].Value.ToString(), "Revisión", dataGridView2, dataGridView6);
+                fec.ShowDialog();
+            }
+            catch
+            {
+            }
+
+        }
+
+        //Al pulsar sobre una de las fechas del datagrid view, sale un cuadro para reservarlo
+        //Son las citas de vacunas
+        private void dataGridView3_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                FormElegirCita fec = new FormElegirCita((DataTable)(dataGridView1.DataSource), dataGridView3.Rows[e.RowIndex].Cells["Fecha"].Value.ToString(),
+                                                    dataGridView3.Rows[e.RowIndex].Cells["Hora"].Value.ToString(), "Vacuna", dataGridView3, dataGridView6);
+                fec.ShowDialog();
+            }
+            catch
+            {
+
+            }
+
+        }
+
+        //Al pulsar sobre una de las fechas del datagrid view, sale un cuadro para reservarlo
+        //Son las citas de peluquería
+        private void dataGridView4_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            try
+            {
+                FormElegirCita fec = new FormElegirCita((DataTable)(dataGridView1.DataSource), dataGridView4.Rows[e.RowIndex].Cells["Fecha"].Value.ToString(),
+                                                    dataGridView4.Rows[e.RowIndex].Cells["Hora"].Value.ToString(), "Peluquería", dataGridView4, dataGridView6);
+                fec.ShowDialog();
+            }
+            catch
+            {
+
+            }
+
+        }
+
+        //Al pulsar sobre una de las fechas del datagrid view, sale un cuadro para reservarlo
+        //Son las citas de Otros
+        private void dataGridView5_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                FormElegirCita fec = new FormElegirCita((DataTable)(dataGridView1.DataSource), dataGridView5.Rows[e.RowIndex].Cells["Fecha"].Value.ToString(),
+                                                    dataGridView5.Rows[e.RowIndex].Cells["Hora"].Value.ToString(), "Otros", dataGridView5, dataGridView6);
+                fec.ShowDialog();
+            }
+            catch
+            {
+
+            }
+
+        }
+
 
     }
 }

@@ -54,7 +54,7 @@ namespace Veterinario2020
         private void buttonGuardar_Click(object sender, EventArgs e)
         {
 
-            if (!c.comprobarId("SELECT * FROM mascota WHERE n_chip='" + textBoxchip.Text + "';"))//Si ya hay un animal con ese chip sale mensaje de error
+            if (!c.comprobarId("SELECT * FROM mascota WHERE n_chip='" + textBoxchip.Text + "';") || String.Equals(textBoxchip.Text, chip))//Si ya hay un animal con ese chip sale mensaje de error
             {
                 if (textBoxnombre.Text.Length > 1 && textBoxchip.Text.Length > 4 && textBoxespecie.Text.Length > 3 && textBoxraza.Text.Length > 2 && textBoxpropietario.Text.Length > 5 &&
                     textBoxcolor.Text.Length > 2)
