@@ -86,6 +86,7 @@ namespace Veterinario2020
                 //Actualizamos los datagridview
                 if (String.Compare(motivo, "Revisión") == 0)
                 {
+
                     aux.DataSource = c4.obtenerDatos("SELECT DATE_FORMAT(fecha, '%Y-%m-%d') AS Fecha, hora AS Hora FROM cita  WHERE chip_mascota IS NULL AND motivo = 'Revisión' AND fecha>CURDATE()");//Ponemos las revisiones libres
                 }
                 else if (String.Compare(motivo, "Vacuna") == 0)
