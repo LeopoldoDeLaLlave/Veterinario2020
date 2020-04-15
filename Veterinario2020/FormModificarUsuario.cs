@@ -150,6 +150,7 @@ namespace Veterinario2020
                 FormElegirCita fec = new FormElegirCita((DataTable)(dataGridView1.DataSource), dataGridView3.Rows[e.RowIndex].Cells["Fecha"].Value.ToString(),
                                                     dataGridView3.Rows[e.RowIndex].Cells["Hora"].Value.ToString(), "Vacuna", dataGridView3, dataGridView6);
                 fec.ShowDialog();
+
             }
             catch
             {
@@ -168,6 +169,7 @@ namespace Veterinario2020
                 FormElegirCita fec = new FormElegirCita((DataTable)(dataGridView1.DataSource), dataGridView4.Rows[e.RowIndex].Cells["Fecha"].Value.ToString(),
                                                     dataGridView4.Rows[e.RowIndex].Cells["Hora"].Value.ToString(), "Peluquería", dataGridView4, dataGridView6);
                 fec.ShowDialog();
+
             }
             catch
             {
@@ -185,6 +187,26 @@ namespace Veterinario2020
                 FormElegirCita fec = new FormElegirCita((DataTable)(dataGridView1.DataSource), dataGridView5.Rows[e.RowIndex].Cells["Fecha"].Value.ToString(),
                                                     dataGridView5.Rows[e.RowIndex].Cells["Hora"].Value.ToString(), "Otros", dataGridView5, dataGridView6);
                 fec.ShowDialog();
+            }
+            catch
+            {
+
+            }
+
+        }
+
+        //Al pulsar sobre una cita se abre la opción de borrarla
+        private void dataGridView6_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try
+            {
+                FormAnularCita fac = new FormAnularCita(dni,
+                                                    dataGridView6.Rows[e.RowIndex].Cells["Fecha"].Value.ToString(),
+                                                    dataGridView6.Rows[e.RowIndex].Cells["Hora"].Value.ToString(),
+                                                    Int32.Parse(dataGridView6.Rows[e.RowIndex].Cells["Numero"].Value.ToString()),
+                                                    dataGridView2, dataGridView3, dataGridView4, dataGridView5, dataGridView6);
+                fac.ShowDialog();
+
             }
             catch
             {

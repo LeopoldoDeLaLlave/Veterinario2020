@@ -147,6 +147,7 @@
             this.dataGridView1.ShowRowErrors = false;
             this.dataGridView1.Size = new System.Drawing.Size(351, 350);
             this.dataGridView1.TabIndex = 54;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // panel1
             // 
@@ -482,6 +483,7 @@
             this.dataGridView6.ShowRowErrors = false;
             this.dataGridView6.Size = new System.Drawing.Size(754, 348);
             this.dataGridView6.TabIndex = 2;
+            this.dataGridView6.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView6_CellClick);
             // 
             // imageList1
             // 
