@@ -53,33 +53,42 @@ namespace Veterinario2020
         //Guarda en la base de datos los valores modificados
         private void buttonGuardar_Click(object sender, EventArgs e)
         {
-            if (textBoxnombre.Text.Length>1 && textBoxchip.Text.Length>4 && textBoxespecie.Text.Length > 3 && textBoxraza.Text.Length > 2 && textBoxpropietario.Text.Length > 5 &&
-                    textBoxcolor.Text.Length > 2 )
+
+            if (!c.comprobarId("SELECT * FROM mascota WHERE n_chip='" + textBoxchip.Text + "';"))//Si ya hay un animal con ese chip sale mensaje de error
             {
-                String fecha = Convert.ToDateTime(dateTimePicker1.Value.ToString().Substring(0, 10)).ToString("yyyy-MM-dd");//Para que no de fallo al introducirlo en l base de datos
-                c.modificaTabla("UPDATE mascota SET nombre='" + textBoxnombre.Text + "', n_chip='" + textBoxchip.Text +
-                        "', especie = '" + textBoxespecie.Text + "', raza='" + textBoxraza.Text + "',propietario='" + textBoxpropietario.Text
-                        + "', color='" + textBoxcolor.Text + "', patologias='" + textBoxpat.Text +
-                        "', medicamentos='" + textBoxmed.Text + "', sexo='" + comboBox1.SelectedItem
-                        + "', esterilizado=" + checkBox1.Checked + ", f_nacimiento='" + fecha + "' WHERE n_chip = '" + chip + "';");
-                try
-                {//El admin puede llegar aquí desde la modificación de usuario o desde la lista de mascotas, en este ultimo caso este datagridview sera null
-                    aux.DataSource = c.obtenerDatos("SELECT n_chip AS Chip, nombre AS Nombre FROM mascota WHERE propietario='" + datosMascota.Rows[0]["propietario"].ToString() + "'; ");//Actualizamos el datagridview con las mascotasdel usuario
-                }
-                catch (Exception)
+                if (textBoxnombre.Text.Length > 1 && textBoxchip.Text.Length > 4 && textBoxespecie.Text.Length > 3 && textBoxraza.Text.Length > 2 && textBoxpropietario.Text.Length > 5 &&
+                    textBoxcolor.Text.Length > 2)
                 {
+                    String fecha = Convert.ToDateTime(dateTimePicker1.Value.ToString().Substring(0, 10)).ToString("yyyy-MM-dd");//Para que no de fallo al introducirlo en l base de datos
+                    c.modificaTabla("UPDATE mascota SET nombre='" + textBoxnombre.Text + "', n_chip='" + textBoxchip.Text +
+                            "', especie = '" + textBoxespecie.Text + "', raza='" + textBoxraza.Text + "',propietario='" + textBoxpropietario.Text
+                            + "', color='" + textBoxcolor.Text + "', patologias='" + textBoxpat.Text +
+                            "', medicamentos='" + textBoxmed.Text + "', sexo='" + comboBox1.SelectedItem
+                            + "', esterilizado=" + checkBox1.Checked + ", f_nacimiento='" + fecha + "' WHERE n_chip = '" + chip + "';");
+                    try
+                    {//El admin puede llegar aquí desde la modificación de usuario o desde la lista de mascotas, en este ultimo caso este datagridview sera null
+                        aux.DataSource = c.obtenerDatos("SELECT n_chip AS Chip, nombre AS Nombre FROM mascota WHERE propietario='" + datosMascota.Rows[0]["propietario"].ToString() + "'; ");//Actualizamos el datagridview con las mascotasdel usuario
+                    }
+                    catch (Exception)
+                    {
 
+                    }
+
+
+                    dglistaMascotas.DataSource = c.obtenerDatos("SELECT m.n_chip AS Chip, m.nombre AS Nombre, m.especie AS Especie, m.raza AS Raza, CONCAT(s.nombre, ' ', s.apellido) AS Propietario FROM `mascota` m, usuario s WHERE m.propietario = s.dni;");//Ponemos todass las mascotas
+                    MessageBox.Show("Cambios guardados", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Hide();
                 }
-
-                
-                dglistaMascotas.DataSource = c.obtenerDatos("SELECT m.n_chip AS Chip, m.nombre AS Nombre, m.especie AS Especie, m.raza AS Raza, CONCAT(s.nombre, ' ', s.apellido) AS Propietario FROM `mascota` m, usuario s WHERE m.propietario = s.dni;");//Ponemos todass las mascotas
-                MessageBox.Show("Cambios guardados", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.Hide();
+                else
+                {
+                    MessageBox.Show("Datos no válidos", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
             }
             else
             {
-                MessageBox.Show("Datos no válidos", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Chip ya registrado", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
+            
             
         }
 

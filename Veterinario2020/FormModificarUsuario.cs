@@ -52,22 +52,30 @@ namespace Veterinario2020
 
         private void buttonCambios_Click(object sender, EventArgs e)
         {
-            if (textBoxNombre.Text.Length>=2 && textBoxApellido.Text.Length>=2 && textBoxTelefono.Text.Length>6 && textBoxDir.Text.Length>6
-                && textBoxEmail.Text.Length>5)
+            if (!c.comprobarId("SELECT * FROM usuario WHERE dni='" + textBoxdni.Text.ToUpper() + "';"))//Si el dni ya está registrado sale mensaje de error
             {
-                c.modificaTabla("UPDATE usuario SET nombre='"+ textBoxNombre.Text +"', apellido='"+textBoxApellido.Text+
-                    "', telefono = '"+textBoxTelefono.Text+"', dni='"+textBoxdni.Text+"',direccion='"+textBoxDir.Text
-                    +"', email='"+textBoxEmail.Text+"' WHERE dni = '"+dni+"';");
+                if (textBoxNombre.Text.Length >= 2 && textBoxApellido.Text.Length >= 2 && textBoxTelefono.Text.Length > 6 && textBoxDir.Text.Length > 6
+                && textBoxEmail.Text.Length > 5)
+                {
+                    c.modificaTabla("UPDATE usuario SET nombre='" + textBoxNombre.Text + "', apellido='" + textBoxApellido.Text +
+                        "', telefono = '" + textBoxTelefono.Text + "', dni='" + textBoxdni.Text + "',direccion='" + textBoxDir.Text
+                        + "', email='" + textBoxEmail.Text + "' WHERE dni = '" + dni + "';");
 
-                MessageBox.Show("Cambios guardados", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                this.Hide();
-                aux.DataSource = c.obtenerDatos("SELECT dni AS DNI, nombre AS Nombre, apellido AS Apellido, email AS Email, telefono AS Telefono FROM usuario WHERE administrador=FALSE; ");//Actualizamos el datagridview con usuarios
-                dgmascotas.DataSource = c.obtenerDatos("SELECT m.n_chip AS Chip, m.nombre AS Nombre, m.especie AS Especie, m.raza AS Raza, CONCAT(s.nombre, ' ', s.apellido) AS Propietario FROM `mascota` m, usuario s WHERE m.propietario = s.dni;");//Actualizamos el datagridview de las mascotas
+                    MessageBox.Show("Cambios guardados", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Hide();
+                    aux.DataSource = c.obtenerDatos("SELECT dni AS DNI, nombre AS Nombre, apellido AS Apellido, email AS Email, telefono AS Telefono FROM usuario WHERE administrador=FALSE; ");//Actualizamos el datagridview con usuarios
+                    dgmascotas.DataSource = c.obtenerDatos("SELECT m.n_chip AS Chip, m.nombre AS Nombre, m.especie AS Especie, m.raza AS Raza, CONCAT(s.nombre, ' ', s.apellido) AS Propietario FROM `mascota` m, usuario s WHERE m.propietario = s.dni;");//Actualizamos el datagridview de las mascotas
+                }
+                else
+                {
+                    MessageBox.Show("Datos no válidos", "Información", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
             else
             {
-                MessageBox.Show("Datos no válidos", "Información", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("DNI ya registrado", "Información", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            
         }
 
         //Nos lleva a una ventana para confirmar el borrar al usuario

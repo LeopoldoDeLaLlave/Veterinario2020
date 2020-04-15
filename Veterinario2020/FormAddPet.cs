@@ -37,7 +37,7 @@ namespace Veterinario2020
         private void button1_Click(object sender, EventArgs e)
         {
 
-            if (!c.comprobarId("SELECT * FROM mascota WHERE n_chip='" + textBoxchip.Text + "';"))
+            if (!c.comprobarId("SELECT * FROM mascota WHERE n_chip='" + textBoxchip.Text + "';"))//Si ya hay un animal con ese chip sale mensaje de error
             {
                 if (textBoxchip.Text.Length > 5 && textBoxnombre.Text.Length > 1 && textBoxespecie.Text.Length > 1 && textBoxraza.Text.Length > 1 && textBoxcolor.Text.Length > 1 && comboBox1.Text.Length > 2)
                 {
