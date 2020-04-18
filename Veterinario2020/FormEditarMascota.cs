@@ -30,6 +30,7 @@ namespace Veterinario2020
             InitializeComponent();
             this.Text = datosMascota.Rows[0]["nombre"].ToString();
             ponerDatos();
+            dateTimePicker1.MaxDate = DateTime.Now;//Como máximo la fecha de nacimiento podrá ser hoy
         }
 
         /*
@@ -99,5 +100,6 @@ namespace Veterinario2020
             fcem.ShowDialog();
             this.Hide();
         }
+
     }
 }

@@ -31,6 +31,7 @@ namespace Veterinario2020
             todasMascotas = dg2;
             dni = d;
             InitializeComponent();
+            dateTimePicker1.MaxDate = DateTime.Now;//Como máximo la fecha de nacimiento podrá se hoy
         }
 
         //Añade la mascota en la base e datos

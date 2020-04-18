@@ -29,6 +29,10 @@ namespace Veterinario2020
             this.Text = datosUsuarios.Rows[0]["nombre"].ToString() + " " + datosUsuarios.Rows[0]["apellido"].ToString();//Ponemos el nombre del usuario de título del form
             dataGridView1.DataSource = c6.obtenerDatos("SELECT dni AS DNI, nombre AS Nombre, apellido AS Apellido, email AS Email, telefono AS Telefono FROM usuario WHERE administrador=FALSE; ");//Ponemos todos los usuarios
             dataGridView2.DataSource = c6.obtenerDatos("SELECT m.n_chip AS Chip, m.nombre AS Nombre, m.especie AS Especie, m.raza AS Raza, CONCAT(s.nombre, ' ', s.apellido) AS Propietario FROM `mascota` m, usuario s WHERE m.propietario = s.dni;");//Ponemos todos las mascotas
+
+            dateTimePickerCitas.MaxDate = DateTime.Now.AddMonths(3); //La fecha máxima de creación de cita es el tres meses después de la creación
+            dateTimePickerCitas.MinDate = DateTime.Now.AddDays(1); //La fecha mínima de creación de cita es el día siguiente a la fecha de creación
+            
         }
 
         private void formAdministrador_FormClosing(object sender, FormClosingEventArgs e)
@@ -83,6 +87,7 @@ namespace Veterinario2020
             
         }
 
+        //Se abren los datos de la mascota
         private void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             try
@@ -102,6 +107,28 @@ namespace Veterinario2020
         {
             FormAddUser fas = new FormAddUser(dataGridView1);
             fas.ShowDialog();
+        }
+
+        //Al pulsarlo, se crea una cita con los datos dados
+        private void button1_Click(object sender, EventArgs e)
+        {
+            if (dateTimePickerCitas.Value != null && comboBoxHoras.Text != "" && comboBoxMotivo.Text != "")//Si están rellenos los valores
+            {
+                String fecha = Convert.ToDateTime(dateTimePickerCitas.Value.ToString().Substring(0, 10)).ToString("yyyy-MM-dd");//Para que no de fallo al introducirlo en l base de datos
+                if (!c6.comprobarId("Select * FROM cita WHERE fecha ='"+fecha+"' AND motivo ='"+comboBoxMotivo.Text+"' AND hora ='"+comboBoxHoras.Text+"';"))//Si esa cita no existe ya
+                {
+                    c6.modificaTabla("INSERT INTO cita VALUES (NULL,'"+fecha+"', NULL,'"+comboBoxMotivo.Text+"', NULL, NULL, NULL,'"+comboBoxHoras.Text+"');");
+                    MessageBox.Show("Cita creada", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Cita ya existente", "Información", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            else
+            {
+                MessageBox.Show("Todos los campos deben estar completados", "Información", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

@@ -108,8 +108,8 @@ namespace Veterinario2020
 
 
         /*
- * Recibe el dni y la contraseña introducidos por el usuario y comprueba si coinciden
- */
+        * Recibe el dni y la contraseña introducidos por el usuario y comprueba si coinciden
+         */
         public void addUser(String nombre, String apellido, String dni, String email, String dir, String telefono, String pass)
         {
             //Cramos una variable con la fecha actual para guardarla en fecha de registro
@@ -142,7 +142,7 @@ namespace Veterinario2020
         }
 
         /*
-         * Recibe un id y devuelve true si está registrado
+         * Recibe un una consulta y si hay datos que coinciden devuelve true
         */
         public Boolean comprobarId(String str)
         {
