@@ -28,6 +28,8 @@ namespace Veterinario2020
         string motivo = "";//Motivo de la cita
         DataGridView aux = new DataGridView(); //guardaremos el datagridview usado para actualizarlo
         DataGridView citasFuturas = new DataGridView(); //Al reservar una cita actuaizamos las próximas citas
+        int bandera = 0;//si vale 0 ha sido llamado desde el formUsuarios, si vale 1 ha sido llamado dese formEditarUsuario
+        string dni = "";//Dni del propietario de la mascota
 
         /*
          * DataTable dm: todas las mascotas del usuario que está usando la aplicación
@@ -41,8 +43,12 @@ namespace Veterinario2020
          * DataGridView dg: datagridview usado
          * 
          * DataGridView dg2: datagridview con las próximas citas
+         * 
+         * int b:si vale 0 ha sido llamado desde el formUsuarios, si vale 1 ha sido llamado dese formEditarUsuario
+         * 
+         * string d: propietario de la mascota
          */
-        public FormElegirCita(DataTable dm, string f, string h, string mot, DataGridView dg, DataGridView dg2)
+        public FormElegirCita(DataTable dm, string f, string h, string mot, DataGridView dg, DataGridView dg2, int b, string d)
         {
             mascotas = dm;
             fecha = f;
@@ -50,6 +56,8 @@ namespace Veterinario2020
             motivo = mot;
             aux=dg;
             citasFuturas = dg2;
+            bandera = b;
+            dni = d;
 
 
             InitializeComponent();
@@ -103,9 +111,19 @@ namespace Veterinario2020
                 }
 
 
-                citasFuturas.DataSource = c4.obtenerDatos("SELECT n_cita AS Numero, DATE_FORMAT(c.fecha, '%Y-%m-%d') AS Fecha, hora AS Hora, m.nombre AS mascota, c.motivo AS Motivo FROM mascota m, cita c " +
+                if (bandera == 0)//Si ha sido llamado desde formusuario
+                {
+                    citasFuturas.DataSource = c4.obtenerDatos("SELECT n_cita AS Numero, DATE_FORMAT(c.fecha, '%Y-%m-%d') AS Fecha, hora AS Hora, m.nombre AS mascota, c.motivo AS Motivo FROM mascota m, cita c " +
                     "WHERE m.n_chip = c.chip_mascota AND m.propietario = '" + foundRows[0][1].ToString() + "' AND fecha>CURDATE()");//Actualizamos las próximas citas
+                }
+                else
+                {//Si ha sido llamado desde form modifica usuario
+                    citasFuturas.DataSource = c4.obtenerDatos("SELECT n_cita AS Numero, DATE_FORMAT(c.fecha, '%Y-%m-%d') AS Fecha, hora AS Hora, m.nombre AS mascota, c.motivo AS Motivo FROM mascota m, cita c " +
+                "WHERE m.n_chip = c.chip_mascota AND m.propietario = '" + dni + "' AND fecha>CURDATE()");//Actualizamos las próximas citas
+                }
                 
+
+
             }         
             else
             {

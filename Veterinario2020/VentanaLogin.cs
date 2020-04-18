@@ -69,5 +69,13 @@ namespace Veterinario2020
         {
             Application.Exit();
         }
+
+        //abre el form para registrarse como usuario
+        private void label3_Click(object sender, EventArgs e)
+        {
+            FormAddUser fas = new FormAddUser(null);
+            fas.ShowDialog();
+
+        }
     }
 }

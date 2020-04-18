@@ -111,6 +111,7 @@ namespace Veterinario2020
             }
         }
 
+        //Al pulsar se abre el form para añadir mascota
         private void buttonaddmascota_Click(object sender, EventArgs e)
         {
 
@@ -132,7 +133,7 @@ namespace Veterinario2020
             try
             {
                 FormElegirCita fec = new FormElegirCita((DataTable)(dataGridView1.DataSource), dataGridView2.Rows[e.RowIndex].Cells["Fecha"].Value.ToString(),
-                                                    dataGridView2.Rows[e.RowIndex].Cells["Hora"].Value.ToString(), "Revisión", dataGridView2, dataGridView6);
+                                                    dataGridView2.Rows[e.RowIndex].Cells["Hora"].Value.ToString(), "Revisión", dataGridView2, dataGridView6, 1, dni);
                 fec.ShowDialog();
             }
             catch
@@ -148,7 +149,7 @@ namespace Veterinario2020
             try
             {
                 FormElegirCita fec = new FormElegirCita((DataTable)(dataGridView1.DataSource), dataGridView3.Rows[e.RowIndex].Cells["Fecha"].Value.ToString(),
-                                                    dataGridView3.Rows[e.RowIndex].Cells["Hora"].Value.ToString(), "Vacuna", dataGridView3, dataGridView6);
+                                                    dataGridView3.Rows[e.RowIndex].Cells["Hora"].Value.ToString(), "Vacuna", dataGridView3, dataGridView6, 1, dni);
                 fec.ShowDialog();
 
             }
@@ -167,7 +168,7 @@ namespace Veterinario2020
             try
             {
                 FormElegirCita fec = new FormElegirCita((DataTable)(dataGridView1.DataSource), dataGridView4.Rows[e.RowIndex].Cells["Fecha"].Value.ToString(),
-                                                    dataGridView4.Rows[e.RowIndex].Cells["Hora"].Value.ToString(), "Peluquería", dataGridView4, dataGridView6);
+                                                    dataGridView4.Rows[e.RowIndex].Cells["Hora"].Value.ToString(), "Peluquería", dataGridView4, dataGridView6, 1, dni);
                 fec.ShowDialog();
 
             }
@@ -185,7 +186,7 @@ namespace Veterinario2020
             try
             {
                 FormElegirCita fec = new FormElegirCita((DataTable)(dataGridView1.DataSource), dataGridView5.Rows[e.RowIndex].Cells["Fecha"].Value.ToString(),
-                                                    dataGridView5.Rows[e.RowIndex].Cells["Hora"].Value.ToString(), "Otros", dataGridView5, dataGridView6);
+                                                    dataGridView5.Rows[e.RowIndex].Cells["Hora"].Value.ToString(), "Otros", dataGridView5, dataGridView6, 1, dni);
                 fec.ShowDialog();
             }
             catch

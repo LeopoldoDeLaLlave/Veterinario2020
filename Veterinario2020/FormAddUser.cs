@@ -37,11 +37,21 @@ namespace Veterinario2020
 
 
                     c.addUser(textBoxNombre.Text, textBoxApellido.Text, textBoxdni.Text.ToUpper(), textBoxEmail.Text, textBoxDir.Text, textBoxTelefono.Text, myHash);
-                    tablaUsuarios.DataSource = c.obtenerDatos("SELECT dni AS DNI, nombre AS Nombre, apellido AS Apellido, email AS Email, telefono AS Telefono FROM usuario WHERE administrador=FALSE; ");//Actualizamos la tabala con el nuevo usuario
+                    try//Si es un usuario registrándose a sí mismo el datagridview es null y da fallo
+                    {
+                        tablaUsuarios.DataSource = c.obtenerDatos("SELECT dni AS DNI, nombre AS Nombre, apellido AS Apellido, email AS Email, telefono AS Telefono FROM usuario WHERE administrador=FALSE; ");//Actualizamos la tabala con el nuevo usuario
+                    }
+                    catch
+                    {
+
+                    }
+                    
                     MessageBox.Show("Usuario añadido ", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+                    this.Hide();
                     //Vacíamos los datos introducidos anteriormente
 
+                    textBoxEmail.Text = "";
                     textBoxNombre.Text = "";
                     textBoxApellido.Text = "";
                     textBoxdni.Text = "";
@@ -58,12 +68,14 @@ namespace Veterinario2020
             else
             {
                 MessageBox.Show("Ese DNI ya está registrado", "Información", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                //Vacíamos los datos introducidos anteriormente
                 textBoxNombre.Text = "";
                 textBoxApellido.Text = "";
                 textBoxdni.Text = "";
                 textBoxDir.Text = "";
                 textBoxTelefono.Text = "";
                 textBoxPass.Text = "";
+                textBoxEmail.Text = "";
             }
                 
 

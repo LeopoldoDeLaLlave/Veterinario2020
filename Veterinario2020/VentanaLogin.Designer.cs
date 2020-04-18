@@ -35,6 +35,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.buttonLog = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.label3 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -96,12 +97,25 @@
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
             // 
+            // label3
+            // 
+            this.label3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label3.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.label3.Location = new System.Drawing.Point(225, 691);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(90, 24);
+            this.label3.TabIndex = 6;
+            this.label3.Text = "Registrarse";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.label3.Click += new System.EventHandler(this.label3_Click);
+            // 
             // VentanaLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
-            this.ClientSize = new System.Drawing.Size(558, 733);
+            this.ClientSize = new System.Drawing.Size(558, 749);
+            this.Controls.Add(this.label3);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.buttonLog);
             this.Controls.Add(this.textBoxContrasena);
@@ -128,5 +142,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button buttonLog;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label3;
     }
 }
