@@ -59,6 +59,7 @@
             this.ClientSize = new System.Drawing.Size(473, 239);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormConfirmarEliminarMascota";
             this.Text = "Confirmar";

@@ -77,5 +77,38 @@ namespace Veterinario2020
             fas.ShowDialog();
 
         }
+
+        //Se encarga de recoger el nombre y la contraseña introducida por el usuario y comprobar si coinciden
+        //En tal caso cierra VentanaLogin y abre FormUsuario o FormAdministrador en función de quien haya introducido los datos.
+        //Si los datos introducidos son incorrectos salta un aviso
+        private void VentanaLogin_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                BotonLogin_Click(sender, e);
+            }
+        }
+
+        //Se encarga de recoger el nombre y la contraseña introducida por el usuario y comprobar si coinciden
+        //En tal caso cierra VentanaLogin y abre FormUsuario o FormAdministrador en función de quien haya introducido los datos.
+        //Si los datos introducidos son incorrectos salta un aviso
+        private void textBoxUsuario_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                BotonLogin_Click(sender, e);
+            }
+        }
+
+        //Se encarga de recoger el nombre y la contraseña introducida por el usuario y comprobar si coinciden
+        //En tal caso cierra VentanaLogin y abre FormUsuario o FormAdministrador en función de quien haya introducido los datos.
+        //Si los datos introducidos son incorrectos salta un aviso
+        private void textBoxContrasena_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                BotonLogin_Click(sender, e);
+            }
+        }
     }
 }

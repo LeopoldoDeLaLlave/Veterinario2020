@@ -55,6 +55,7 @@
             this.textBoxUsuario.Name = "textBoxUsuario";
             this.textBoxUsuario.Size = new System.Drawing.Size(399, 22);
             this.textBoxUsuario.TabIndex = 1;
+            this.textBoxUsuario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxUsuario_KeyPress);
             // 
             // textBoxContrasena
             // 
@@ -63,6 +64,7 @@
             this.textBoxContrasena.PasswordChar = '*';
             this.textBoxContrasena.Size = new System.Drawing.Size(399, 22);
             this.textBoxContrasena.TabIndex = 3;
+            this.textBoxContrasena.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxContrasena_KeyPress);
             // 
             // label2
             // 
@@ -122,12 +124,13 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.textBoxUsuario);
             this.Controls.Add(this.label1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimizeBox = false;
             this.Name = "VentanaLogin";
             this.Text = "Emerald";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.VentanaLogin_FormClosing);
+            this.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.VentanaLogin_KeyPress);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
