@@ -118,7 +118,7 @@ namespace Veterinario2020
 
             try
             {
-                //"INSERT INTO profesor VALUES (@dni, FALSE, @nombre, @apellido, @email, @telefono, @dir,'"+fecha+"', @pass), " String nombre, String apellido, String dni, String email, String dir, String telefono, String pass
+                
                 conexion.Open();
                 MySqlCommand consulta =
                     new MySqlCommand("INSERT INTO usuario VALUES (@dni, FALSE, @nombre, @apellido, @email, @telefono, @dir,'" + fecha + "', @pass)", conexion);

@@ -47,6 +47,9 @@ namespace Veterinario2020
 
             dataGridView6.DataSource = c.obtenerDatos("SELECT n_cita AS Numero, DATE_FORMAT(c.fecha, '%Y-%m-%d') AS Fecha, hora AS Hora, m.nombre AS mascota, c.motivo AS Motivo FROM mascota m, cita c " +
                     "WHERE m.n_chip = c.chip_mascota AND m.propietario = '" + dni + "' AND fecha>CURDATE()");//Ponemos las próximas citas
+
+            dataGridView7.DataSource = c.obtenerDatos("SELECT m.nombre AS mascota, c.n_cita AS Numero, DATE_FORMAT(c.fecha, '%Y-%m-%d') AS Fecha, hora AS Hora, c.motivo AS Motivo, c.tipo_vacuna AS Vacuna,c.comentarios AS Comentarios," +
+                "c.precio AS Precio FROM mascota m, cita c WHERE m.n_chip = c.chip_mascota AND m.propietario = '" + dni + "' AND fecha<CURDATE()");//Ponemos las citas que ha tenido un usuario
         }
 
 
@@ -216,6 +219,20 @@ namespace Veterinario2020
 
         }
 
+        //Al pulsar sobre una celda abre un form con información modificable de esa cita
+        private void dataGridView7_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            try//or si da el el cabecero de la tabla
+            {
+                FormInfoCita fic = new FormInfoCita(dataGridView7, e.RowIndex, dni);
+                fic.ShowDialog();
+            }
+            catch
+            {
+
+            }
+            
+        }
 
     }
 }

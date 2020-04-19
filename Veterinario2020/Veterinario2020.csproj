@@ -72,6 +72,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Conexion.cs" />
+    <Compile Include="FormInfoCita.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormInfoCita.Designer.cs">
+      <DependentUpon>FormInfoCita.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormChangePass.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -157,6 +163,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FormInfoCita.resx">
+      <DependentUpon>FormInfoCita.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormAddPet.resx">
       <DependentUpon>FormAddPet.cs</DependentUpon>
     </EmbeddedResource>
