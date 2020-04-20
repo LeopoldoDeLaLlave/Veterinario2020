@@ -25,6 +25,7 @@ namespace Veterinario2020
         public VentanaLogin()
         {
             InitializeComponent();
+           
         }
 
         //Se encarga de recoger el nombre y la contraseña introducida por el usuario y comprobar si coinciden
@@ -108,6 +109,48 @@ namespace Veterinario2020
             if (e.KeyChar == (char)Keys.Enter)
             {
                 BotonLogin_Click(sender, e);
+            }
+        }
+
+        //Al pulsar si pone "usuario(DNI)" se vacíacy se oscurece la fuente
+        private void textBoxUsuario_Enter(object sender, EventArgs e)
+        {
+            if (textBoxUsuario.Text== "USUARIO(DNI)")
+            {
+                textBoxUsuario.Text = "";
+                textBoxUsuario.ForeColor = Color.FromArgb(15, 15, 15);
+            }
+        }
+
+        //Al salir del textbox, si no hay nada escrito se vuelve a poner usuario
+        private void textBoxUsuario_Leave(object sender, EventArgs e)
+        {
+            if (textBoxUsuario.Text == "")
+            {
+                textBoxUsuario.Text = "USUARIO(DNI)";
+                textBoxUsuario.ForeColor = Color.FromArgb(64,64,64);
+            }
+        }
+
+        //AL pulsar sobre se borra la palabra contraseña y se escribe con asteriscos
+        private void textBoxContrasena_Enter(object sender, EventArgs e)
+        {
+            textBoxContrasena.PasswordChar = '*';
+            if (textBoxContrasena.Text=="CONTRASEÑA")
+            {
+                textBoxContrasena.Text = "";
+                textBoxContrasena.ForeColor = Color.FromArgb(15, 15, 15);
+            }
+        }
+
+        //Al soltar, si se ha quedado vací, se vuelve a poner contraseña
+        private void textBoxContrasena_Leave(object sender, EventArgs e)
+        {
+            if (textBoxContrasena.Text == "")
+            {
+                textBoxContrasena.PasswordChar = '\0';
+                textBoxContrasena.Text = "CONTRASEÑA";
+                textBoxContrasena.ForeColor = Color.FromArgb(64, 64, 64);
             }
         }
     }

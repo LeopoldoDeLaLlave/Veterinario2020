@@ -44,7 +44,7 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(38, 64);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(199, 29);
+            this.label1.Size = new System.Drawing.Size(230, 29);
             this.label1.TabIndex = 0;
             this.label1.Text = "Contraseña actual:";
             // 
@@ -53,7 +53,7 @@
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(38, 206);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(230, 29);
+            this.label2.Size = new System.Drawing.Size(250, 29);
             this.label2.TabIndex = 1;
             this.label2.Text = "Confirmar contraseña:";
             // 
@@ -62,7 +62,7 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(38, 139);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(199, 29);
+            this.label3.Size = new System.Drawing.Size(230, 29);
             this.label3.TabIndex = 2;
             this.label3.Text = "Nueva contraseña:";
             // 
@@ -78,7 +78,7 @@
             // 
             // textBoxActual
             // 
-            this.textBoxActual.Location = new System.Drawing.Point(274, 66);
+            this.textBoxActual.Location = new System.Drawing.Point(318, 64);
             this.textBoxActual.Name = "textBoxActual";
             this.textBoxActual.Size = new System.Drawing.Size(292, 22);
             this.textBoxActual.TabIndex = 4;
@@ -86,7 +86,7 @@
             // 
             // textBoxConfirmar
             // 
-            this.textBoxConfirmar.Location = new System.Drawing.Point(274, 208);
+            this.textBoxConfirmar.Location = new System.Drawing.Point(318, 208);
             this.textBoxConfirmar.Name = "textBoxConfirmar";
             this.textBoxConfirmar.Size = new System.Drawing.Size(292, 22);
             this.textBoxConfirmar.TabIndex = 5;
@@ -94,7 +94,7 @@
             // 
             // textBoxNueva
             // 
-            this.textBoxNueva.Location = new System.Drawing.Point(274, 139);
+            this.textBoxNueva.Location = new System.Drawing.Point(318, 141);
             this.textBoxNueva.Name = "textBoxNueva";
             this.textBoxNueva.Size = new System.Drawing.Size(292, 22);
             this.textBoxNueva.TabIndex = 6;
@@ -114,7 +114,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(255)))), ((int)(((byte)(192)))));
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.textBoxNueva);
@@ -124,9 +124,12 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FormChangePass";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cambiar contraseña";
             this.ResumeLayout(false);
             this.PerformLayout();
