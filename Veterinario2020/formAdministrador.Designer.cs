@@ -37,7 +37,7 @@
             this.textBoxnmascota = new System.Windows.Forms.TextBox();
             this.textBoxchip = new System.Windows.Forms.TextBox();
             this.buttonChip = new System.Windows.Forms.Button();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dgTodasMascotas = new System.Windows.Forms.DataGridView();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.buttonAddUser = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -45,7 +45,7 @@
             this.textBoxNombre = new System.Windows.Forms.TextBox();
             this.textBoxdni = new System.Windows.Forms.TextBox();
             this.buttonbdni = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgTodosUsuarios = new System.Windows.Forms.DataGridView();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.comboBoxMotivo = new System.Windows.Forms.ComboBox();
@@ -57,9 +57,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgTodasMascotas)).BeginInit();
             this.tabPage1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgTodosUsuarios)).BeginInit();
             this.tabControl1.SuspendLayout();
             this.tabPage3.SuspendLayout();
             this.SuspendLayout();
@@ -80,7 +80,7 @@
             this.tabPage2.Controls.Add(this.textBoxnmascota);
             this.tabPage2.Controls.Add(this.textBoxchip);
             this.tabPage2.Controls.Add(this.buttonChip);
-            this.tabPage2.Controls.Add(this.dataGridView2);
+            this.tabPage2.Controls.Add(this.dgTodasMascotas);
             this.tabPage2.ImageIndex = 1;
             this.tabPage2.Location = new System.Drawing.Point(4, 39);
             this.tabPage2.Name = "tabPage2";
@@ -135,26 +135,26 @@
             // 
             // dataGridView2
             // 
-            this.dataGridView2.AllowUserToAddRows = false;
-            this.dataGridView2.AllowUserToDeleteRows = false;
-            this.dataGridView2.AllowUserToResizeColumns = false;
-            this.dataGridView2.AllowUserToResizeRows = false;
-            this.dataGridView2.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.dataGridView2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(224, 258);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.ReadOnly = true;
-            this.dataGridView2.RowHeadersWidth = 51;
-            this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dataGridView2.ShowCellErrors = false;
-            this.dataGridView2.ShowCellToolTips = false;
-            this.dataGridView2.ShowEditingIcon = false;
-            this.dataGridView2.ShowRowErrors = false;
-            this.dataGridView2.Size = new System.Drawing.Size(770, 231);
-            this.dataGridView2.TabIndex = 9;
-            this.dataGridView2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellClick);
+            this.dgTodasMascotas.AllowUserToAddRows = false;
+            this.dgTodasMascotas.AllowUserToDeleteRows = false;
+            this.dgTodasMascotas.AllowUserToResizeColumns = false;
+            this.dgTodasMascotas.AllowUserToResizeRows = false;
+            this.dgTodasMascotas.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.dgTodasMascotas.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgTodasMascotas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgTodasMascotas.Location = new System.Drawing.Point(224, 258);
+            this.dgTodasMascotas.Name = "dataGridView2";
+            this.dgTodasMascotas.ReadOnly = true;
+            this.dgTodasMascotas.RowHeadersWidth = 51;
+            this.dgTodasMascotas.RowTemplate.Height = 24;
+            this.dgTodasMascotas.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dgTodasMascotas.ShowCellErrors = false;
+            this.dgTodasMascotas.ShowCellToolTips = false;
+            this.dgTodasMascotas.ShowEditingIcon = false;
+            this.dgTodasMascotas.ShowRowErrors = false;
+            this.dgTodasMascotas.Size = new System.Drawing.Size(770, 231);
+            this.dgTodasMascotas.TabIndex = 9;
+            this.dgTodasMascotas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellClick);
             // 
             // tabPage1
             // 
@@ -165,7 +165,7 @@
             this.tabPage1.Controls.Add(this.textBoxNombre);
             this.tabPage1.Controls.Add(this.textBoxdni);
             this.tabPage1.Controls.Add(this.buttonbdni);
-            this.tabPage1.Controls.Add(this.dataGridView1);
+            this.tabPage1.Controls.Add(this.dgTodosUsuarios);
             this.tabPage1.ImageIndex = 2;
             this.tabPage1.Location = new System.Drawing.Point(4, 39);
             this.tabPage1.Name = "tabPage1";
@@ -230,26 +230,26 @@
             // 
             // dataGridView1
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AllowUserToResizeColumns = false;
-            this.dataGridView1.AllowUserToResizeRows = false;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(197, 249);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dataGridView1.ShowCellErrors = false;
-            this.dataGridView1.ShowCellToolTips = false;
-            this.dataGridView1.ShowEditingIcon = false;
-            this.dataGridView1.ShowRowErrors = false;
-            this.dataGridView1.Size = new System.Drawing.Size(768, 202);
-            this.dataGridView1.TabIndex = 3;
-            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            this.dgTodosUsuarios.AllowUserToAddRows = false;
+            this.dgTodosUsuarios.AllowUserToDeleteRows = false;
+            this.dgTodosUsuarios.AllowUserToResizeColumns = false;
+            this.dgTodosUsuarios.AllowUserToResizeRows = false;
+            this.dgTodosUsuarios.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.dgTodosUsuarios.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgTodosUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgTodosUsuarios.Location = new System.Drawing.Point(197, 249);
+            this.dgTodosUsuarios.Name = "dataGridView1";
+            this.dgTodosUsuarios.ReadOnly = true;
+            this.dgTodosUsuarios.RowHeadersWidth = 51;
+            this.dgTodosUsuarios.RowTemplate.Height = 24;
+            this.dgTodosUsuarios.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dgTodosUsuarios.ShowCellErrors = false;
+            this.dgTodosUsuarios.ShowCellToolTips = false;
+            this.dgTodosUsuarios.ShowEditingIcon = false;
+            this.dgTodosUsuarios.ShowRowErrors = false;
+            this.dgTodosUsuarios.Size = new System.Drawing.Size(768, 202);
+            this.dgTodosUsuarios.TabIndex = 3;
+            this.dgTodosUsuarios.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // tabControl1
             // 
@@ -394,10 +394,10 @@
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.formAdministrador_FormClosing);
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgTodasMascotas)).EndInit();
             this.tabPage1.ResumeLayout(false);
             this.tabPage1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgTodosUsuarios)).EndInit();
             this.tabControl1.ResumeLayout(false);
             this.tabPage3.ResumeLayout(false);
             this.ResumeLayout(false);
@@ -412,7 +412,7 @@
         private System.Windows.Forms.TextBox textBoxnmascota;
         private System.Windows.Forms.TextBox textBoxchip;
         private System.Windows.Forms.Button buttonChip;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView dgTodasMascotas;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.Button buttonAddUser;
         private System.Windows.Forms.Label label1;
@@ -420,7 +420,7 @@
         private System.Windows.Forms.TextBox textBoxNombre;
         private System.Windows.Forms.TextBox textBoxdni;
         private System.Windows.Forms.Button buttonbdni;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgTodosUsuarios;
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage3;
         private System.Windows.Forms.Button button1;

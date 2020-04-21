@@ -112,7 +112,7 @@
             // textBoxNombre
             // 
             this.textBoxNombre.Location = new System.Drawing.Point(152, 53);
-            this.textBoxNombre.MaxLength = 30;
+            this.textBoxNombre.MaxLength = 20;
             this.textBoxNombre.Name = "textBoxNombre";
             this.textBoxNombre.Size = new System.Drawing.Size(289, 22);
             this.textBoxNombre.TabIndex = 7;
@@ -136,7 +136,7 @@
             // textBoxPass
             // 
             this.textBoxPass.Location = new System.Drawing.Point(202, 260);
-            this.textBoxPass.MaxLength = 30;
+            this.textBoxPass.MaxLength = 20;
             this.textBoxPass.Name = "textBoxPass";
             this.textBoxPass.Size = new System.Drawing.Size(298, 22);
             this.textBoxPass.TabIndex = 10;
@@ -153,7 +153,7 @@
             // textBoxApellido
             // 
             this.textBoxApellido.Location = new System.Drawing.Point(640, 53);
-            this.textBoxApellido.MaxLength = 50;
+            this.textBoxApellido.MaxLength = 20;
             this.textBoxApellido.Name = "textBoxApellido";
             this.textBoxApellido.Size = new System.Drawing.Size(318, 22);
             this.textBoxApellido.TabIndex = 12;

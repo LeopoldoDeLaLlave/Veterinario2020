@@ -20,11 +20,18 @@ namespace Veterinario2020
 
         Conexion c = new Conexion();
 
-        String dni = "";
+        String dni = "";//Dni del cliente al que se le añade la mascota
 
         DataGridView todasMascotas = new DataGridView();
         DataGridView mascotasUsuario = new DataGridView();
 
+        /*
+         * String d: Dni del cliente al que se le añade la mascota
+         * 
+         * DataGridView dg1: datagridview con los datos de las mascotas del usuario
+         * 
+         * DataGridView dg2:datagridview con los datos de todas las mascotas registradas
+         */
         public FormAddPet(String d, DataGridView dg1, DataGridView dg2)
         {
             mascotasUsuario = dg1;
@@ -40,8 +47,8 @@ namespace Veterinario2020
 
             if (!c.comprobarId("SELECT * FROM mascota WHERE n_chip='" + textBoxchip.Text + "';"))//Si ya hay un animal con ese chip sale mensaje de error
             {
-                if (textBoxchip.Text.Length > 5 && textBoxnombre.Text.Length > 1 && textBoxespecie.Text.Length > 1 && textBoxraza.Text.Length > 1 && textBoxcolor.Text.Length > 1 && comboBox1.Text.Length > 2)
-                {
+                if (textBoxchip.Text.Length > 4 && textBoxnombre.Text.Length > 1 && textBoxespecie.Text.Length > 1 && textBoxraza.Text.Length > 1 && textBoxcolor.Text.Length > 1 && comboBox1.Text.Length > 2)
+                {//Los datos tienen un tamaño mínimo
                     String fecha = Convert.ToDateTime(dateTimePicker1.Value.ToString().Substring(0, 10)).ToString("yyyy-MM-dd");//Para que no de fallo al introducirlo en l base de datos
                     c.modificaTabla("INSERT INTO mascota VALUES('" + textBoxchip.Text + "','" + dni + "','" + textBoxnombre.Text + "','" + textBoxespecie.Text
                         + "','" + textBoxraza.Text + "','" + textBoxcolor.Text + "','" + checkBox1.Checked + "', '" + textBoxpat.Text + "','" + textBoxmed.Text + "','" + fecha + "','" + comboBox1.Text + "')");

@@ -108,7 +108,7 @@ namespace Veterinario2020
 
 
         /*
-        * Recibe el dni y la contraseña introducidos por el usuario y comprueba si coinciden
+        * Recibe datos para añadir un nuevo usuario
          */
         public void addUser(String nombre, String apellido, String dni, String email, String dir, String telefono, String pass)
         {

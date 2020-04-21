@@ -79,6 +79,7 @@
             // textBoxActual
             // 
             this.textBoxActual.Location = new System.Drawing.Point(318, 64);
+            this.textBoxActual.MaxLength = 20;
             this.textBoxActual.Name = "textBoxActual";
             this.textBoxActual.Size = new System.Drawing.Size(292, 22);
             this.textBoxActual.TabIndex = 4;
@@ -87,6 +88,7 @@
             // textBoxConfirmar
             // 
             this.textBoxConfirmar.Location = new System.Drawing.Point(318, 208);
+            this.textBoxConfirmar.MaxLength = 20;
             this.textBoxConfirmar.Name = "textBoxConfirmar";
             this.textBoxConfirmar.Size = new System.Drawing.Size(292, 22);
             this.textBoxConfirmar.TabIndex = 5;
@@ -95,6 +97,7 @@
             // textBoxNueva
             // 
             this.textBoxNueva.Location = new System.Drawing.Point(318, 141);
+            this.textBoxNueva.MaxLength = 20;
             this.textBoxNueva.Name = "textBoxNueva";
             this.textBoxNueva.Size = new System.Drawing.Size(292, 22);
             this.textBoxNueva.TabIndex = 6;

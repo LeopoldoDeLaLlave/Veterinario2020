@@ -21,8 +21,15 @@ namespace Veterinario2020
 
         public DataTable datosMascota = new DataTable();//Aquí guardamos los datos de la mascota
         string nombrePropietario = "";
-        int indice = 0;
+        int indice = 0;//Posición que ocupa la mascota en la lista de mascotas
 
+        /*
+         * int im: Posición que ocupa la mascota en la lista de mascotas
+         * 
+         * DataTable dt: Aquí guardamos los datos de la mascota
+         * 
+         * String nombre: Nombre del propietario de la mascota
+         */
         public FormDatosMascota(int im, DataTable dt, String nombre)
         {
             datosMascota = dt;
@@ -34,7 +41,7 @@ namespace Veterinario2020
 
             dataGridView1.DataSource = c3.obtenerDatos("SELECT DATE_FORMAT(fecha, '%Y-%m-%d') AS Fecha, tipo_vacuna AS Vacuna  FROM cita WHERE `chip_mascota`='" +
                 datosMascota.Rows[indice]["n_chip"].ToString() +
-                    "' AND motivo = 'Vacuna' AND tipo_vacuna IS NOT NULL");
+                    "' AND motivo = 'Vacuna' AND tipo_vacuna IS NOT NULL");//Ponemos las vacunas en un datagridview
         }
 
 

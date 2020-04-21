@@ -86,7 +86,7 @@ namespace Veterinario2020
                 DataRow[] foundRows;
                 foundRows = mascotas.Select("nombre = '" + comboBox1.Text + "'");//Datos de la mascota seleccionada
                 c4.modificaTabla("UPDATE cita SET chip_mascota = '" + foundRows[0][0].ToString() + "' where fecha='" + fecha + "' AND hora='" + hora + "'" +
-                    "AND motivo = '" + motivo + "'");
+                    "AND motivo = '" + motivo + "';");
 
                 this.Hide();
 
@@ -99,15 +99,15 @@ namespace Veterinario2020
                 }
                 else if (String.Compare(motivo, "Vacuna") == 0)
                 {
-                    aux.DataSource = c4.obtenerDatos("SELECT DATE_FORMAT(fecha, '%Y-%m-%d') AS Fecha, hora AS Hora FROM cita  WHERE chip_mascota IS NULL AND motivo = 'Vacuna'");//Ponemos las revisiones libres
+                    aux.DataSource = c4.obtenerDatos("SELECT DATE_FORMAT(fecha, '%Y-%m-%d') AS Fecha, hora AS Hora FROM cita  WHERE chip_mascota IS NULL AND motivo = 'Vacuna'");//Ponemos las vacunas libres
                 }
                 else if(String.Compare(motivo, "Peluquería") == 0)
                 {
-                    aux.DataSource = c4.obtenerDatos("SELECT DATE_FORMAT(fecha, '%Y-%m-%d') AS Fecha, hora AS Hora FROM cita  WHERE chip_mascota IS NULL AND motivo = 'Peluquería'");//Ponemos las revisiones libres
+                    aux.DataSource = c4.obtenerDatos("SELECT DATE_FORMAT(fecha, '%Y-%m-%d') AS Fecha, hora AS Hora FROM cita  WHERE chip_mascota IS NULL AND motivo = 'Peluquería'");//Ponemos la peluquería libre
                 }
                 else if(String.Compare(motivo, "Otros") == 0)
                 {
-                    aux.DataSource = c4.obtenerDatos("SELECT DATE_FORMAT(fecha, '%Y-%m-%d') AS Fecha, hora AS Hora FROM cita  WHERE chip_mascota IS NULL AND motivo = 'Otros'");//Ponemos las revisiones libres
+                    aux.DataSource = c4.obtenerDatos("SELECT DATE_FORMAT(fecha, '%Y-%m-%d') AS Fecha, hora AS Hora FROM cita  WHERE chip_mascota IS NULL AND motivo = 'Otros'");//Ponemos otros libres
                 }
 
 

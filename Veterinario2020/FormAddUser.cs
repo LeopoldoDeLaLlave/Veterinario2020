@@ -19,7 +19,11 @@ namespace Veterinario2020
     public partial class FormAddUser : Form
     {
         Conexion c = new Conexion();
-        DataGridView tablaUsuarios = new DataGridView();
+        DataGridView tablaUsuarios = new DataGridView();//Datagridview con todos los usuarios
+
+        /*
+         * DataGridView dg: Datagridview con todos los usuarios
+         */
         public FormAddUser(DataGridView dg)
         {
             tablaUsuarios = dg;

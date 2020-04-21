@@ -147,6 +147,7 @@
             // textBoxnombre
             // 
             this.textBoxnombre.Location = new System.Drawing.Point(137, 43);
+            this.textBoxnombre.MaxLength = 15;
             this.textBoxnombre.Name = "textBoxnombre";
             this.textBoxnombre.Size = new System.Drawing.Size(272, 22);
             this.textBoxnombre.TabIndex = 34;
@@ -154,6 +155,7 @@
             // textBoxespecie
             // 
             this.textBoxespecie.Location = new System.Drawing.Point(137, 116);
+            this.textBoxespecie.MaxLength = 20;
             this.textBoxespecie.Name = "textBoxespecie";
             this.textBoxespecie.Size = new System.Drawing.Size(272, 22);
             this.textBoxespecie.TabIndex = 35;
@@ -161,6 +163,7 @@
             // textBoxcolor
             // 
             this.textBoxcolor.Location = new System.Drawing.Point(111, 191);
+            this.textBoxcolor.MaxLength = 30;
             this.textBoxcolor.Name = "textBoxcolor";
             this.textBoxcolor.Size = new System.Drawing.Size(272, 22);
             this.textBoxcolor.TabIndex = 36;
@@ -168,6 +171,7 @@
             // textBoxmed
             // 
             this.textBoxmed.Location = new System.Drawing.Point(199, 256);
+            this.textBoxmed.MaxLength = 100;
             this.textBoxmed.Name = "textBoxmed";
             this.textBoxmed.Size = new System.Drawing.Size(262, 22);
             this.textBoxmed.TabIndex = 37;
@@ -175,6 +179,7 @@
             // textBoxpat
             // 
             this.textBoxpat.Location = new System.Drawing.Point(158, 384);
+            this.textBoxpat.MaxLength = 100;
             this.textBoxpat.Name = "textBoxpat";
             this.textBoxpat.Size = new System.Drawing.Size(672, 22);
             this.textBoxpat.TabIndex = 38;
@@ -182,6 +187,7 @@
             // textBoxchip
             // 
             this.textBoxchip.Location = new System.Drawing.Point(594, 43);
+            this.textBoxchip.MaxLength = 15;
             this.textBoxchip.Name = "textBoxchip";
             this.textBoxchip.Size = new System.Drawing.Size(194, 22);
             this.textBoxchip.TabIndex = 39;
@@ -189,6 +195,7 @@
             // textBoxraza
             // 
             this.textBoxraza.Location = new System.Drawing.Point(574, 116);
+            this.textBoxraza.MaxLength = 20;
             this.textBoxraza.Name = "textBoxraza";
             this.textBoxraza.Size = new System.Drawing.Size(256, 22);
             this.textBoxraza.TabIndex = 40;
@@ -196,6 +203,7 @@
             // textBoxpropietario
             // 
             this.textBoxpropietario.Location = new System.Drawing.Point(615, 190);
+            this.textBoxpropietario.MaxLength = 20;
             this.textBoxpropietario.Name = "textBoxpropietario";
             this.textBoxpropietario.Size = new System.Drawing.Size(215, 22);
             this.textBoxpropietario.TabIndex = 41;

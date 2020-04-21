@@ -59,7 +59,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.label9 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgHistorialCitas = new System.Windows.Forms.DataGridView();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.tabControl2 = new System.Windows.Forms.TabControl();
             this.tabPage4 = new System.Windows.Forms.TabPage();
@@ -67,28 +67,28 @@
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.Revisiones = new System.Windows.Forms.Label();
-            this.dataGridView5 = new System.Windows.Forms.DataGridView();
-            this.dataGridView4 = new System.Windows.Forms.DataGridView();
-            this.dataGridView3 = new System.Windows.Forms.DataGridView();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.dgOtrosLibres = new System.Windows.Forms.DataGridView();
+            this.dgPeluqueriaLibre = new System.Windows.Forms.DataGridView();
+            this.dgVacunasLibres = new System.Windows.Forms.DataGridView();
+            this.dgRevisionesLibres = new System.Windows.Forms.DataGridView();
             this.tabPage5 = new System.Windows.Forms.TabPage();
             this.label13 = new System.Windows.Forms.Label();
-            this.dataGridView6 = new System.Windows.Forms.DataGridView();
+            this.dgProxCitas = new System.Windows.Forms.DataGridView();
             this.imageList2 = new System.Windows.Forms.ImageList(this.components);
             this.imageList1 = new System.Windows.Forms.ImageList(this.components);
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgHistorialCitas)).BeginInit();
             this.tabPage3.SuspendLayout();
             this.tabControl2.SuspendLayout();
             this.tabPage4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgOtrosLibres)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgPeluqueriaLibre)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgVacunasLibres)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgRevisionesLibres)).BeginInit();
             this.tabPage5.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgProxCitas)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -384,7 +384,7 @@
             // 
             this.tabPage2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.tabPage2.Controls.Add(this.label9);
-            this.tabPage2.Controls.Add(this.dataGridView1);
+            this.tabPage2.Controls.Add(this.dgHistorialCitas);
             this.tabPage2.ImageIndex = 2;
             this.tabPage2.Location = new System.Drawing.Point(4, 39);
             this.tabPage2.Name = "tabPage2";
@@ -403,26 +403,26 @@
             this.label9.Text = "Historial de Citas";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // dataGridView1
+            // dgHistorialCitas
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AllowUserToResizeColumns = false;
-            this.dataGridView1.AllowUserToResizeRows = false;
-            this.dataGridView1.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(289, 137);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.ShowCellErrors = false;
-            this.dataGridView1.ShowCellToolTips = false;
-            this.dataGridView1.ShowEditingIcon = false;
-            this.dataGridView1.ShowRowErrors = false;
-            this.dataGridView1.Size = new System.Drawing.Size(754, 348);
-            this.dataGridView1.TabIndex = 0;
+            this.dgHistorialCitas.AllowUserToAddRows = false;
+            this.dgHistorialCitas.AllowUserToDeleteRows = false;
+            this.dgHistorialCitas.AllowUserToResizeColumns = false;
+            this.dgHistorialCitas.AllowUserToResizeRows = false;
+            this.dgHistorialCitas.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.dgHistorialCitas.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgHistorialCitas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgHistorialCitas.Location = new System.Drawing.Point(289, 137);
+            this.dgHistorialCitas.Name = "dgHistorialCitas";
+            this.dgHistorialCitas.ReadOnly = true;
+            this.dgHistorialCitas.RowHeadersWidth = 51;
+            this.dgHistorialCitas.RowTemplate.Height = 24;
+            this.dgHistorialCitas.ShowCellErrors = false;
+            this.dgHistorialCitas.ShowCellToolTips = false;
+            this.dgHistorialCitas.ShowEditingIcon = false;
+            this.dgHistorialCitas.ShowRowErrors = false;
+            this.dgHistorialCitas.Size = new System.Drawing.Size(754, 348);
+            this.dgHistorialCitas.TabIndex = 0;
             // 
             // tabPage3
             // 
@@ -453,10 +453,10 @@
             this.tabPage4.Controls.Add(this.label11);
             this.tabPage4.Controls.Add(this.label10);
             this.tabPage4.Controls.Add(this.Revisiones);
-            this.tabPage4.Controls.Add(this.dataGridView5);
-            this.tabPage4.Controls.Add(this.dataGridView4);
-            this.tabPage4.Controls.Add(this.dataGridView3);
-            this.tabPage4.Controls.Add(this.dataGridView2);
+            this.tabPage4.Controls.Add(this.dgOtrosLibres);
+            this.tabPage4.Controls.Add(this.dgPeluqueriaLibre);
+            this.tabPage4.Controls.Add(this.dgVacunasLibres);
+            this.tabPage4.Controls.Add(this.dgRevisionesLibres);
             this.tabPage4.Location = new System.Drawing.Point(4, 25);
             this.tabPage4.Name = "tabPage4";
             this.tabPage4.Padding = new System.Windows.Forms.Padding(3);
@@ -508,95 +508,95 @@
             this.Revisiones.Text = "Revisiones";
             this.Revisiones.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // dataGridView5
+            // dgOtrosLibres
             // 
-            this.dataGridView5.AllowUserToAddRows = false;
-            this.dataGridView5.AllowUserToDeleteRows = false;
-            this.dataGridView5.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.dataGridView5.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView5.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView5.Location = new System.Drawing.Point(885, 122);
-            this.dataGridView5.Name = "dataGridView5";
-            this.dataGridView5.ReadOnly = true;
-            this.dataGridView5.RowHeadersWidth = 51;
-            this.dataGridView5.RowTemplate.Height = 24;
-            this.dataGridView5.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dataGridView5.ShowCellErrors = false;
-            this.dataGridView5.ShowCellToolTips = false;
-            this.dataGridView5.ShowEditingIcon = false;
-            this.dataGridView5.ShowRowErrors = false;
-            this.dataGridView5.Size = new System.Drawing.Size(295, 354);
-            this.dataGridView5.TabIndex = 3;
-            this.dataGridView5.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView5_CellClick);
+            this.dgOtrosLibres.AllowUserToAddRows = false;
+            this.dgOtrosLibres.AllowUserToDeleteRows = false;
+            this.dgOtrosLibres.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.dgOtrosLibres.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgOtrosLibres.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgOtrosLibres.Location = new System.Drawing.Point(885, 122);
+            this.dgOtrosLibres.Name = "dgOtrosLibres";
+            this.dgOtrosLibres.ReadOnly = true;
+            this.dgOtrosLibres.RowHeadersWidth = 51;
+            this.dgOtrosLibres.RowTemplate.Height = 24;
+            this.dgOtrosLibres.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dgOtrosLibres.ShowCellErrors = false;
+            this.dgOtrosLibres.ShowCellToolTips = false;
+            this.dgOtrosLibres.ShowEditingIcon = false;
+            this.dgOtrosLibres.ShowRowErrors = false;
+            this.dgOtrosLibres.Size = new System.Drawing.Size(295, 354);
+            this.dgOtrosLibres.TabIndex = 3;
+            this.dgOtrosLibres.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView5_CellClick);
             // 
-            // dataGridView4
+            // dgPeluqueriaLibre
             // 
-            this.dataGridView4.AllowUserToAddRows = false;
-            this.dataGridView4.AllowUserToDeleteRows = false;
-            this.dataGridView4.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.dataGridView4.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView4.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView4.Location = new System.Drawing.Point(590, 122);
-            this.dataGridView4.Name = "dataGridView4";
-            this.dataGridView4.ReadOnly = true;
-            this.dataGridView4.RowHeadersWidth = 51;
-            this.dataGridView4.RowTemplate.Height = 24;
-            this.dataGridView4.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dataGridView4.ShowCellErrors = false;
-            this.dataGridView4.ShowCellToolTips = false;
-            this.dataGridView4.ShowEditingIcon = false;
-            this.dataGridView4.ShowRowErrors = false;
-            this.dataGridView4.Size = new System.Drawing.Size(295, 354);
-            this.dataGridView4.TabIndex = 2;
-            this.dataGridView4.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView4_CellClick);
+            this.dgPeluqueriaLibre.AllowUserToAddRows = false;
+            this.dgPeluqueriaLibre.AllowUserToDeleteRows = false;
+            this.dgPeluqueriaLibre.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.dgPeluqueriaLibre.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgPeluqueriaLibre.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgPeluqueriaLibre.Location = new System.Drawing.Point(590, 122);
+            this.dgPeluqueriaLibre.Name = "dgPeluqueriaLibre";
+            this.dgPeluqueriaLibre.ReadOnly = true;
+            this.dgPeluqueriaLibre.RowHeadersWidth = 51;
+            this.dgPeluqueriaLibre.RowTemplate.Height = 24;
+            this.dgPeluqueriaLibre.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dgPeluqueriaLibre.ShowCellErrors = false;
+            this.dgPeluqueriaLibre.ShowCellToolTips = false;
+            this.dgPeluqueriaLibre.ShowEditingIcon = false;
+            this.dgPeluqueriaLibre.ShowRowErrors = false;
+            this.dgPeluqueriaLibre.Size = new System.Drawing.Size(295, 354);
+            this.dgPeluqueriaLibre.TabIndex = 2;
+            this.dgPeluqueriaLibre.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView4_CellClick);
             // 
-            // dataGridView3
+            // dgVacunasLibres
             // 
-            this.dataGridView3.AllowUserToAddRows = false;
-            this.dataGridView3.AllowUserToDeleteRows = false;
-            this.dataGridView3.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.dataGridView3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView3.Location = new System.Drawing.Point(295, 122);
-            this.dataGridView3.Name = "dataGridView3";
-            this.dataGridView3.ReadOnly = true;
-            this.dataGridView3.RowHeadersWidth = 51;
-            this.dataGridView3.RowTemplate.Height = 24;
-            this.dataGridView3.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dataGridView3.ShowCellErrors = false;
-            this.dataGridView3.ShowCellToolTips = false;
-            this.dataGridView3.ShowEditingIcon = false;
-            this.dataGridView3.ShowRowErrors = false;
-            this.dataGridView3.Size = new System.Drawing.Size(295, 354);
-            this.dataGridView3.TabIndex = 1;
-            this.dataGridView3.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView3_CellClick);
+            this.dgVacunasLibres.AllowUserToAddRows = false;
+            this.dgVacunasLibres.AllowUserToDeleteRows = false;
+            this.dgVacunasLibres.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.dgVacunasLibres.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgVacunasLibres.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgVacunasLibres.Location = new System.Drawing.Point(295, 122);
+            this.dgVacunasLibres.Name = "dgVacunasLibres";
+            this.dgVacunasLibres.ReadOnly = true;
+            this.dgVacunasLibres.RowHeadersWidth = 51;
+            this.dgVacunasLibres.RowTemplate.Height = 24;
+            this.dgVacunasLibres.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dgVacunasLibres.ShowCellErrors = false;
+            this.dgVacunasLibres.ShowCellToolTips = false;
+            this.dgVacunasLibres.ShowEditingIcon = false;
+            this.dgVacunasLibres.ShowRowErrors = false;
+            this.dgVacunasLibres.Size = new System.Drawing.Size(295, 354);
+            this.dgVacunasLibres.TabIndex = 1;
+            this.dgVacunasLibres.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView3_CellClick);
             // 
-            // dataGridView2
+            // dgRevisionesLibres
             // 
-            this.dataGridView2.AllowUserToAddRows = false;
-            this.dataGridView2.AllowUserToDeleteRows = false;
-            this.dataGridView2.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.dataGridView2.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(0, 122);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.ReadOnly = true;
-            this.dataGridView2.RowHeadersWidth = 51;
-            this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.dataGridView2.ShowCellErrors = false;
-            this.dataGridView2.ShowCellToolTips = false;
-            this.dataGridView2.ShowEditingIcon = false;
-            this.dataGridView2.ShowRowErrors = false;
-            this.dataGridView2.Size = new System.Drawing.Size(295, 354);
-            this.dataGridView2.TabIndex = 0;
-            this.dataGridView2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellClick);
+            this.dgRevisionesLibres.AllowUserToAddRows = false;
+            this.dgRevisionesLibres.AllowUserToDeleteRows = false;
+            this.dgRevisionesLibres.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.dgRevisionesLibres.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgRevisionesLibres.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgRevisionesLibres.Location = new System.Drawing.Point(0, 122);
+            this.dgRevisionesLibres.Name = "dgRevisionesLibres";
+            this.dgRevisionesLibres.ReadOnly = true;
+            this.dgRevisionesLibres.RowHeadersWidth = 51;
+            this.dgRevisionesLibres.RowTemplate.Height = 24;
+            this.dgRevisionesLibres.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
+            this.dgRevisionesLibres.ShowCellErrors = false;
+            this.dgRevisionesLibres.ShowCellToolTips = false;
+            this.dgRevisionesLibres.ShowEditingIcon = false;
+            this.dgRevisionesLibres.ShowRowErrors = false;
+            this.dgRevisionesLibres.Size = new System.Drawing.Size(295, 354);
+            this.dgRevisionesLibres.TabIndex = 0;
+            this.dgRevisionesLibres.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellClick);
             // 
             // tabPage5
             // 
             this.tabPage5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
             this.tabPage5.Controls.Add(this.label13);
-            this.tabPage5.Controls.Add(this.dataGridView6);
+            this.tabPage5.Controls.Add(this.dgProxCitas);
             this.tabPage5.Location = new System.Drawing.Point(4, 25);
             this.tabPage5.Name = "tabPage5";
             this.tabPage5.Padding = new System.Windows.Forms.Padding(3);
@@ -614,27 +614,27 @@
             this.label13.Text = "Próximas citas";
             this.label13.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // dataGridView6
+            // dgProxCitas
             // 
-            this.dataGridView6.AllowUserToAddRows = false;
-            this.dataGridView6.AllowUserToDeleteRows = false;
-            this.dataGridView6.AllowUserToResizeColumns = false;
-            this.dataGridView6.AllowUserToResizeRows = false;
-            this.dataGridView6.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.dataGridView6.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dataGridView6.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView6.Location = new System.Drawing.Point(201, 120);
-            this.dataGridView6.Name = "dataGridView6";
-            this.dataGridView6.ReadOnly = true;
-            this.dataGridView6.RowHeadersWidth = 51;
-            this.dataGridView6.RowTemplate.Height = 24;
-            this.dataGridView6.ShowCellErrors = false;
-            this.dataGridView6.ShowCellToolTips = false;
-            this.dataGridView6.ShowEditingIcon = false;
-            this.dataGridView6.ShowRowErrors = false;
-            this.dataGridView6.Size = new System.Drawing.Size(754, 348);
-            this.dataGridView6.TabIndex = 2;
-            this.dataGridView6.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView6_CellClick);
+            this.dgProxCitas.AllowUserToAddRows = false;
+            this.dgProxCitas.AllowUserToDeleteRows = false;
+            this.dgProxCitas.AllowUserToResizeColumns = false;
+            this.dgProxCitas.AllowUserToResizeRows = false;
+            this.dgProxCitas.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
+            this.dgProxCitas.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dgProxCitas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgProxCitas.Location = new System.Drawing.Point(201, 120);
+            this.dgProxCitas.Name = "dgProxCitas";
+            this.dgProxCitas.ReadOnly = true;
+            this.dgProxCitas.RowHeadersWidth = 51;
+            this.dgProxCitas.RowTemplate.Height = 24;
+            this.dgProxCitas.ShowCellErrors = false;
+            this.dgProxCitas.ShowCellToolTips = false;
+            this.dgProxCitas.ShowEditingIcon = false;
+            this.dgProxCitas.ShowRowErrors = false;
+            this.dgProxCitas.Size = new System.Drawing.Size(754, 348);
+            this.dgProxCitas.TabIndex = 2;
+            this.dgProxCitas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView6_CellClick);
             // 
             // imageList2
             // 
@@ -669,16 +669,16 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgHistorialCitas)).EndInit();
             this.tabPage3.ResumeLayout(false);
             this.tabControl2.ResumeLayout(false);
             this.tabPage4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgOtrosLibres)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgPeluqueriaLibre)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgVacunasLibres)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgRevisionesLibres)).EndInit();
             this.tabPage5.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView6)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgProxCitas)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -713,22 +713,22 @@
         private System.Windows.Forms.Label lMascota3;
         private System.Windows.Forms.Label lMascota2;
         private System.Windows.Forms.Label lMascota1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgHistorialCitas;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.ImageList imageList1;
         private System.Windows.Forms.TabControl tabControl2;
         private System.Windows.Forms.TabPage tabPage4;
-        private System.Windows.Forms.DataGridView dataGridView5;
-        private System.Windows.Forms.DataGridView dataGridView4;
-        private System.Windows.Forms.DataGridView dataGridView3;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.DataGridView dgOtrosLibres;
+        private System.Windows.Forms.DataGridView dgPeluqueriaLibre;
+        private System.Windows.Forms.DataGridView dgVacunasLibres;
+        private System.Windows.Forms.DataGridView dgRevisionesLibres;
         private System.Windows.Forms.TabPage tabPage5;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label Revisiones;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.DataGridView dataGridView6;
+        private System.Windows.Forms.DataGridView dgProxCitas;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button buttonPass;
     }

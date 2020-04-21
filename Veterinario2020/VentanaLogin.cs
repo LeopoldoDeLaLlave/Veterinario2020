@@ -20,7 +20,7 @@ namespace Veterinario2020
     {
 
         Conexion c = new Conexion();
-        public DataTable tablaUsuario = new DataTable();
+        public DataTable tablaUsuario = new DataTable();//Aquí guardamos todos lod datos del usuario
         
         public VentanaLogin()
         {
@@ -34,7 +34,7 @@ namespace Veterinario2020
         public void BotonLogin_Click(object sender, EventArgs e)
         {      
 
-            if (c.comprobarLogin(textBoxUsuario.Text, textBoxContrasena.Text))
+            if (c.comprobarLogin(textBoxUsuario.Text, textBoxContrasena.Text))//SI el usuario y la contraseña son correctos
             {
                 tablaUsuario = c.obtenerDatos("SELECT * FROM usuario WHERE dni ='" + textBoxUsuario.Text + "'");//Obtenemos los datos del usuario
                 if (Convert.ToBoolean(tablaUsuario.Rows[0]["administrador"]))//Si el usuario es administrador abrimos el form de administrador
@@ -65,6 +65,7 @@ namespace Veterinario2020
 
         }
 
+
         //Para que se para la aplicación al pulsar la x
         private void VentanaLogin_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -79,9 +80,7 @@ namespace Veterinario2020
 
         }
 
-        //Se encarga de recoger el nombre y la contraseña introducida por el usuario y comprobar si coinciden
-        //En tal caso cierra VentanaLogin y abre FormUsuario o FormAdministrador en función de quien haya introducido los datos.
-        //Si los datos introducidos son incorrectos salta un aviso
+        //Al pulsar enter se realiza la acción de login
         private void VentanaLogin_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == (char)Keys.Enter)
@@ -90,9 +89,7 @@ namespace Veterinario2020
             }
         }
 
-        //Se encarga de recoger el nombre y la contraseña introducida por el usuario y comprobar si coinciden
-        //En tal caso cierra VentanaLogin y abre FormUsuario o FormAdministrador en función de quien haya introducido los datos.
-        //Si los datos introducidos son incorrectos salta un aviso
+        //Al pulsar enter se realiza la acción de login
         private void textBoxUsuario_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == (char)Keys.Enter)
@@ -101,9 +98,7 @@ namespace Veterinario2020
             }
         }
 
-        //Se encarga de recoger el nombre y la contraseña introducida por el usuario y comprobar si coinciden
-        //En tal caso cierra VentanaLogin y abre FormUsuario o FormAdministrador en función de quien haya introducido los datos.
-        //Si los datos introducidos son incorrectos salta un aviso
+        //Al pulsar enter se realiza la acción de login
         private void textBoxContrasena_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == (char)Keys.Enter)
@@ -112,7 +107,7 @@ namespace Veterinario2020
             }
         }
 
-        //Al pulsar si pone "usuario(DNI)" se vacíacy se oscurece la fuente
+        //Al pulsar si pone "usuario(DNI)" se vacíac y se oscurece la fuente
         private void textBoxUsuario_Enter(object sender, EventArgs e)
         {
             if (textBoxUsuario.Text== "USUARIO(DNI)")
@@ -143,12 +138,12 @@ namespace Veterinario2020
             }
         }
 
-        //Al soltar, si se ha quedado vací, se vuelve a poner contraseña
+        //Al soltar, si se ha quedado vacío, se vuelve a poner contraseña
         private void textBoxContrasena_Leave(object sender, EventArgs e)
         {
             if (textBoxContrasena.Text == "")
             {
-                textBoxContrasena.PasswordChar = '\0';
+                textBoxContrasena.PasswordChar = '\0';//Quítamos los asteríscos
                 textBoxContrasena.Text = "CONTRASEÑA";
                 textBoxContrasena.ForeColor = Color.FromArgb(64, 64, 64);
             }

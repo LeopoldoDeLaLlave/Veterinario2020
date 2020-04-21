@@ -13,7 +13,7 @@ namespace Veterinario2020
     /*
      * Autor: Javier de la Llave
      * 
-     * 
+     * El administrador puede buscar usuarios y mascotas y abrir fichas para editarlos, también puede generar nuevas citas.
      * 
      */
     public partial class FormAdministrador : Form
@@ -22,19 +22,24 @@ namespace Veterinario2020
         Conexion c6 = new Conexion();
 
         public DataTable datosUsuarios = new DataTable();//Aquí guardamos los datos del admin
+
+        /*
+         * DataTable dUsuarios: datos del admin
+         */
         public FormAdministrador(DataTable dUsuarios)
         {
             InitializeComponent();
             datosUsuarios = dUsuarios;
             this.Text = datosUsuarios.Rows[0]["nombre"].ToString() + " " + datosUsuarios.Rows[0]["apellido"].ToString();//Ponemos el nombre del usuario de título del form
-            dataGridView1.DataSource = c6.obtenerDatos("SELECT dni AS DNI, nombre AS Nombre, apellido AS Apellido, email AS Email, telefono AS Telefono FROM usuario WHERE administrador=FALSE; ");//Ponemos todos los usuarios
-            dataGridView2.DataSource = c6.obtenerDatos("SELECT m.n_chip AS Chip, m.nombre AS Nombre, m.especie AS Especie, m.raza AS Raza, CONCAT(s.nombre, ' ', s.apellido) AS Propietario FROM `mascota` m, usuario s WHERE m.propietario = s.dni;");//Ponemos todos las mascotas
+            dgTodosUsuarios.DataSource = c6.obtenerDatos("SELECT dni AS DNI, nombre AS Nombre, apellido AS Apellido, email AS Email, telefono AS Telefono FROM usuario WHERE administrador=FALSE; ");//Ponemos todos los usuarios
+            dgTodasMascotas.DataSource = c6.obtenerDatos("SELECT m.n_chip AS Chip, m.nombre AS Nombre, m.especie AS Especie, m.raza AS Raza, CONCAT(s.nombre, ' ', s.apellido) AS Propietario FROM `mascota` m, usuario s WHERE m.propietario = s.dni;");//Ponemos todos las mascotas
 
             dateTimePickerCitas.MaxDate = DateTime.Now.AddMonths(3); //La fecha máxima de creación de cita es el tres meses después de la creación
             dateTimePickerCitas.MinDate = DateTime.Now.AddDays(1); //La fecha mínima de creación de cita es el día siguiente a la fecha de creación
             
         }
 
+        //Para cerrar la apicación al pulsar la x
         private void formAdministrador_FormClosing(object sender, FormClosingEventArgs e)
         {
             Application.Exit();
@@ -43,14 +48,14 @@ namespace Veterinario2020
         //Al pulsar buscar, aparece el dni que coincida con el escrito o los que contengan los carácteres escritos
         private void buttonbdni_Click(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = c6.obtenerDatos("SELECT dni AS DNI, nombre AS Nombre, apellido AS Apellido, email AS Email, telefono AS Telefono " +
+            dgTodosUsuarios.DataSource = c6.obtenerDatos("SELECT dni AS DNI, nombre AS Nombre, apellido AS Apellido, email AS Email, telefono AS Telefono " +
                 "FROM usuario WHERE administrador=FALSE AND dni LIKE '%"+textBoxdni.Text.ToUpper()+"%';");
         }
 
-        //Al pulsar buscar, aparecen los nombres que coincidad
+        //Al pulsar buscar, aparecen los nombres que coincidan
         private void buttonNombre_Click(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = c6.obtenerDatos("SELECT dni AS DNI, nombre AS Nombre, apellido AS Apellido, email AS Email, telefono AS Telefono " +
+            dgTodosUsuarios.DataSource = c6.obtenerDatos("SELECT dni AS DNI, nombre AS Nombre, apellido AS Apellido, email AS Email, telefono AS Telefono " +
                                                        "FROM usuario WHERE administrador=FALSE AND LOWER(CONCAT(nombre, ' ', apellido)) " +
                                                        "LIKE '%" + textBoxNombre.Text.ToLower() + "%';");
         }
@@ -58,7 +63,7 @@ namespace Veterinario2020
         //Al pulsar aparecen los datos que coincidan con el chip introducido
         private void buttonChip_Click(object sender, EventArgs e)
         {
-            dataGridView2.DataSource = c6.obtenerDatos("SELECT m.n_chip AS Chip, m.nombre AS Nombre, m.especie AS Especie, m.raza AS Raza, " +
+            dgTodasMascotas.DataSource = c6.obtenerDatos("SELECT m.n_chip AS Chip, m.nombre AS Nombre, m.especie AS Especie, m.raza AS Raza, " +
                                                        "CONCAT(s.nombre, ' ', s.apellido) AS Propietario FROM `mascota` m, usuario s " +
                                                        "WHERE m.propietario = s.dni AND m.n_chip LIKE '%"+textBoxchip.Text+"%';");
         }
@@ -66,7 +71,7 @@ namespace Veterinario2020
         //Al pulsar aparecen los datos que coincidan con el nombre de la mascota introducido
         private void buttonNMaascota_Click(object sender, EventArgs e)
         {
-            dataGridView2.DataSource = c6.obtenerDatos("SELECT m.n_chip AS Chip, m.nombre AS Nombre, m.especie AS Especie, m.raza AS Raza, " +
+            dgTodasMascotas.DataSource = c6.obtenerDatos("SELECT m.n_chip AS Chip, m.nombre AS Nombre, m.especie AS Especie, m.raza AS Raza, " +
                                                        "CONCAT(s.nombre, ' ', s.apellido) AS Propietario FROM `mascota` m, usuario s " +
                                                        "WHERE m.propietario = s.dni AND LOWER(m.nombre) LIKE '%" + textBoxnmascota.Text.ToLower() + "%';");
         }
@@ -77,7 +82,7 @@ namespace Veterinario2020
 
             try
             {
-                FormModificarUsuario fmu = new FormModificarUsuario(dataGridView1.Rows[e.RowIndex].Cells["DNI"].Value.ToString(), dataGridView1, dataGridView2);
+                FormModificarUsuario fmu = new FormModificarUsuario(dgTodosUsuarios.Rows[e.RowIndex].Cells["DNI"].Value.ToString(), dgTodosUsuarios, dgTodasMascotas);
                 fmu.ShowDialog();
             }
             catch
@@ -92,7 +97,7 @@ namespace Veterinario2020
         {
             try
             {
-                FormEditarMascota fem = new FormEditarMascota(dataGridView2.Rows[e.RowIndex].Cells["Chip"].Value.ToString(), null, dataGridView2);
+                FormEditarMascota fem = new FormEditarMascota(dgTodasMascotas.Rows[e.RowIndex].Cells["Chip"].Value.ToString(), null, dgTodasMascotas);
                 fem.ShowDialog();
             }
             catch
@@ -105,7 +110,7 @@ namespace Veterinario2020
         //Abre un form para añadir un usuario
         private void buttonAddUser_Click(object sender, EventArgs e)
         {
-            FormAddUser fas = new FormAddUser(dataGridView1);
+            FormAddUser fas = new FormAddUser(dgTodosUsuarios);
             fas.ShowDialog();
         }
 

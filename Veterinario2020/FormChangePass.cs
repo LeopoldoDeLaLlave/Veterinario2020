@@ -20,7 +20,11 @@ namespace Veterinario2020
     public partial class FormChangePass : Form
     {
         Conexion c = new Conexion();
-        String dni = "";
+        String dni = "";//Dni del cliente
+
+        /*
+         * String d: DNI del cliente
+         */
         public FormChangePass(String d)
         {
             dni = d;
@@ -28,6 +32,7 @@ namespace Veterinario2020
             InitializeComponent();
         }
 
+        //Al pulsar, si los datos son correctos, se cambia la contraseña
         private void button1_Click(object sender, EventArgs e)
         {
             if (c.comprobarLogin(dni, textBoxActual.Text))//Comprobamos que la contraseña actual sea correcta

@@ -24,17 +24,17 @@ namespace Veterinario2020
 
         Conexion c2 = new Conexion();
 
-        public DataTable datosUsuarios = new DataTable();//Aquí guardamos los datos de los usuarios
-        public DataTable datosMascotas = new DataTable();//Aquí guardamos los datos de las mascotas
+        public DataTable datosUsuarios = new DataTable();//Aquí guardamos los datos del usario que ha abierto sesió
+        public DataTable datosMascotas = new DataTable();//Aquí guardamos los datos de las mascotas del usuario que ha abierto sesión
 
 
         /*
-         * dUsuarios: Recibe todos los datos del usuario en forma de datatable
+         * DataTable dUsuarios: Recibe todos los datos del usuario en forma de datatable
          */
         public FormUsuario(DataTable dUsuarios)
         {
             InitializeComponent();
-            datosUsuarios = dUsuarios;//Obtenemos los datos de los usuarios
+            datosUsuarios = dUsuarios;//Obtenemos los datos del usuario que ha abierto sesión
             prepararForm();
         }
 
@@ -47,19 +47,19 @@ namespace Veterinario2020
             ponerDatos();
             ponerMascotas();
 
-            dataGridView1.DataSource = c2.obtenerDatos("SELECT DATE_FORMAT(c.fecha, '%Y-%m-%d') AS Fecha, m.nombre AS mascota, c.motivo AS Motivo, c.precio AS Precio FROM mascota m, cita c " +
+            dgHistorialCitas.DataSource = c2.obtenerDatos("SELECT DATE_FORMAT(c.fecha, '%Y-%m-%d') AS Fecha, m.nombre AS mascota, c.motivo AS Motivo, c.precio AS Precio FROM mascota m, cita c " +
                     "WHERE m.n_chip = c.chip_mascota AND m.propietario = '" + datosUsuarios.Rows[0]["dni"].ToString() + "' AND fecha<CURDATE()");//Ponemos el historial de citas pasadas
 
-            dataGridView6.DataSource = c2.obtenerDatos("SELECT n_cita AS Numero, DATE_FORMAT(c.fecha, '%Y-%m-%d') AS Fecha, hora AS Hora, m.nombre AS mascota, c.motivo AS Motivo FROM mascota m, cita c " +
+            dgProxCitas.DataSource = c2.obtenerDatos("SELECT n_cita AS Numero, DATE_FORMAT(c.fecha, '%Y-%m-%d') AS Fecha, hora AS Hora, m.nombre AS mascota, c.motivo AS Motivo FROM mascota m, cita c " +
                     "WHERE m.n_chip = c.chip_mascota AND m.propietario = '" + datosUsuarios.Rows[0]["dni"].ToString() + "' AND fecha>CURDATE()");//Ponemos las próximas citas
 
-            dataGridView2.DataSource = c2.obtenerDatos("SELECT DATE_FORMAT(fecha, '%Y-%m-%d') AS Fecha, hora AS Hora FROM cita  WHERE chip_mascota IS NULL AND motivo = 'Revisión' AND fecha>CURDATE()");//Ponemos las revisiones libres
+            dgRevisionesLibres.DataSource = c2.obtenerDatos("SELECT DATE_FORMAT(fecha, '%Y-%m-%d') AS Fecha, hora AS Hora FROM cita  WHERE chip_mascota IS NULL AND motivo = 'Revisión' AND fecha>CURDATE()");//Ponemos las revisiones libres
 
-            dataGridView3.DataSource = c2.obtenerDatos("SELECT DATE_FORMAT(fecha, '%Y-%m-%d') AS Fecha, hora AS Hora FROM cita  WHERE chip_mascota IS NULL AND motivo = 'Vacuna' AND fecha>CURDATE()");//Ponemos las revisiones libres
+            dgVacunasLibres.DataSource = c2.obtenerDatos("SELECT DATE_FORMAT(fecha, '%Y-%m-%d') AS Fecha, hora AS Hora FROM cita  WHERE chip_mascota IS NULL AND motivo = 'Vacuna' AND fecha>CURDATE()");//Ponemos las vacunas libres
 
-            dataGridView4.DataSource = c2.obtenerDatos("SELECT DATE_FORMAT(fecha, '%Y-%m-%d') AS Fecha, hora AS Hora FROM cita  WHERE chip_mascota IS NULL AND motivo = 'Peluquería' AND fecha>CURDATE()");//Ponemos las revisiones libres
+            dgPeluqueriaLibre.DataSource = c2.obtenerDatos("SELECT DATE_FORMAT(fecha, '%Y-%m-%d') AS Fecha, hora AS Hora FROM cita  WHERE chip_mascota IS NULL AND motivo = 'Peluquería' AND fecha>CURDATE()");//Ponemos la peluquería libre
 
-            dataGridView5.DataSource = c2.obtenerDatos("SELECT DATE_FORMAT(fecha, '%Y-%m-%d') AS Fecha, hora AS Hora FROM cita  WHERE chip_mascota IS NULL AND motivo = 'Otros' AND fecha>CURDATE()");//Ponemos las revisiones libres
+            dgOtrosLibres.DataSource = c2.obtenerDatos("SELECT DATE_FORMAT(fecha, '%Y-%m-%d') AS Fecha, hora AS Hora FROM cita  WHERE chip_mascota IS NULL AND motivo = 'Otros' AND fecha>CURDATE()");//Ponemos otos libres
         }
 
 
@@ -111,7 +111,7 @@ namespace Veterinario2020
                 {
                     lMascota7.Text = datosMascotas.Rows[i]["nombre"].ToString();
                 }
-                else
+                else if (i == 7)
                 {
                     lMascota8.Text = datosMascotas.Rows[i]["nombre"].ToString();
                 }
@@ -212,8 +212,8 @@ namespace Veterinario2020
         {
             try
             {
-                FormElegirCita fec = new FormElegirCita(datosMascotas, dataGridView2.Rows[e.RowIndex].Cells["Fecha"].Value.ToString(),
-                                                    dataGridView2.Rows[e.RowIndex].Cells["Hora"].Value.ToString(), "Revisión", dataGridView2, dataGridView6, 0, null);
+                FormElegirCita fec = new FormElegirCita(datosMascotas, dgRevisionesLibres.Rows[e.RowIndex].Cells["Fecha"].Value.ToString(),
+                                                    dgRevisionesLibres.Rows[e.RowIndex].Cells["Hora"].Value.ToString(), "Revisión", dgRevisionesLibres, dgProxCitas, 0, null);
                 fec.ShowDialog();
             }
             catch
@@ -229,8 +229,8 @@ namespace Veterinario2020
         {
             try
             {
-                FormElegirCita fec = new FormElegirCita(datosMascotas, dataGridView3.Rows[e.RowIndex].Cells["Fecha"].Value.ToString(),
-                                                    dataGridView3.Rows[e.RowIndex].Cells["Hora"].Value.ToString(), "Vacuna", dataGridView3, dataGridView6, 0, null);
+                FormElegirCita fec = new FormElegirCita(datosMascotas, dgVacunasLibres.Rows[e.RowIndex].Cells["Fecha"].Value.ToString(),
+                                                    dgVacunasLibres.Rows[e.RowIndex].Cells["Hora"].Value.ToString(), "Vacuna", dgVacunasLibres, dgProxCitas, 0, null);
                 fec.ShowDialog();
             }
             catch
@@ -247,8 +247,8 @@ namespace Veterinario2020
 
             try
             {
-                FormElegirCita fec = new FormElegirCita(datosMascotas, dataGridView4.Rows[e.RowIndex].Cells["Fecha"].Value.ToString(),
-                                                    dataGridView4.Rows[e.RowIndex].Cells["Hora"].Value.ToString(), "Peluquería", dataGridView4, dataGridView6, 0, null);
+                FormElegirCita fec = new FormElegirCita(datosMascotas, dgPeluqueriaLibre.Rows[e.RowIndex].Cells["Fecha"].Value.ToString(),
+                                                    dgPeluqueriaLibre.Rows[e.RowIndex].Cells["Hora"].Value.ToString(), "Peluquería", dgPeluqueriaLibre, dgProxCitas, 0, null);
                 fec.ShowDialog();
             }
             catch
@@ -264,8 +264,8 @@ namespace Veterinario2020
         {
             try
             {
-                FormElegirCita fec = new FormElegirCita(datosMascotas, dataGridView5.Rows[e.RowIndex].Cells["Fecha"].Value.ToString(),
-                                                    dataGridView5.Rows[e.RowIndex].Cells["Hora"].Value.ToString(), "Otros", dataGridView5, dataGridView6, 0, null);
+                FormElegirCita fec = new FormElegirCita(datosMascotas, dgOtrosLibres.Rows[e.RowIndex].Cells["Fecha"].Value.ToString(),
+                                                    dgOtrosLibres.Rows[e.RowIndex].Cells["Hora"].Value.ToString(), "Otros", dgOtrosLibres, dgProxCitas, 0, null);
                 fec.ShowDialog();
             }
             catch
@@ -281,10 +281,10 @@ namespace Veterinario2020
             try
             {
                 FormAnularCita fac = new FormAnularCita(datosUsuarios.Rows[0]["dni"].ToString(),
-                                                    dataGridView6.Rows[e.RowIndex].Cells["Fecha"].Value.ToString(),
-                                                    dataGridView6.Rows[e.RowIndex].Cells["Hora"].Value.ToString(),
-                                                    Int32.Parse(dataGridView6.Rows[e.RowIndex].Cells["Numero"].Value.ToString()),
-                                                    dataGridView2, dataGridView3, dataGridView4, dataGridView5, dataGridView6);
+                                                    dgProxCitas.Rows[e.RowIndex].Cells["Fecha"].Value.ToString(),
+                                                    dgProxCitas.Rows[e.RowIndex].Cells["Hora"].Value.ToString(),
+                                                    Int32.Parse(dgProxCitas.Rows[e.RowIndex].Cells["Numero"].Value.ToString()),
+                                                    dgRevisionesLibres, dgVacunasLibres, dgPeluqueriaLibre, dgOtrosLibres, dgProxCitas);
                 fac.ShowDialog();
                 
             }
@@ -295,7 +295,7 @@ namespace Veterinario2020
 
         }
 
-        //Al pulsar el botón se cierr la sesión y se abre la ventana de login
+        //Al pulsar el botón se cierra la sesión y se abre la ventana de login
         private void button1_Click(object sender, EventArgs e)
         {
             this.Hide();

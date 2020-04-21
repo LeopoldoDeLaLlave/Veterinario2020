@@ -19,9 +19,16 @@ namespace Veterinario2020
     {
         Conexion c = new Conexion();
         DataGridView dgCitas = new DataGridView();//Información de las citas pasadas del usuario
-        int index = 0;//Indica que fila ha sido pulsada
+        int index = 0;//Indica que fila ha sido pulsada ya que este form recibe el datagriview entero
         string dni = "";//Guardamos el dni del cliente que ha tenido la cita
 
+        /*
+         * DataGridView dg: datagridview con todas las citas pasadas del usuario
+         * 
+         * int i: número de la fila que se ha pulsado en el datagridview del historial de citas
+         * 
+         * string d: dni del usuario
+         */
         public FormInfoCita(DataGridView dg, int i, string d)
         {
             
