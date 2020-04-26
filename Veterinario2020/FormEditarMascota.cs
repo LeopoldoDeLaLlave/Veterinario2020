@@ -80,7 +80,7 @@ namespace Veterinario2020
                     {//El admin puede llegar aquí desde la modificación de usuario o desde la lista de mascotas, en este ultimo caso este datagridview será null
                         dgMascotasUsuario.DataSource = c.obtenerDatos("SELECT n_chip AS Chip, nombre AS Nombre FROM mascota WHERE propietario='" + datosMascota.Rows[0]["propietario"].ToString() + "'; ");//Actualizamos el datagridview con las mascotas del usuario
                     }
-                    catch (Exception)
+                    catch (Exception ex)
                     {
 
                     }
@@ -97,9 +97,7 @@ namespace Veterinario2020
             else
             {
                 MessageBox.Show("Chip ya registrado", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            }
-            
-            
+            }                     
         }
 
         //Abre un form para confirmar al eliminación de la mascota
